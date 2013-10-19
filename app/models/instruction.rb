@@ -1,3 +1,3 @@
 class Instruction < ActiveRecord::Base
-  has_many :pages, as: :pageable
+  has_one :page, as: :pageable
 end

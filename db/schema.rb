@@ -20,15 +20,15 @@ ActiveRecord::Schema.define(version: 20131019181023) do
     t.text     "result"
     t.datetime "correct_at"
     t.integer  "question_id"
-    t.integer  "course_id"
+    t.integer  "course_progression_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "answers", ["course_id"], name: "index_answers_on_course_id", using: :btree
+  add_index "answers", ["course_progression_id"], name: "index_answers_on_course_progression_id", using: :btree
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
-  create_table "courses", force: true do |t|
+  create_table "course_progressions", force: true do |t|
     t.integer  "user_id"
     t.integer  "subject_id"
     t.integer  "page_id"
@@ -37,13 +37,12 @@ ActiveRecord::Schema.define(version: 20131019181023) do
     t.datetime "updated_at"
   end
 
-  add_index "courses", ["page_id"], name: "index_courses_on_page_id", using: :btree
-  add_index "courses", ["subject_id"], name: "index_courses_on_subject_id", using: :btree
-  add_index "courses", ["user_id"], name: "index_courses_on_user_id", using: :btree
+  add_index "course_progressions", ["page_id"], name: "index_course_progressions_on_page_id", using: :btree
+  add_index "course_progressions", ["subject_id"], name: "index_course_progressions_on_subject_id", using: :btree
+  add_index "course_progressions", ["user_id"], name: "index_course_progressions_on_user_id", using: :btree
 
   create_table "instructions", force: true do |t|
     t.text     "body"
-    t.text     "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,7 +60,6 @@ ActiveRecord::Schema.define(version: 20131019181023) do
 
   create_table "questions", force: true do |t|
     t.text     "body"
-    t.text     "image"
     t.text     "choices"
     t.text     "answers"
     t.text     "explanation"

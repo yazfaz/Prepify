@@ -1,6 +1,6 @@
 class CreateCourseProgressions < ActiveRecord::Migration
   def change
-    create_table :courses do |t|
+    create_table :course_progressions do |t|
       t.references :user, index: true
       t.references :subject, index: true
       t.references :page, index: true
