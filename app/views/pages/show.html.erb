@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sequence:</strong>
+  <%= @page.sequence_id %>
+</p>
+
+<p>
+  <strong>Pageable:</strong>
+  <%= @page.pageable_id %>
+</p>
+
+<p>
+  <strong>Pageable type:</strong>
+  <%= @page.pageable_type %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @page.subject %>
+</p>
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>
