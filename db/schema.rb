@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20131019181023) do
     t.datetime "updated_at"
   end
 
+  add_index "pages", ["pageable_id", "pageable_type"], name: "index_pages_on_pageable_id_and_pageable_type", using: :btree
   add_index "pages", ["subject_id"], name: "index_pages_on_subject_id", using: :btree
 
   create_table "questions", force: true do |t|

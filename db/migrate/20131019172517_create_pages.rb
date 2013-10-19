@@ -8,5 +8,6 @@ class CreatePages < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :pages, [:pageable_id, :pageable_type]
   end
 end
