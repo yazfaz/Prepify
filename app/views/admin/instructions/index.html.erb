@@ -1,0 +1,29 @@
+<h1>Listing instructions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @instructions.each do |instruction| %>
+      <tr>
+        <td><%= instruction.body %></td>
+        <td><%= instruction.image %></td>
+        <td><%= link_to 'Show', instruction %></td>
+        <td><%= link_to 'Edit', edit_instruction_path(instruction) %></td>
+        <td><%= link_to 'Destroy', instruction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instruction', new_instruction_path %>

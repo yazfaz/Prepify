@@ -1,0 +1,25 @@
+<h1>Listing course_progressions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @course_progressions.each do |course_progression| %>
+      <tr>
+        <td><%= link_to 'Show', course_progression %></td>
+        <td><%= link_to 'Edit', edit_course_progression_path(course_progression) %></td>
+        <td><%= link_to 'Destroy', course_progression, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course progression', new_course_progression_path %>
