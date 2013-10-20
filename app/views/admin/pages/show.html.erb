@@ -2,7 +2,7 @@
 
 <p>
   <strong>Subject:</strong>
-  <%= @page.subject.name %>
+  <%= @subject.name %>
 </p>
 
 <p>
@@ -15,19 +15,26 @@
   <%= @page.pageable_type %>
 </p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @page.pageable.body %>
-</p>
 <% if @page.pageable_type == "Question" %>
+	
+  <p>
+    <strong>Body:</strong>
+    <%= @pageable.body %>
+  </p>
+  <p>
+    <strong>Choices:</strong>
+    <%= @pageable.choices %>
+  </p>
 	<p>
-	  <strong>Choices:</strong>
-	  <%= @page.pageable.choices %>
-	</p>
-	<p>
-  <strong>Correct Answer:</strong>
-  <%= @page.pageable.correct_answer %>
-</p>
+    <strong>Correct Answer:</strong>
+    <%= @pageable.correct_answer %>
+  </p>
+  
+<% elsif @page.pageable_type == "Instruction" %>
+  <p>
+    <strong>Body:</strong>
+    <%= @pageable.body %>
+  </p>
 <% end %>
 
 

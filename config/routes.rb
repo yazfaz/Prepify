@@ -4,6 +4,7 @@ Prepify::Application.routes.draw do
       resources :pages
     end
   
+root 'admin/subjects#index'
 
   namespace :admin do
     resources :subjects do

@@ -1,5 +1,5 @@
 class Admin::PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
+  # before_action :set_page, only: [:show, :new,  :edit, :update, :destroy]
 
   # GET /pages
   # GET /pages.json
@@ -11,12 +11,15 @@ class Admin::PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @pageable = Page.find(params[:id])   
+    @subject = Subject.find(params[:subject_id])
+    @page = Page.find(params[:id])
+    @pageable = @page.pageable
   end
 
   # GET /pages/new
   def new
-    @page = Page.new
+    @pageable = Subject.find(params[:subject_id])
+    @page = @pageable.pages.new
   end
 
   # GET /pages/1/edit
@@ -26,15 +29,16 @@ class Admin::PagesController < ApplicationController
   # POST /pages
   # POST /pages.json
   def create
-    @page = @pageable.pages.build(params[:page])
-    respond_to do |format|
+    @subject = Subject.find(params[:subject_id])
+    @page = @subject.pages.new(page_params)
+    
       if @page.save
-        format.html { redirect_to :id => nil, notice: 'Page was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @page }
+        on_page_save
+      
       else
-        format.html { render action: 'new' }
-        format.json { render json: @page.errors, status: :unprocessable_entity }
-      end
+       render action: 'new' 
+    
+    
     end
   end
 
@@ -69,6 +73,14 @@ class Admin::PagesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    def on_page_save
+      if @page.pageable_type == "Question"
+           redirect_to new_admin_subject_question_path 
+        elsif @page.pageable_type == "Instruction"
+          redirect_to new_admin_subject_instruction_path 
+      end
+    end
+
     def page_params
       params.require(:page).permit(:sequence_id, :pageable_id, :pageable_type, :subject_id)
     end

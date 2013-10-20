@@ -1,4 +1,4 @@
-<%= form_for(@page) do |f| %>
+<%= form_for [@pageable, @page] do |f| %>
   <% if @page.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
@@ -14,20 +14,14 @@
   <div class="field">
     <%= f.label :sequence_id %><br>
     <%= f.number_field :sequence_id %>
-  </div>
-  <div class="field">
-    <%= f.label :pageable_id %><br>
-    <%= f.number_field :pageable_id %>
-  </div>
+  </div> 
   <div class="field">
     <%= f.label :pageable_type %><br>
-    <%= f.text_field :pageable_type %>
+    <%= f.collection_select(:pageable_id, Page.all.select("DISTINCT(pageable_type)"), :id, :pageable_type) %>
   </div>
-  <div class="field">
-    <%= f.label :subject %><br>
-    <%= f.text_field :subject %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
 <% end %>

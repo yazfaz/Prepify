@@ -1,4 +1,4 @@
-<%= form_for(@question) do |f| %>
+<%= form_for [:admin, @pageable, @question ] do |f| %>
   <% if @question.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
@@ -10,6 +10,19 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div> 
+  <div class="field">
+    <%= f.label :choices %><br>
+    <%= f.text_field :choices %>
+  </div>
+  <div class="field">
+    <%= f.label :correct_answer%><br>
+    <%= f.text_field :correct_answer %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

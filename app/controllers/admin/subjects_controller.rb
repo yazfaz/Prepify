@@ -27,10 +27,9 @@ class Admin::SubjectsController < ApplicationController
   # POST /subjects.json
   def create
     @subject = Subject.new(subject_params)
-
     respond_to do |format|
       if @subject.save
-        format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
+        format.html { redirect_to admin_subjects_path, notice: 'Subject was successfully created.' }
         format.json { render action: 'show', status: :created, location: @subject }
       else
         format.html { render action: 'new' }
