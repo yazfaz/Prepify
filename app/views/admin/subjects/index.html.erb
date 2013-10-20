@@ -5,9 +5,7 @@
     <tr>
       <th>Section</th>
       <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      
     </tr>
   </thead>
 
@@ -16,8 +14,8 @@
       <tr>
         <td><%= subject.section %></td>
         <td><%= subject.name %></td>
-        <td><%= link_to 'Show', subject %></td>
-        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+        <td><%= link_to 'Show', admin_subject_pages_path(subject) %></td>
+        <td><%= link_to 'Edit', edit_admin_subject_path(subject) %></td>
         <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

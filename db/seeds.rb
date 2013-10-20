@@ -18,3 +18,5 @@ instruc_1 = Instruction.create(body: "Do this and that!")
 #Link pages to either question/instruction
 page_1.pageable = instruc_1
 page_2.pageable = ques_1
+page_1.save
+page_2.save

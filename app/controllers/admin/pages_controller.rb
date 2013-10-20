@@ -4,13 +4,16 @@ class Admin::PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pageable = find_pageable
-    @pages = @pageable.pages
+    @pageable = Subject.find(params[:subject_id])
+    @pages = @pageable.pages 
+    # @pages.sort! {|a,b| a.sequence_id <=> b.sequence_id} 
   end
 
   # GET /pages/1
   # GET /pages/1.json
   def show
+    @pageable = Subject.find(params[:id])
+    @pages = @pageable.pages 
   end
 
   # GET /pages/new
@@ -25,7 +28,6 @@ class Admin::PagesController < ApplicationController
   # POST /pages
   # POST /pages.json
   def create
-    @pageable = find_pageable
     @page = @pageable.pages.build(params[:page])
     respond_to do |format|
       if @page.save
@@ -72,13 +74,4 @@ class Admin::PagesController < ApplicationController
     def page_params
       params.require(:page).permit(:sequence_id, :pageable_id, :pageable_type, :subject_id)
     end
-
-    # Fetches the specific pageable type
-    def find_pageable
-      params.each do |name, value|
-        if name =- /(.+)_id$/
-        return $1.classify.constantize.find(value)
-      end
-    end
-
 end
