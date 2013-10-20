@@ -4,6 +4,7 @@ class Admin::PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
+    @pages = @pageable.pages
     @pages = Page.all
   end
 
