@@ -7,11 +7,10 @@ Prepify::Application.routes.draw do
 
   namespace :admin do
     resources :subjects do
-      resources :pages
-      resources :instructions
-      resources :questions      
+      resources :pages 
+        resources :instructions
+        resources :questions  
+    
     end
-  end
-
-  
+  end 
 end

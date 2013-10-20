@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Sequence:</strong>
-  <%= @page.sequence_id %>
+  <strong>Subject:</strong>
+  <%= @page.subject.name %>
 </p>
 
 <p>
-  <strong>Pageable:</strong>
-  <%= @page.pageable_id %>
+  <strong>Sequence:</strong>
+  <%= @page.sequence_id %>
 </p>
 
 <p>
@@ -16,9 +16,16 @@
 </p>
 
 <p>
-  <strong>Subject:</strong>
-  <%= @page.subject %>
+  <strong>Body:</strong>
+  <%= @page.pageable.body %>
 </p>
 
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+<p>
+  <strong>Choices:</strong>
+  <%= @page.pageable.choices %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @page.pageable.answers %>
+</p>

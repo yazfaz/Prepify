@@ -12,7 +12,7 @@ algebra = Subject.create(section: "Math",name:"Algebra")
 page_1 = algebra.pages.create(sequence_id: 1)
 page_2 = algebra.pages.create(sequence_id: 2)
 #Create Questions
-ques_1 = Question.create(body: "What is 2 + 2?", choices: [1,3,4,6])
+ques_1 = Question.create(body: "What is 2 + 2?", choices: [1,3,4,6], answers:"4")
 #Create Instructions
 instruc_1 = Instruction.create(body: "Do this and that!")
 #Link pages to either question/instruction

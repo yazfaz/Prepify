@@ -12,8 +12,7 @@ class Admin::PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @pageable = Subject.find(params[:id])
-    @pages = @pageable.pages 
+    @pageable = Page.find(params[:id])   
   end
 
   # GET /pages/new
