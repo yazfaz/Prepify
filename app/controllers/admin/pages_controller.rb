@@ -4,8 +4,8 @@ class Admin::PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
+    @pageable = find_pageable
     @pages = @pageable.pages
-    @pages = Page.all
   end
 
   # GET /pages/1
@@ -25,11 +25,11 @@ class Admin::PagesController < ApplicationController
   # POST /pages
   # POST /pages.json
   def create
-    @page = Page.new(page_params)
-
+    @pageable = find_pageable
+    @page = @pageable.pages.build(params[:page])
     respond_to do |format|
       if @page.save
-        format.html { redirect_to @page, notice: 'Page was successfully created.' }
+        format.html { redirect_to :id => nil, notice: 'Page was successfully created.' }
         format.json { render action: 'show', status: :created, location: @page }
       else
         format.html { render action: 'new' }
@@ -63,7 +63,7 @@ class Admin::PagesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Use callbacks to share common setup or constraints between actions.    
     def set_page
       @page = Page.find(params[:id])
     end
@@ -72,4 +72,13 @@ class Admin::PagesController < ApplicationController
     def page_params
       params.require(:page).permit(:sequence_id, :pageable_id, :pageable_type, :subject_id)
     end
+
+    # Fetches the specific pageable type
+    def find_pageable
+      params.each do |name, value|
+        if name =- /(.+)_id$/
+        return $1.classify.constantize.find(value)
+      end
+    end
+
 end
