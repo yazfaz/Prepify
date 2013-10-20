@@ -6,7 +6,6 @@ class Admin::PagesController < ApplicationController
   def index
     @pageable = Subject.find(params[:subject_id])
     @pages = @pageable.pages 
-    # @pages.sort! {|a,b| a.sequence_id <=> b.sequence_id} 
   end
 
   # GET /pages/1

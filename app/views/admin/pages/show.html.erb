@@ -19,13 +19,19 @@
   <strong>Body:</strong>
   <%= @page.pageable.body %>
 </p>
-
-<p>
-  <strong>Choices:</strong>
-  <%= @page.pageable.choices %>
-</p>
-
-<p>
+<% if @page.pageable_type == "Question" %>
+	<p>
+	  <strong>Choices:</strong>
+	  <%= @page.pageable.choices %>
+	</p>
+	<p>
   <strong>Correct Answer:</strong>
   <%= @page.pageable.correct_answer %>
 </p>
+<% end %>
+
+
+
+<%= link_to "Edit", edit_admin_subject_page_path(@pageable, :page) %> 
+<%= link_to "Delete" , admin_subject_pages_path(@pageable, :page) %> 
+<%= link_to "Back", admin_subject_pages_path(@page.subject_id) %> 
