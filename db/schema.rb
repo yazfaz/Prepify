@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20131019181023) do
   create_table "questions", force: true do |t|
     t.text     "body"
     t.text     "choices"
-    t.text     "answers"
+    t.text     "correct_answer"
     t.text     "explanation"
     t.datetime "created_at"
     t.datetime "updated_at"

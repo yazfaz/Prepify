@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.text :body
       
       t.text :choices
-      t.text :answers
+      t.text :correct_answer
       t.text :explanation
 
       t.timestamps
