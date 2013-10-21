@@ -4,8 +4,8 @@ class Admin::PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pageable = Subject.find(params[:subject_id])
-    @pages = @pageable.pages 
+    @subject = Subject.find(params[:subject_id])
+    @pages = @subject.pages 
   end
 
   # GET /pages/1
@@ -18,8 +18,8 @@ class Admin::PagesController < ApplicationController
 
   # GET /pages/new
   def new
-    @pageable = Subject.find(params[:subject_id])
-    @page = @pageable.pages.new
+    @subject = Subject.find(params[:subject_id])
+    @page = @subject.pages.new
   end
 
   # GET /pages/1/edit
@@ -34,6 +34,7 @@ class Admin::PagesController < ApplicationController
     @page = @subject.pages.new(page_params)
     
       if @page.save
+        
      redirect_to admin_subject_pages_path
       
       else

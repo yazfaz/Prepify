@@ -14,10 +14,10 @@ class Admin::QuestionsController < ApplicationController
 
   # GET /questions/new
   def new
-    @pageable = Subject.find(params[:subject_id])
-    @page = @pageable.pages.last
+    @subject = Subject.find(params[:subject_id])
+    @page = Page.find(params[:page_id])
     @question = Question.new
-    @page.pageable = @question
+    
   end
 
   # GET /questions/1/edit
@@ -27,8 +27,8 @@ class Admin::QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-    @pageable = Subject.find(params[:subject_id])
-    @page = @pageable.pages.last
+    @subject = Subject.find(params[:subject_id])
+    @page = Page.find(params[:page_id])
     @question = Question.new
     @page.pageable = @question
 
