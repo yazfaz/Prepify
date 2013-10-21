@@ -34,7 +34,7 @@ class Admin::PagesController < ApplicationController
     @page = @subject.pages.new(page_params)
     
       if @page.save
-        
+  
      redirect_to admin_subject_pages_path
       
       else
@@ -76,11 +76,13 @@ class Admin::PagesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # Can't redirect to new question or instruction form because the newly saved page doesn't have id yet (at least one to find in url)
     def on_page_save
-      if @page.pageable_type == "Question"
-           redirect_to new_admin_subject_question_path 
+      @page = Page.find(params[:page_id])
+          if @page.pageable_type == "Question"
+           redirect_to new_admin_subject_page_question_path(@page)
         elsif @page.pageable_type == "Instruction"
-          redirect_to new_admin_subject_instruction_path 
+          redirect_to new_admin_subject_page_instruction_path 
       end
     end
 
