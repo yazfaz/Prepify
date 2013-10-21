@@ -24,6 +24,7 @@ class Admin::PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
+    @pageable = Subject.find(params[:subject_id])
   end
 
   # POST /pages
@@ -33,7 +34,7 @@ class Admin::PagesController < ApplicationController
     @page = @subject.pages.new(page_params)
     
       if @page.save
-        on_page_save
+     redirect_to admin_subject_pages_path
       
       else
        render action: 'new' 
@@ -59,6 +60,7 @@ class Admin::PagesController < ApplicationController
   # DELETE /pages/1
   # DELETE /pages/1.json
   def destroy
+    @pageable = Subject.find(params[:subject_id])
     @page.destroy
     respond_to do |format|
       format.html { redirect_to pages_url }
