@@ -23,7 +23,11 @@
         <td><%= page.pageable_id %></td>
         <td><%= page.pageable_type %></td>
         <td><%= page.subject.name %></td>
-        <td><%= page.pageable.body %></td>
+        <% if page.pageable %>
+          <td><%= page.pageable.body %></td>
+        <% else %>
+          <td><%= "Please add content" %></td>
+       <% end %>
        
        <% if page.pageable_type == "Question" %>
         <td><%= link_to "Add Question Content" , new_admin_subject_page_question_path(@subject, page) %></td>
