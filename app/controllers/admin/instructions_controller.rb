@@ -10,25 +10,36 @@ class Admin::InstructionsController < ApplicationController
   # GET /instructions/1
   # GET /instructions/1.json
   def show
+    @subject = Subject.find(params[:subject_id])
+    @page = Page.find(params[:page_id])
   end
 
   # GET /instructions/new
-  def new
+   def new
+    @subject = Subject.find(params[:subject_id])
+    @page = Page.find(params[:page_id])
     @instruction = Instruction.new
+    
   end
 
   # GET /instructions/1/edit
   def edit
+       @subject = Subject.find(params[:subject_id])
+    @page = Page.find(params[:page_id])
   end
 
   # POST /instructions
   # POST /instructions.json
-  def create
-    @instruction = Instruction.new(instruction_params)
+   def create
+    @subject = Subject.find(params[:subject_id])
+    @page = Page.find(params[:page_id])
+    @instruction = Instruction.new
+    @page.pageable = @instruction
 
     respond_to do |format|
       if @instruction.save
-        format.html { redirect_to @instruction, notice: 'Instruction was successfully created.' }
+        @page.save
+        format.html { redirect_to admin_subject_pages_path, notice: 'Instruction was successfully created.' }
         format.json { render action: 'show', status: :created, location: @instruction }
       else
         format.html { render action: 'new' }
@@ -72,4 +83,3 @@ class Admin::InstructionsController < ApplicationController
       params.require(:instruction).permit(:body, :image)
     end
 end
-s
