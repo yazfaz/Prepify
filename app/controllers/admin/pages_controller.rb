@@ -18,8 +18,9 @@ class Admin::PagesController < ApplicationController
 
   # GET /pages/new
   def new
-    @pageable = Subject.find(params[:subject_id])
-    @page = @pageable.pages.new
+    @subject = Subject.find(params[:subject_id])
+    @page = @subject.pages.new
+    @pageable = @page.pageable
   end
 
   # GET /pages/1/edit
@@ -30,10 +31,19 @@ class Admin::PagesController < ApplicationController
   # POST /pages.json
   def create
     @subject = Subject.find(params[:subject_id])
-    @page = @subject.pages.new(page_params)
-    
-      if @page.save
-        on_page_save
+    # @page = Page.new(page_params)
+    @page =  @subject.pages.new(page_params)
+    @pageable = @page.pageable
+    if @page.save
+    # @page.pageable_type == "Question"
+           # redirect_to '/admin/subjects/"#{subject}/pages/"#{page}"/questions/new'
+           @page.pageable = @pageable
+           # @page = Page.find(page_params)
+
+           redirect_to new_admin_subject_page_question_path
+      #   elsif @page.pageable_type == "Instruction"
+      #     redirect_to new_admin_subject_instruction_path 
+      # end
       
       else
        render action: 'new' 
@@ -73,13 +83,7 @@ class Admin::PagesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def on_page_save
-      if @page.pageable_type == "Question"
-           redirect_to new_admin_subject_question_path 
-        elsif @page.pageable_type == "Instruction"
-          redirect_to new_admin_subject_instruction_path 
-      end
-    end
+    
 
     def page_params
       params.require(:page).permit(:sequence_id, :pageable_id, :pageable_type, :subject_id)

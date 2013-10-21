@@ -14,8 +14,8 @@ class Admin::QuestionsController < ApplicationController
 
   # GET /questions/new
   def new
-    @pageable = Subject.find(params[:subject_id])
-    @page = @pageable.pages.last
+    @subject = Subject.find(params[:subject_id])
+    @page = @subject.pages.last
     @question = Question.new
     @page.pageable = @question
   end
@@ -27,14 +27,15 @@ class Admin::QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-    @pageable = Subject.find(params[:subject_id])
-    @page = @pageable.pages.last
+    @subject = Subject.find(params[:subject_id])
+    @page = @subject.pages.last
     @question = Question.new
     @page.pageable = @question
 
     respond_to do |format|
       if @question.save
         @page.save
+        @page.pageable = @question
         format.html { redirect_to admin_subject_pages_path, notice: 'Question was successfully created.' }
         format.json { render action: 'show', status: :created, location: @question }
       else
