@@ -18,7 +18,6 @@ class Admin::QuestionsController < ApplicationController
     @subject = Subject.find(params[:subject_id])
     @page = Page.find(params[:page_id])
     @question = Question.new
-    @page.pageable = @question
     
   end
 
