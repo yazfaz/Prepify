@@ -10,6 +10,7 @@ class Admin::QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @question = Question.find(question_params)
   end
 
   # GET /questions/new
