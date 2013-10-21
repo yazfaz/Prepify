@@ -5,6 +5,7 @@ class Admin::QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
+    
   end
 
   # GET /questions/1
@@ -17,6 +18,7 @@ class Admin::QuestionsController < ApplicationController
     @subject = Subject.find(params[:subject_id])
     @page = Page.find(params[:page_id])
     @question = Question.new
+    @page.pageable = @question
     
   end
 
