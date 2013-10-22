@@ -10,10 +10,12 @@ class Admin::InstructionsController < ApplicationController
   # GET /instructions/1
   # GET /instructions/1.json
   def show
+     # @instruction = Instruction.find(instruction_params)
   end
 
   # GET /instructions/new
   def new
+    @subject = Subject.find(params[:subject_id])
     @instruction = Instruction.new
   end
 
@@ -24,11 +26,15 @@ class Admin::InstructionsController < ApplicationController
   # POST /instructions
   # POST /instructions.json
   def create
+    @subject = Subject.find(params[:subject_id])
+    @page =  @subject.pages.create
     @instruction = Instruction.new(instruction_params)
 
     respond_to do |format|
       if @instruction.save
-        format.html { redirect_to @instruction, notice: 'Instruction was successfully created.' }
+        @page.pageable = @instruction
+        @page.save
+        format.html { redirect_to admin_subject_pages_path, notice: 'Instruction was successfully created.' }
         format.json { render action: 'show', status: :created, location: @instruction }
       else
         format.html { render action: 'new' }
@@ -42,7 +48,7 @@ class Admin::InstructionsController < ApplicationController
   def update
     respond_to do |format|
       if @instruction.update(instruction_params)
-        format.html { redirect_to @instruction, notice: 'Instruction was successfully updated.' }
+        format.html { redirect_to admin_subject_pages_path, notice: 'Instruction was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,7 +75,6 @@ class Admin::InstructionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def instruction_params
-      params.require(:instruction).permit(:body, :image)
+      params.require(:instruction).permit(:body)
     end
 end
-s

@@ -16,9 +16,7 @@ class Admin::QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @subject = Subject.find(params[:subject_id])
-    @page = @subject.pages.last
     @question = Question.new
-    @page.pageable = @question
   end
 
   # GET /questions/1/edit
@@ -51,7 +49,7 @@ class Admin::QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+        format.html { redirect_to admin_subject_pages_path, notice: 'Question was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
