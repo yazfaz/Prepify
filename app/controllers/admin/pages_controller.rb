@@ -7,6 +7,7 @@ class Admin::PagesController < ApplicationController
     @subject = Subject.find(params[:subject_id])
     @pages = @subject.pages 
     # @pageable = @page.pageable
+   
   end
 
   # GET /pages/1
@@ -25,7 +26,10 @@ class Admin::PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
-    @pageable = Subject.find(params[:subject_id])
+    @subject = Subject.find(params[:subject_id])
+    @page = Page.find(params[:id])
+    @pageable = @page.pageable 
+
   end
 
   # POST /pages

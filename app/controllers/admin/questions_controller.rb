@@ -5,6 +5,8 @@ class Admin::QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
+    @page = Page.find(params[:page_id])
+    @question = @page.pageable_id
     
   end
 
@@ -23,6 +25,10 @@ class Admin::QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
+    @page = Page.find(params[:page_id])
+    @question = @page.pageable
+    @subject = Subject.find(params[:subject_id])
+ 
   end
 
   # POST /questions
@@ -74,7 +80,9 @@ class Admin::QuestionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_question
-      @question = Question.find(params[:id])
+      # @question = Question.find(params[:id])
+      @page = Page.find(params[:page_id])
+      @question = @page.pageable_id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

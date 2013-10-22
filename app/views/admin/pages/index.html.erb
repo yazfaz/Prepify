@@ -31,6 +31,7 @@
        
        <% if page.pageable_type == "Question" %>
         <td><%= link_to "Add Question Content" , new_admin_subject_page_question_path(@subject, page) %></td>
+        <td><%= link_to "Edit Question Content" , edit_admin_subject_page_question_path(@subject, page, page.pageable.id) %></td>
         <% elsif page.pageable_type == "Instruction" %>
         <td><%= link_to "Add Instruction Content" , new_admin_subject_page_instruction_path(@subject, page) %></td>
         <% end %>
