@@ -4,8 +4,9 @@ class Admin::PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pageable = Subject.find(params[:subject_id])
-    @pages = @pageable.pages 
+    @subject = Subject.find(params[:subject_id])
+    
+    @pages = @subject.pages
   end
 
   # GET /pages/1
