@@ -31,11 +31,13 @@ class Admin::QuestionsController < ApplicationController
     @subject = Subject.find(params[:subject_id])
     @page = Page.find(params[:page_id])
     @question = Question.new
-    @page.pageable = @question
+    
 
     respond_to do |format|
-      if @question.save
+      if @question.save!
+        @page.pageable = @question
         @page.save
+
         format.html { redirect_to admin_subject_pages_path, notice: 'Question was successfully created.' }
         format.json { render action: 'show', status: :created, location: @question }
       else

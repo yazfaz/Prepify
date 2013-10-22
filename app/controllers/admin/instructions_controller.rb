@@ -34,10 +34,11 @@ class Admin::InstructionsController < ApplicationController
     @subject = Subject.find(params[:subject_id])
     @page = Page.find(params[:page_id])
     @instruction = Instruction.new
-    @page.pageable = @instruction
+    
 
     respond_to do |format|
       if @instruction.save
+        @page.pageable = @instruction
         @page.save
         format.html { redirect_to admin_subject_pages_path, notice: 'Instruction was successfully created.' }
         format.json { render action: 'show', status: :created, location: @instruction }
