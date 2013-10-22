@@ -30,7 +30,7 @@ class Admin::QuestionsController < ApplicationController
   def create
     @subject = Subject.find(params[:subject_id])
     @page = Page.find(params[:page_id])
-    @question = Question.new
+    @question = Question.new(question_params)
     
 
     respond_to do |format|
@@ -79,6 +79,6 @@ class Admin::QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params[:question]
+     params.require(:question).permit(:body, :choices, :correct_answer)
     end
 end

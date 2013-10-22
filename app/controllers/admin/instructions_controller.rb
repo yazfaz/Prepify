@@ -18,7 +18,7 @@ class Admin::InstructionsController < ApplicationController
    def new
     @subject = Subject.find(params[:subject_id])
     @page = Page.find(params[:page_id])
-    @instruction = Instruction.new
+    @instruction = Instruction.new(instruction_params)
     
   end
 
@@ -33,7 +33,7 @@ class Admin::InstructionsController < ApplicationController
    def create
     @subject = Subject.find(params[:subject_id])
     @page = Page.find(params[:page_id])
-    @instruction = Instruction.new
+    @instruction = Instruction.new(instruction_params)
     
 
     respond_to do |format|
@@ -81,6 +81,6 @@ class Admin::InstructionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def instruction_params
-      params.require(:instruction).permit(:body, :image)
+      params.require(:instruction).permit(:body)
     end
 end
