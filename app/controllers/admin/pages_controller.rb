@@ -73,10 +73,13 @@ class Admin::PagesController < ApplicationController
   # DELETE /pages/1
   # DELETE /pages/1.json
   def destroy
-    @subject = Subject.find(params[:subject])
+    @subject = Subject.find(params[:subject_id])
+    # @pageable = @page.pageable
+    # @pageable.destroy
     @page.destroy
+
     respond_to do |format|
-      format.html { redirect_to admin_subject_pages_path }
+      format.html { redirect_to admin_subject_pages_path(@subject) }
       format.json { head :no_content }
     end
   end
