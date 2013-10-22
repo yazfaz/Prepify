@@ -18,7 +18,7 @@ class Admin::InstructionsController < ApplicationController
    def new
     @subject = Subject.find(params[:subject_id])
     @page = Page.find(params[:page_id])
-    @instruction = Instruction.new(instruction_params)
+    @instruction = Instruction.new
     
   end
 
