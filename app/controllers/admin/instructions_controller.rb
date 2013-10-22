@@ -10,7 +10,7 @@ class Admin::InstructionsController < ApplicationController
   # GET /instructions/1
   # GET /instructions/1.json
   def show
-     # @instruction = Instruction.find(instruction_params)
+     @instruction = Instruction.find(instruction_params)
   end
 
   # GET /instructions/new
