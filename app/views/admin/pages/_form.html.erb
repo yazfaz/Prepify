@@ -15,10 +15,10 @@
     <%= f.label :sequence_id %><br>
     <%= f.number_field :sequence_id %>
   </div> 
-  <div class="field">
-    <%= f.label :pageable_type %><br>
-    <%= f.collection_select(:pageable_id, Page.all.select("DISTINCT(pageable_type)"), :id, :pageable_type) %>
-  </div>
+  <!-- <div class="field">
+    <%#= f.label :pageable_type %><br>
+    <%#= f.collection_select(:pageable_id, Page.all.select("DISTINCT(pageable_type)"), :id, :pageable_type) %>
+  </div> -->
 
   <div class="actions">
     <%= f.submit %>
