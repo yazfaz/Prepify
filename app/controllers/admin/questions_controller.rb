@@ -1,6 +1,7 @@
 class Admin::QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
-
+  accepts_nested_attributes_ for :pages
+  
   # GET /questions
   # GET /questions.json
   def index
