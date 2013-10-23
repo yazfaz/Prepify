@@ -1,5 +1,5 @@
 class Admin::InstructionsController < ApplicationController
-  before_action :set_instruction, only: [:show, :edit, :update, :destroy]
+  before_action :set_instruction, only: [:update, :destroy]
 
   # GET /instructions
   # GET /instructions.json
@@ -10,7 +10,8 @@ class Admin::InstructionsController < ApplicationController
   # GET /instructions/1
   # GET /instructions/1.json
   def show
-     @instruction = Instruction.find(instruction_params)
+    @question = Question.find(params[:id])
+    @instruction = Instruction.find(params[:instruction_id])
   end
 
   # GET /instructions/new
@@ -21,13 +22,15 @@ class Admin::InstructionsController < ApplicationController
 
   # GET /instructions/1/edit
   def edit
+    @subject = Subject.find(params[:subject_id])
+    @instruction = Instruction.find(params[:id])
   end
 
   # POST /instructions
   # POST /instructions.json
   def create
     @subject = Subject.find(params[:subject_id])
-    @page =  @subject.pages.create
+    @page = @subject.pages.create
     @instruction = Instruction.new(instruction_params)
 
     respond_to do |format|

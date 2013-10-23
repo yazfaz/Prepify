@@ -37,7 +37,7 @@ class Admin::QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @subject = Subject.find(params[:subject_id])
-    @page =  @subject.pages.create
+    @page = @subject.pages.create
     @question = Question.new(question_params)
     
 

@@ -16,6 +16,7 @@ class Admin::PagesController < ApplicationController
     @page = Page.find(params[:id])
     @pageable = @page.pageable
     @question = @pageable.id
+    @instruction = @pageable.id
   end
 
   # GET /pages/new
