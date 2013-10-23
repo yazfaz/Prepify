@@ -23,8 +23,14 @@
 
   <body>
 
-    <%= yield %>
+    <p class="notice">
+      <%= notice unless notice.blank? %>
+    </p>
+    <p class="alert">
+      <%= alert unless alert.blank? %>
+    </p>
 
+    <%= yield %>
     
     <%= javascript_include_tag "application" %>
   </body>
