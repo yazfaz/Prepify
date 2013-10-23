@@ -21,7 +21,9 @@ page_2.pageable = ques_1
 page_1.save
 page_2.save
 
-
-
-
-
+#Password/Authentication Data for Devise login
+admin = Admin.create(
+    name: 'Joe',
+    email: 'joseph.charles.marshall@gmail.com',
+    password: 'password',
+  )

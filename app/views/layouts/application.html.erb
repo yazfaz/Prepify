@@ -18,13 +18,30 @@
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= javascript_include_tag "application"%>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+    <div id="user_nav">
+      <% if admin_signed_in? %>
+      Hello <strong><%= current_admin.name %></strong>
+      <%= link_to 'Edit Profile', edit_admin_registration_path %>
+      <%= link_to "Sign out", destroy_admin_session_path, method: :delete %> 
+      <% else %>
+      <%= link_to "Sign up", new_admin_registration_path %>
+      <%= link_to "Sign in", new_admin_session_path %>
+      <% end %>
+    </div>
+
+    <p class="notice">
+      <%= notice unless notice.blank? %>
+    </p>
+    <p class="alert">
+      <%= alert unless alert.blank? %>
+    </p>
 
     <%= yield %>
-
     
     <%= javascript_include_tag "application" %>
   </body>
