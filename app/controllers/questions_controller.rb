@@ -24,10 +24,16 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
+    @subject = Subject.find(params[:subject_id])
+    # @page = Page.new(page_params)
+    
     @question = Question.new(question_params)
 
     respond_to do |format|
       if @question.save
+        @page =  @subject.pages.create(page_params)
+        @page.pageable = @question
+        @page.save
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
         format.json { render action: 'show', status: :created, location: @question }
       else
@@ -69,6 +75,9 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params[:question]
+      params.require(:question).permit(:body, :choices, :correct_answer)
+    end
+    def page_params
+      params.require(:page).permit(:sequence_id, :pageable_id, :pageable_type, :subject_id)
     end
 end

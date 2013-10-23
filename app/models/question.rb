@@ -1,11 +1,12 @@
 class Question < ActiveRecord::Base
-  serialize :choices, Array
-  attr_accessible :choices
+  # serialize :choices, Array
   has_one :page, as: :pageable
 
   has_one :answer
 
-  def serialize_choices
-    self.choices = self.choices.split(',').collect()
+  def page_attributes=(page_attributes)
+  page_attributes.each do |attributes|
+    page.build(attributes)
   end
+end
 end
