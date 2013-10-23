@@ -1,5 +1,5 @@
-class AddDeviseToUsers < ActiveRecord::Migration
-  def self.up
+class DeviseCreateUsers < ActiveRecord::Migration
+  def change
     create_table(:users) do |t|
       # Adds username
       t.string :name

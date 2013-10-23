@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   # Uncomment to require admin login on the whole application
-  # before_action :authenticate_admin!
+  before_action :authenticate_user!
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
 
   # Accept the following parameters if in the devise controller
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def admin?
+    admin == true
+  end
 
   protected
 
