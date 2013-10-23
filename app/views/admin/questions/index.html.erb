@@ -12,9 +12,11 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= question.body %></td>
+
+          <td><%= link_to 'Show', admin_subject_question_path(@question, question) %></td>
+        <td><%#= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%#= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<%#= link_to 'New Question', new_question_path %>

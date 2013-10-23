@@ -7,11 +7,12 @@
       <th>Pageable</th>
       <th>Pageable type</th>
       <th>Subject</th>
+      <th>Body</th>
       
     </tr>
   </thead>
 
-
+<p> <%#= @pages.pageable %> </p>
 
   <tbody>
 
@@ -21,15 +22,28 @@
         <td><%= page.pageable_id %></td>
         <td><%= page.pageable_type %></td>
         <td><%= page.subject.name %></td>
+        <% if page.pageable %>
+          <td><%= page.pageable.body %></td>
+        <% else %>
+          <td><%= "Please add content" %></td>
+       <% end %>
        
-        <td><%= link_to "Show" , admin_subject_page_path(@pageable, page) %></td>
-        <td><%= link_to "Edit", edit_admin_subject_page_path(@pageable, page) %></td>
-        <td><%= link_to "Delete", admin_subject_page_path(@pageable, page) %></td>
+        <td><%= link_to "Show Page" , admin_subject_page_path(@subject, page) %></td>
+        <td><%= link_to "Update Page Sequence", edit_admin_subject_page_path(@subject, page) %></td>
+        <td><%= link_to 'Destroy', admin_subject_page_path(@subject, page), method: :delete %></td>
+        
+       
+      
+
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<%= link_to "New Page", new_admin_subject_page_path%> 
+<%= link_to "New Question Page", new_admin_subject_question_path%> 
+
+<%= link_to "New Instruction Page", new_admin_subject_instruction_path
+%> 
 

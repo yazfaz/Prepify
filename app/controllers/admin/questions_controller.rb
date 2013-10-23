@@ -1,7 +1,6 @@
 class Admin::QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
-  accepts_nested_attributes_ for :pages
-  
+  before_action :set_question, only: [ :update, :destroy]
+
   # GET /questions
   # GET /questions.json
   def index
@@ -11,30 +10,40 @@ class Admin::QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @question = Question.find(params[:id])
+    @subject = Subject.find(params[:subject_id])
+    # @page = Page.find(params[:page_id])
+    # @pageable_id = @page.pageable_id
+    # @question = Question.find(@pageable_id)
+    # @instruction = Instruction.find(@pageable.id)
   end
 
   # GET /questions/new
   def new
-    @pageable = Subject.find(params[:subject_id])
-    @page = @pageable.pages.last
+    @subject = Subject.find(params[:subject_id])
     @question = Question.new
-    @page.pageable = @question
   end
 
   # GET /questions/1/edit
   def edit
+    @subject = Subject.find(params[:subject_id])
+    @question = Question.find(params[:id])
+    # @page = Page.find(params[:page_id])
+    # @pageable_id = @page.pageable_id
+    # @question = Question.find(@pageable_id)
   end
 
   # POST /questions
   # POST /questions.json
   def create
-    @pageable = Subject.find(params[:subject_id])
-    @page = @pageable.pages.last
-    @question = Question.new
-    @page.pageable = @question
+    @subject = Subject.find(params[:subject_id])
+    @page = @subject.pages.create
+    @question = Question.new(question_params)
+    
 
     respond_to do |format|
       if @question.save
+        @page.pageable = @question
         @page.save
         format.html { redirect_to admin_subject_pages_path, notice: 'Question was successfully created.' }
         format.json { render action: 'show', status: :created, location: @question }
@@ -50,7 +59,7 @@ class Admin::QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+        format.html { redirect_to admin_subject_pages_path, notice: 'Question was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -77,6 +86,6 @@ class Admin::QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params[:question]
+        params.require(:question).permit(:body, :choices, :correct_answer)
     end
 end

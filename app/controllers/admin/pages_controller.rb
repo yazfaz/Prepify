@@ -1,11 +1,12 @@
 class Admin::PagesController < ApplicationController
-  # before_action :set_page, only: [:show, :new,  :edit, :update, :destroy]
+  before_action :set_page, only: [:show, :new,  :edit, :update, :destroy]
 
   # GET /pages
   # GET /pages.json
   def index
-    @pageable = Subject.find(params[:subject_id])
-    @pages = @pageable.pages 
+    @subject = Subject.find(params[:subject_id])
+    
+    @pages = @subject.pages
   end
 
   # GET /pages/1
@@ -14,26 +15,41 @@ class Admin::PagesController < ApplicationController
     @subject = Subject.find(params[:subject_id])
     @page = Page.find(params[:id])
     @pageable = @page.pageable
+    @question = @pageable.id
+    @instruction = @pageable.id
   end
 
   # GET /pages/new
   def new
-    @pageable = Subject.find(params[:subject_id])
-    @page = @pageable.pages.new
+    @subject = Subject.find(params[:subject_id])
+    @page = @subject.pages.new
+    @pageable = @page.pageable
   end
 
   # GET /pages/1/edit
   def edit
+    @subject = Subject.find(params[:subject_id])
+    @page = Page.find(params[:id])
+    # @pageable = @page.pageable 
   end
 
   # POST /pages
   # POST /pages.json
   def create
     @subject = Subject.find(params[:subject_id])
-    @page = @subject.pages.new(page_params)
-    
-      if @page.save
-        on_page_save
+    # @page = Page.new(page_params)
+    @page =  @subject.pages.new(page_params)
+    @pageable = @page.pageable
+    if @page.save
+    # @page.pageable_type == "Question"
+           # redirect_to '/admin/subjects/"#{subject}/pages/"#{page}"/questions/new'
+           @page.pageable = @pageable
+           # @page = Page.find(page_params)
+
+           redirect_to new_admin_subject_page_question_path
+      #   elsif @page.pageable_type == "Instruction"
+      #     redirect_to new_admin_subject_instruction_path 
+      # end
       
       else
        render action: 'new' 
@@ -47,7 +63,7 @@ class Admin::PagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
+        format.html { redirect_to admin_subject_pages_path, notice: 'Page was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -59,9 +75,14 @@ class Admin::PagesController < ApplicationController
   # DELETE /pages/1
   # DELETE /pages/1.json
   def destroy
+    @subject = Subject.find(params[:subject_id])
+    # Need to delete pageable too?
+    @pageable = @page.pageable
+    @pageable.destroy
     @page.destroy
+
     respond_to do |format|
-      format.html { redirect_to pages_url }
+      format.html { redirect_to admin_subject_pages_path(@subject) }
       format.json { head :no_content }
     end
   end
@@ -73,13 +94,7 @@ class Admin::PagesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def on_page_save
-      if @page.pageable_type == "Question"
-           redirect_to new_admin_subject_question_path 
-        elsif @page.pageable_type == "Instruction"
-          redirect_to new_admin_subject_instruction_path 
-      end
-    end
+    
 
     def page_params
       params.require(:page).permit(:sequence_id, :pageable_id, :pageable_type, :subject_id)

@@ -16,7 +16,7 @@
         <td><%= subject.name %></td>
         <td><%= link_to 'Show', admin_subject_pages_path(subject) %></td>
         <td><%= link_to 'Edit', edit_admin_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', admin_subject_path(subject), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>

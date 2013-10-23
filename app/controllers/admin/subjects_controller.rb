@@ -10,8 +10,8 @@ class Admin::SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
-    @pageable = Subject.find(subject_params)
-    @page = @pageable.pages 
+    @subject = Subject.find(subject_params)
+    @page = @subject.pages 
   end
 
   # GET /subjects/new
@@ -57,7 +57,7 @@ class Admin::SubjectsController < ApplicationController
   def destroy
     @subject.destroy
     respond_to do |format|
-      format.html { redirect_to subjects_url }
+      format.html { redirect_to admin_subjects_path   }
       format.json { head :no_content }
     end
   end
