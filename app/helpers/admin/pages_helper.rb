@@ -1,7 +1,10 @@
 module Admin::PagesHelper
 
-  def index_content
-  
+  def show_page(page = @page)
+    
+      page.sequence_id
+      page.pageable_type
+    
     
   end
 

@@ -15,7 +15,7 @@
 <p> <%#= @pages.pageable %> </p>
 
   <tbody>
-
+  <p> <%= show_page %>
     <% @pages.each do |page| %>
       <tr>
         <td><%= page.sequence_id %></td>
