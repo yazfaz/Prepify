@@ -15,6 +15,7 @@ class Admin::PagesController < ApplicationController
     @subject = Subject.find(params[:subject_id])
     @page = Page.find(params[:id])
     @pageable = @page.pageable
+    @question = @pageable.id
   end
 
   # GET /pages/new

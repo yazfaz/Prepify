@@ -1,5 +1,5 @@
 class Admin::QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [ :update, :destroy]
 
   # GET /questions
   # GET /questions.json
@@ -10,7 +10,12 @@ class Admin::QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
-    @question = Question.find(question_params)
+    # @question = Question.find(question_params)
+    @subject = Subject.find(params[:subject_id])
+    @page = Page.find(params[:page_id])
+    @pageable_id = @page.pageable_id
+    @question = Question.find(@pageable_id)
+    @instruction = Instruction.find(@pageable.id)
   end
 
   # GET /questions/new
@@ -21,6 +26,10 @@ class Admin::QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
+    @subject = Subject.find(params[:subject_id])
+    @page = Page.find(params[:page_id])
+    @pageable_id = @page.pageable_id
+    @question = Question.find(@pageable_id)
   end
 
   # POST /questions
