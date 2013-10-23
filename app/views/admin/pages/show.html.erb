@@ -20,32 +20,22 @@
   <p>
     <strong>Body:</strong>
     <td><%= show_body %></td>
-
   </p>
+
   <p>
     <strong>Choices:</strong>
-  <% if @pageable == nil %>
-      <p> No content </p>
-    <% else %>
-      <%= @pageable.choices %>
-    <% end %>
-   
+    <td><%= show_choices %></td>
   </p>
+
 	<p>
     <strong>Correct Answer:</strong>
-   <% if @pageable == nil %>
-      <p> No content </p>
-    <% else %>
-      <%= @pageable.correct_answer %>
-    <% end %>
-  <% elsif @page.pageable_type == "Instruction" %>
+    <td><%= show_correct_answer %></td>
+  </p>
+  
   <p>
+<% elsif @page.pageable_type == "Instruction" %>
     <strong>Body:</strong>
-    <% if @pageable == nil %>
-      <p> No content </p>
-    <% else %>
-      <%= @pageable.body %>
-    <% end %>
+    <td><%= show_body %></td>
   </p>
 <% end %>
   
