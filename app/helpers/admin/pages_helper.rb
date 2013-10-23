@@ -1,11 +1,8 @@
 module Admin::PagesHelper
 
-  def index_content(page)
-    if page.pageable 
-      "<td><%= page.pageable.body %></td>".html_safe
-    else
-      "<td><%= "Please add content" %></td>".html_safe
-    end
+  def index_content
+  
+    
   end
 
   def show_body(pageable = @pageable)
