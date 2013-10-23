@@ -76,8 +76,9 @@ class Admin::PagesController < ApplicationController
   # DELETE /pages/1.json
   def destroy
     @subject = Subject.find(params[:subject_id])
-    # @pageable = @page.pageable
-    # @pageable.destroy
+    # Need to delete pageable too?
+    @pageable = @page.pageable
+    @pageable.destroy
     @page.destroy
 
     respond_to do |format|
