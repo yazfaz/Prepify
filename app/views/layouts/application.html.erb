@@ -25,6 +25,7 @@
   <body>
     <div id="user_nav">
       <% if admin_signed_in? %>
+      Hello <strong><%= current_admin.email %></strong>
       <%= link_to 'Edit Profile', edit_admin_registration_path %>
       <%= link_to "Sign out", destroy_admin_session_path, method: :delete %> 
       <% else %>

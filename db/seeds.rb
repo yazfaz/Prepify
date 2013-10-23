@@ -24,6 +24,6 @@ page_2.save
 #Password/Authentication Data for Devise login
 admin = Admin.create(
     name: 'Joe',
-    email: 'dummy@fake.com',
+    email: 'joseph.charles.marshall@gmail.com',
     password: 'password',
   )
