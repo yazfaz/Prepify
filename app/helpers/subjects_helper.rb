@@ -1,5 +1,5 @@
 module SubjectsHelper
-
+  
   def which_page(subject)
     @Sid = subject.id
     lesson_pages = subject.pages.find(:all, :order => 'sequence_id')    
