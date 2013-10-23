@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  # Require login
-  before_action :authenticate_admin!
+  # Uncomment to require admin login on the whole application
+  # before_action :authenticate_admin!
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
