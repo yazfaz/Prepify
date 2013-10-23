@@ -2,7 +2,8 @@ Prepify::Application.routes.draw do
   
   devise_for :admins
     resources :subjects do
-      resources :pages
+      resources :instructions
+      resources :questions
     end
   
 root 'admin/subjects#index'

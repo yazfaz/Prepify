@@ -16,7 +16,10 @@
       <tr>
         <td><%= subject.section %></td>
         <td><%= subject.name %></td>
-        <td><%= link_to 'Show', subject %></td>
+         <% which_page(subject) %>
+        <td><%= link_to 'Start Lesson', @path       
+            %>
+        </td>
         
       </tr>
     <% end %>
