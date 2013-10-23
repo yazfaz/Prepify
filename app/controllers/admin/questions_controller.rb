@@ -10,12 +10,12 @@ class Admin::QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
-    # @question = Question.find(question_params)
+    @question = Question.find(params[:id])
     @subject = Subject.find(params[:subject_id])
-    @page = Page.find(params[:page_id])
-    @pageable_id = @page.pageable_id
-    @question = Question.find(@pageable_id)
-    @instruction = Instruction.find(@pageable.id)
+    # @page = Page.find(params[:page_id])
+    # @pageable_id = @page.pageable_id
+    # @question = Question.find(@pageable_id)
+    # @instruction = Instruction.find(@pageable.id)
   end
 
   # GET /questions/new
@@ -27,9 +27,10 @@ class Admin::QuestionsController < ApplicationController
   # GET /questions/1/edit
   def edit
     @subject = Subject.find(params[:subject_id])
-    @page = Page.find(params[:page_id])
-    @pageable_id = @page.pageable_id
-    @question = Question.find(@pageable_id)
+    @question = Question.find(params[:id])
+    # @page = Page.find(params[:page_id])
+    # @pageable_id = @page.pageable_id
+    # @question = Question.find(@pageable_id)
   end
 
   # POST /questions
