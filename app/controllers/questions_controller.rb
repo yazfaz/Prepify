@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  helper :Subjects
+
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions
@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
     # @page = Page.new(page_params)
     
     @question = Question.new(question_params)
-
+    @question(:choices => "string")
     respond_to do |format|
       if @question.save
         @page =  @subject.pages.create(page_params)

@@ -1,12 +1,22 @@
 class Question < ActiveRecord::Base
-  # serialize :choices, Array
+  serialize :choices, Array
   has_one :page, as: :pageable
 
   has_one :answer
 
+  
   def page_attributes=(page_attributes)
-  page_attributes.each do |attributes|
-    page.build(attributes)
+    page_attributes.each do |attributes|
+      page.build(attributes)
+    end
   end
-end
+
+  def text_choices
+    choices.join("\n")
+  end
+
+  def text_choices=(text_choices)
+    self.choices = text_choices.split("\n").map(&:strip)
+  end
+
 end
