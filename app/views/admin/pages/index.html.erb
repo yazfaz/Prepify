@@ -15,18 +15,14 @@
 <p> <%#= @pages.pageable %> </p>
 
   <tbody>
-  <p> <%= show_page %>
+  
     <% @pages.each do |page| %>
       <tr>
         <td><%= page.sequence_id %></td>
         <td><%= page.pageable_id %></td>
         <td><%= page.pageable_type %></td>
         <td><%= page.subject.name %></td>
-        <% if page.pageable.body.empty? %>
-          <td><%= "Please add content" %></td>
-        <% else %>
-          <td><%= page.pageable.body %></td> 
-        <% end %> 
+        <td><%= show_body(page.pageable) %></td>
         <td><%= link_to "Show Page" , admin_subject_page_path(@subject, page) %></td>
         <td><%= link_to "Update Page Sequence", edit_admin_subject_page_path(@subject, page) %></td>
         <td><%= link_to 'Destroy', admin_subject_page_path(@subject, page), method: :delete %></td>

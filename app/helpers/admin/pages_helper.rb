@@ -1,6 +1,6 @@
 module Admin::PagesHelper
 
-  def show_page(page = @page)
+  def show_page(page)
     
       page.sequence_id
       page.pageable_type
@@ -8,15 +8,15 @@ module Admin::PagesHelper
     
   end
 
-  def show_body(pageable = @pageable)
+  def show_body(pageable)
     if pageable.body.empty?
-      "<p> No content </p>".html_safe 
+      "No content"
     else  
        pageable.body
     end
   end
 
-  def show_choices(pageable = @pageable)
+  def show_choices(pageable)
     if pageable.choices.empty?
       "<p> No content </p>".html_safe 
     else  
@@ -24,7 +24,7 @@ module Admin::PagesHelper
     end
   end
 
-  def show_correct_answer(pageable = @pageable)
+  def show_correct_answer(pageable)
     if pageable.correct_answer.empty?
       "<p> No content </p>".html_safe 
     else  
