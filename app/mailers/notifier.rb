@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "austinqperson@gmail.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -9,6 +9,6 @@ class Notifier < ActionMailer::Base
   def subscription_confirmation
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail( to: "Joe joseph.charles.marshall@gmail.com", subject: "Test")
   end
 end
