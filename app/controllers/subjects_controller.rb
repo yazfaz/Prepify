@@ -4,14 +4,14 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.json
   def index
-    @subjects = Subject.all
+    @subjects = Subject.all_with_pages
   end
 
   # GET /subjects/1
   # GET /subjects/1.json
   def show
-    @subject = Subject.find(params[:subject_id])
-    @page = @pageable.page
+    @subject = Subject.find(params[:id])
+    # @page = @pageable.page
     # @page = Page.find(params[:id])   
   end
 

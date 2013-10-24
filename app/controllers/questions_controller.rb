@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
     # @page = Page.new(page_params)
     
     @question = Question.new(question_params)
-    @question(:choices => "string")
+    # @question(:choices => "string")
     respond_to do |format|
       if @question.save
         @page =  @subject.pages.create(page_params)

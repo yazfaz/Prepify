@@ -22,7 +22,7 @@ class Admin::PagesController < ApplicationController
   # GET /pages/new
   def new
     @subject = Subject.find(params[:subject_id])
-    @page = @subject.pages.new
+    @page = @subject.pages.new(sequence_id: next_sequence_id)
     @pageable = @page.pageable
   end
 

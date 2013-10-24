@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
-<%= @question.body %>
-<%= @question.choices %>
-<%= @question.correct_answer %>
-<%= @question.explanation %>
+<%= @question.body %><br>
+<p>Your Choices:</p><%= @question.text_choices %><br>
+<%= @question.explanation %><br>
 
-<%= test_helper %>
-<%# link_to 'Next', %>
+<%= link_to "Next Page", next_page(@question.page) %>

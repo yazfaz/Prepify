@@ -1,10 +1,11 @@
 Prepify::Application.routes.draw do
   
-   # devise_for :users
-   #  resources :subjects do 
-   #    resources :instructions
-   #    resources :questions
-   #  end
+   
+  resources :subjects do 
+    resources :instructions
+    resources :questions
+
+  end
 
   devise_for :admins
     resources :subjects do
