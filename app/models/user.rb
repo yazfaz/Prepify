@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :subjects, through: :course_progressions
   has_many :course_progressions
+
 end
