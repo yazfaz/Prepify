@@ -1,6 +1,18 @@
-<p id="notice"><%= notice %></p>
-<%= @question.body %><br>
-<p>Your Choices:</p><%= @question.text_choices %><br>
-<%= @question.explanation %><br>
+<h1><%= @question.body %><br></h1>
+<p>Choose the Correct Answer:</p>
+<div class="field">
+    <%= radio_button :question, :choices, :choices[0] %><%= @question.choices[0]%><br>
+    <%= radio_button :question, :choices, :choices[1] %><%= @question.choices[1]%><br>  
+    <%= radio_button :question, :choices, :choices[1] %><%= @question.choices[2]%><br> 
+    <%= radio_button :question, :choices, :choices[1] %><%= @question.choices[3]%><br>       
+  </div>
+
+  
+
+<p><%= @question.explanation %><br></p>
+
+
+
+
 
 <%= link_to "Next Page", next_page(@question.page) %>
