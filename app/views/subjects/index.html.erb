@@ -5,9 +5,7 @@
     <tr>
       <th>Section</th>
       <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      
     </tr>
   </thead>
 
@@ -16,13 +14,12 @@
       <tr>
         <td><%= subject.section %></td>
         <td><%= subject.name %></td>
-        <td><%= link_to 'Show', subject %></td>
-        
+        <td><%= link_to 'Start Lesson', start_page(subject) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<%= link_to 'Back', subjects_path %>
 
