@@ -30,12 +30,16 @@ class Admin::InstructionsController < ApplicationController
   # POST /instructions.json
   def create
     @subject = Subject.find(params[:subject_id])
+    @last_page = Page.last
+    @last_page_sequence = @last_page.sequence_id
+    @next_sequence_id = @last_page_sequence + 1
     @page = @subject.pages.create
     @instruction = Instruction.new(instruction_params)
 
     respond_to do |format|
       if @instruction.save
         @page.pageable = @instruction
+        @page.sequence_id = @next_sequence_id
         @page.save
         format.html { redirect_to admin_subject_pages_path, notice: 'Instruction was successfully created.' }
         format.json { render action: 'show', status: :created, location: @instruction }
