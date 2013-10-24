@@ -37,7 +37,7 @@ class Admin::QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @subject = Subject.find(params[:subject_id])
-    @last_page = Page.last
+    @last_page = @subject.pages.order('sequence_id').last
     @last_page_sequence = @last_page.sequence_id
     @next_sequence_id = @last_page_sequence + 1
     @page = @subject.pages.create
