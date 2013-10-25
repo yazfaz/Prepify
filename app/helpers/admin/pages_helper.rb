@@ -16,6 +16,14 @@ module Admin::PagesHelper
     end
   end
 
+   def show_image(pageable)
+    if pageable.image
+      pageable.image_url
+    else  
+      "No image" 
+    end
+  end
+
   def show_choices(pageable)
     if pageable.choices.empty?
       "<p> No content </p>".html_safe 
