@@ -1,18 +1,27 @@
 <h1><%= @question.body %><br></h1>
 <p>Choose the Correct Answer:</p>
 <div class="field">
-    <%= radio_button :question, :choices, :choices[0] %><%= @question.choices[0]%><br>
-    <%= radio_button :question, :choices, :choices[1] %><%= @question.choices[1]%><br>  
-    <%= radio_button :question, :choices, :choices[1] %><%= @question.choices[2]%><br> 
-    <%= radio_button :question, :choices, :choices[1] %><%= @question.choices[3]%><br>       
-  </div>
+    <div class="choices">
+			<% @question.choices.each do |choice| %>
+	    	<div class="choice" >
+		    	<%= radio_button :question, :choices, choice %>
+		    	<%= choice %><br>
+		    </div>    	
+    	<%end%>   	
+    </div>      
+  </div> 
+</div>
+<div class="show">
+	
 
-  
+<% content_for :javascript do %>
+<script type="text/javascript">
+	$('.choice').on("click", function(e){
+		check_answer(@question)
+		$('.show').append
+	});
 
-<p><%= @question.explanation %><br></p>
+</script>
 
 
 
-
-
-<%= link_to "Next Page", next_page(@question.page) %>
