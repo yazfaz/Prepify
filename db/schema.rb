@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20131023211353) do
 
   create_table "instructions", force: true do |t|
     t.text     "body"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 20131023211353) do
     t.text     "choices"
     t.text     "correct_answer"
     t.text     "explanation"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
