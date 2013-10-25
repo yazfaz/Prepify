@@ -9,6 +9,9 @@ gem 'pry'
 # Use carrierwave for file uploads
 gem 'carrierwave'
 
+# Use rmagick to size images
+gem 'rmagick'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
