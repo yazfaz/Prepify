@@ -31,19 +31,23 @@ class Admin::InstructionsController < ApplicationController
   def create
     @subject = Subject.find(params[:subject_id])
     
-    @page = @subject.pages.create
+    # @page = @subject.pages.create
     @instruction = Instruction.new(instruction_params)
 
     respond_to do |format|
       if @instruction.save
-        @page.pageable = @instruction
-        if @subject.pages.count == 1
+        
+        if @subject.pages.count == 0
+          @page = @subject.pages.create
           @page.sequence_id = 1
+          @page.pageable = @instruction
           @page.save
         else
-          @last_page_sequence_id = @subject.pages.order('sequence_id').last.sequence_id
-          @next_sequence_id = @last_page_sequence_id.to_i + 1
+          @last_page_sequence_id = @subject.pages.order('sequence_id').last.sequence_id.to_i
+          @next_sequence_id = @last_page_sequence_id + 1
+          @page = @subject.pages.create
           @page.sequence_id = @next_sequence_id
+          @page.pageable = @instruction
           @page.save
         end
         @page.save
