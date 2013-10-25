@@ -37,21 +37,13 @@ class Admin::QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @subject = Subject.find(params[:subject_id])
-    @page = @subject.pages.create
+    
     @question = Question.new(question_params)
     
 
     respond_to do |format|
       if @question.save
-        @page.pageable = @question
-        if @page == @subject.pages.first
-          @page.sequence_id = 1
-        else
-          @last_page_sequence = @last_page.sequence_id
-          @next_sequence_id = @last_page_sequence + 1
-          @page.sequence_id = @next_sequence_id
-        end
-        @page.save
+        auto_sequence(@subject, @question)
         format.html { redirect_to admin_subject_pages_path, notice: 'Question was successfully created.' }
         format.json { render action: 'show', status: :created, location: @question }
       else

@@ -36,21 +36,8 @@ class Admin::InstructionsController < ApplicationController
 
     respond_to do |format|
       if @instruction.save
-        
-        if @subject.pages.count == 0
-          @page = @subject.pages.create
-          @page.sequence_id = 1
-          @page.pageable = @instruction
-          @page.save
-        else
-          @last_page_sequence_id = @subject.pages.order('sequence_id').last.sequence_id.to_i
-          @next_sequence_id = @last_page_sequence_id + 1
-          @page = @subject.pages.create
-          @page.sequence_id = @next_sequence_id
-          @page.pageable = @instruction
-          @page.save
-        end
-        @page.save
+        auto_sequence(@subject, @instruction)
+  
         format.html { redirect_to admin_subject_pages_path, notice: 'Instruction was successfully created.' }
         format.json { render action: 'show', status: :created, location: @instruction }
       else
