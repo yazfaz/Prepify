@@ -30,13 +30,13 @@ class Admin::InstructionsController < ApplicationController
   # POST /instructions.json
   def create
     @subject = Subject.find(params[:subject_id])
-    @page = @subject.pages.create
+    
     @instruction = Instruction.new(instruction_params)
 
     respond_to do |format|
       if @instruction.save
-        @page.pageable = @instruction
-        @page.save
+        auto_sequence(@subject, @instruction)
+  
         format.html { redirect_to admin_subject_pages_path, notice: 'Instruction was successfully created.' }
         format.json { render action: 'show', status: :created, location: @instruction }
       else
@@ -45,6 +45,7 @@ class Admin::InstructionsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /instructions/1
   # PATCH/PUT /instructions/1.json
