@@ -1,6 +1,6 @@
 Prepify::Application.routes.draw do
   
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations"}
     resources :subjects do
       resources :pages
     end
