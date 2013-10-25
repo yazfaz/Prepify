@@ -19,44 +19,41 @@
 	
   <p>
     <strong>Body:</strong>
-  <% if @pageable == nil %>
-      <p> No content </p>
-    <% else %>
-      <%= @pageable.body %>
-    <% end %>
-  </p>
-  <p>
-    <strong>Choices:</strong>
-  <% if @pageable == nil %>
-      <p> No content </p>
-    <% else %>
-      <%= @pageable.choices %>
-    <% end %>
-   
-  </p>
-	<p>
-    <strong>Correct Answer:</strong>
-   <% if @pageable == nil %>
-      <p> No content </p>
-    <% else %>
-      <%= @pageable.correct_answer %>
-    <% end %>
-  <% elsif @page.pageable_type == "Instruction" %>
-  <p>
-    <strong>Body:</strong>
-    <% if @pageable == nil %>
-      <p> No content </p>
-    <% else %>
-      <%= @pageable.body %>
-    <% end %>
+    <td><%= show_body(@pageable) %></td>
   </p>
 
+  <p>
+    <strong>Image:</strong>
+    <td><%= show_image(@pageable) %></td>
+  </p>
+
+  <p>
+    <strong>Choices:</strong>
+    <td><%= show_choices(@pageable) %></td>
+  </p>
+
+	<p>
+    <strong>Correct Answer:</strong>
+    <td><%= show_correct_answer(@pageable) %></td>
+  </p>
+
+<% elsif @page.pageable_type == "Instruction" %>
+   <p>
+    <strong>Body:</strong>
+    <td><%= show_body(@pageable) %></td>
+  </p>
+
+   <p>
+    <strong>Image:</strong>
+    <td><%= show_image(@pageable) %></td>
+  </p>
 <% end %>
-  <% if @page.pageable_type == "Question" %>
-          <td><%= link_to "Edit Question Content" , edit_admin_subject_question_path(@subject, @question) %></td>
-        <% elsif @page.pageable_type == "Instruction" %>
-          <td><%= link_to "Edit Instruction Content" , edit_admin_subject_instruction_path(@subject, @question) %></td>
-        <% end %>
+  
+<% if @page.pageable_type == "Question" %>
+    <td><%= link_to "Edit Question Content" , edit_admin_subject_question_path(@subject, @question) %></td>
+<% elsif @page.pageable_type == "Instruction" %>
+    <td><%= link_to "Edit Instruction Content" , edit_admin_subject_instruction_path(@subject, @question) %></td>
+<% end %>
 
 
 <%#= link_to "Delete" , admin_subject_pages_path(@pageable, :subject, :page) %> 

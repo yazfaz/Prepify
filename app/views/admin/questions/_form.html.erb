@@ -16,11 +16,16 @@
     <%= f.text_area :body %>
   </div> 
    
+   <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
   <div class="field">
-    
     <%= f.label :text_choices, "Choices" %><br>
     <%= f.text_area :text_choices %>
   </div>
+  
   <div class="field">
     <%= f.label :correct_answer%><br>
     <%= f.text_field :correct_answer %>
