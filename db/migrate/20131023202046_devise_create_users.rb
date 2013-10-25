@@ -1,7 +1,7 @@
-class DeviseCreateAdmins < ActiveRecord::Migration
+class DeviseCreateUsers < ActiveRecord::Migration
   def change
-    create_table(:admins) do |t|
-      ## Name (added by Joe)
+    create_table(:users) do |t|
+      # Adds username
       t.string :name
 
       ## Database authenticatable
@@ -34,12 +34,13 @@ class DeviseCreateAdmins < ActiveRecord::Migration
       # t.datetime :locked_at
 
 
-      t.timestamps
+      # Uncomment below if timestamps were not included in your original model.
+      # t.timestamps
     end
 
-    add_index :admins, :email,                :unique => true
-    add_index :admins, :reset_password_token, :unique => true
-    # add_index :admins, :confirmation_token,   :unique => true
-    # add_index :admins, :unlock_token,         :unique => true
+    add_index :users, :email,                :unique => true
+    add_index :users, :reset_password_token, :unique => true
+    # add_index :users, :confirmation_token,   :unique => true
+    # add_index :users, :unlock_token,         :unique => true
   end
 end

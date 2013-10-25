@@ -1,18 +1,13 @@
 Prepify::Application.routes.draw do
-  
-   
-  resources :subjects do 
+
+
+ 
+  devise_for :users, controllers: { registrations: "registrations"}
+    resources :subjects do 
     resources :instructions
     resources :questions
 
   end
-
-  devise_for :admins
-    resources :subjects do
-      resources :instructions
-      resources :questions
-    end
-
 
   
 root 'admin/subjects#index'
@@ -22,6 +17,6 @@ root 'admin/subjects#index'
       resources :pages  
         resources :instructions
         resources :questions  
-    end
-  end 
+    end 
+  end
 end

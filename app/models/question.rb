@@ -4,6 +4,8 @@ class Question < ActiveRecord::Base
 
   has_one :answer
 
+  mount_uploader :image, ImageUploader
+
   
   def page_attributes=(page_attributes)
     page_attributes.each do |attributes|
