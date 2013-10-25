@@ -37,24 +37,14 @@ class Admin::PagesController < ApplicationController
   # POST /pages.json
   def create
     @subject = Subject.find(params[:subject_id])
-    # @page = Page.new(page_params)
     @page =  @subject.pages.new(page_params)
     @pageable = @page.pageable
     if @page.save
-    # @page.pageable_type == "Question"
-           # redirect_to '/admin/subjects/"#{subject}/pages/"#{page}"/questions/new'
-           @page.pageable = @pageable
-           # @page = Page.find(page_params)
-
-           redirect_to new_admin_subject_page_question_path
-      #   elsif @page.pageable_type == "Instruction"
-      #     redirect_to new_admin_subject_instruction_path 
-      # end
+      @page.pageable = @pageable
       
+      redirect_to new_admin_subject_page_question_path
       else
        render action: 'new' 
-    
-    
     end
   end
 

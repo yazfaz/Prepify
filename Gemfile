@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Use Carrierwave for file uploads
+gem 'carrierwave'
+
 gem 'devise'
 
 gem 'hirb'

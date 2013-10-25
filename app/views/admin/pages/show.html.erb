@@ -22,6 +22,16 @@
     <td><%= show_body(@pageable) %></td>
   </p>
 
+   <p>
+    <strong>Image:</strong>
+    <td><%= image_tag @pageable.image_url %></td>
+    <%# if @pageable.image_url? %></td>
+      <!-- <td><iframe frameBorder="0" height="800" src="<%#= @pageable.image_url(:medium) %>" width="100%"></iframe></td> -->
+    <%# else %>
+      <!-- <p> No image </p> -->
+    <%# end %> 
+    </p>
+
   <p>
     <strong>Choices:</strong>
     <td><%= show_choices(@pageable) %></td>
@@ -37,6 +47,15 @@
     <strong>Body:</strong>
     <td><%= show_body(@pageable) %></td>
   </p>
+
+  <p>
+   <strong>Image:</strong>
+   <%# if @pageable.image_url? %>
+     <td><%= image_tag @pageable.image_url %><!-- <iframe frameBorder="0" height="800" src="<%#= @pageable.image_url(:medium) %>" width="100%"></iframe> --></td>
+   <%# else %>
+     <!-- <p> No image </p> -->
+   <%# end %> 
+   </p>
 <% end %>
   
 <% if @page.pageable_type == "Question" %>

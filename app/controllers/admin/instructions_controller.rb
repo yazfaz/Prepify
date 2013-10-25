@@ -78,6 +78,6 @@ class Admin::InstructionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def instruction_params
-      params.require(:instruction).permit(:body)
+      params.require(:instruction).permit(:body, :image)
     end
 end

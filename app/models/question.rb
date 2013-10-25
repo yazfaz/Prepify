@@ -1,9 +1,15 @@
 class Question < ActiveRecord::Base
   serialize :choices, Array
   has_one :page, as: :pageable
+  # , :autosave => false
 
   has_one :answer
 
+  mount_uploader :image, ImageUploader
+
+  # attr_accessible :image
+  attr_accessor :image
+ 
   
   def page_attributes=(page_attributes)
     page_attributes.each do |attributes|
