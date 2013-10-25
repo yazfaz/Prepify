@@ -3,6 +3,7 @@
 <p>
   <strong>Body:</strong>
   <%= @instruction.body %>
+  <img src="<%= @instruction.image %>">
 </p>
 <%= link_to "Next Page", next_page(@instruction.page) %>
 

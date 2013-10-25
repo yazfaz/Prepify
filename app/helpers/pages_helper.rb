@@ -9,4 +9,12 @@ module PagesHelper
       page_to_pageable_path(next_page) 
     end
   end
+
+  def show_image(pageable)
+    if pageable.image?
+      image_tag(pageable.image_url(:thumb))
+    else  
+      "No image" 
+    end
+  end
 end
