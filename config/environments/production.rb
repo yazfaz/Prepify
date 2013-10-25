@@ -77,4 +77,9 @@ Prepify::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Setup production environment mailer domain
+  config.action_mailer.default_url_options = { :host => 'www.prepify.herokuapp.com' }
+
+
 end
