@@ -12,6 +12,9 @@ gem 'carrierwave'
 # Use rmagick to size images
 gem 'rmagick'
 
+# Use Figaro to store API credentials
+gem 'figaro'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
