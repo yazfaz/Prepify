@@ -16,9 +16,11 @@
   </div> 
 </div>
 
-<div class="show">
+<div class="show" visibility: hidden>
 	<%= link_to "Next Page", next_page(@question.page)%>
 </div>
+<div class="message">
+	</div>
 
 
 <script type="text/javascript">		
@@ -28,10 +30,14 @@
 		var user_choice = $('.choice input:checked').val();
 		// Compare with actual answer
 		if (user_choice == <%= @question.correct_answer%>){
-			console.log('Correct!');
+			$('.message').append("Correct");
+			$('.submit').toggle();
+			$('.show').toggle();
 		}
 		else {
-			console.log("Incorrect!");
+			$('.message').append("InCorrect");
+			$('.submit').toggle();
+			$('.show').toggle();
 		}
 		
 		
