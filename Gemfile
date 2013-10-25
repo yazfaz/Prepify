@@ -15,6 +15,9 @@ gem 'rmagick'
 # Use Figaro to store API credentials
 gem 'figaro'
 
+# Use fog for file storate
+gem "fog", "~> 1.3.1"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
