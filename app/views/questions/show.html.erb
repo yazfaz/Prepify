@@ -6,21 +6,36 @@
 	    	<div class="choice" >
 		    	<%= radio_button :question, :choices, choice %>
 		    	<%= choice %><br>
-		    </div>    	
-    	<%end%>   	
+		    </div>
+		       	
+    	<%end%>
+    	<div class="submit">
+				<button type="button">Check Answer</button> 
+			</div>
     </div>      
   </div> 
 </div>
+
 <div class="show">
-	
+	<%= link_to "Next Page", next_page(@question.page)%>
+</div>
 
-<% content_for :javascript do %>
-<script type="text/javascript">
-	$('.choice').on("click", function(e){
-		check_answer(@question)
-		$('.show').append
+
+<script type="text/javascript">		
+	$('.submit').on("click", function(e){
+
+		// Grab value that user selected
+		var user_choice = $('.choice input:checked').val();
+		// Compare with actual answer
+		if (user_choice == <%= @question.correct_answer%>){
+			console.log('Correct!');
+		}
+		else {
+			console.log("Incorrect!");
+		}
+		
+		
 	});
-
 </script>
 
 
