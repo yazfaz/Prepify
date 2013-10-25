@@ -24,7 +24,7 @@
 
   <p>
     <strong>Image:</strong>
-    <td><%= image_tag show_image(@pageable) %></td>
+    <td><%= show_image(@pageable) %></td>
   </p>
 
   <p>
@@ -36,11 +36,16 @@
     <strong>Correct Answer:</strong>
     <td><%= show_correct_answer(@pageable) %></td>
   </p>
-  
-  <p>
+
 <% elsif @page.pageable_type == "Instruction" %>
+   <p>
     <strong>Body:</strong>
     <td><%= show_body(@pageable) %></td>
+  </p>
+
+   <p>
+    <strong>Image:</strong>
+    <td><%= show_image(@pageable) %></td>
   </p>
 <% end %>
   

@@ -17,8 +17,8 @@ module Admin::PagesHelper
   end
 
    def show_image(pageable)
-    if pageable.image
-      pageable.image_url
+    if pageable.image?
+      image_tag(pageable.image_url)
     else  
       "No image" 
     end
