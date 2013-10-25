@@ -10,6 +10,7 @@ class InstructionsController < ApplicationController
   # GET /instructions/1
   # GET /instructions/1.json
   def show
+    @instruction = Instruction.find(params[:id])    
   end
 
   # GET /instructions/new
