@@ -14,15 +14,19 @@ module ApplicationHelper
   # How do I grab the user id?
 
   def new_course(user,page)
-  new_course = CourseProgression.create(user_id: user, subject_id: page.subject_id , page_id: page.id)
+  new_course = CourseProgression.create(user_id: user.id, subject_id: page.subject_id , page_id: page.id)
   end
 
   def update_course(user, page)
     course = CourseProgression.find_by(user_id: user.id, subject_id: page.subject_id)
-    if course.page_id == page.id
-      course.update(page_id: page.id + 1)
-    else 
+    if course.nil?
       new_course(user,page)
+      page_to_pageable_path(user,page)
+    elsif course.page_id == page.id - 1 
+      course.update(page_id: page.id)
+      page_to_pageable_path(user,page)
+    else  
+    page_to_pageable_path(user, page)
     end
   end
 end

@@ -1,7 +1,7 @@
 module PagesHelper
 
   def next_page(user, page)
-    current_page = page.sequence_id.to_i
+    current_page = page.sequence_id
     next_page =  page.subject.pages.find_by_sequence_id(current_page + 1)
     if next_page.nil?
       # How do I grab the user id?
