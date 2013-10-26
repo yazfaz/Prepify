@@ -22,12 +22,14 @@ module ApplicationHelper
     if course.nil?
       new_course(user,page)
       page_to_pageable_path(user,page)
-    elsif course.page_id == page.id - 1 
+    elsif course.page_id == (page.id - 1) 
       course.update(page_id: page.id)
       page_to_pageable_path(user,page)
-    else  
+    else
     page_to_pageable_path(user, page)
     end
   end
 end
+
+
 

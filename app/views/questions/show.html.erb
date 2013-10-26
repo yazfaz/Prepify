@@ -20,21 +20,29 @@
 </div>
 <div class="message">
 </div>
+<div class="progress" visibility: hidden>
+    <%#= progress_bar(<%= progess(@user, @question.page) %>
+</div>
 
 
-<script type="text/javascript">		
+<script type="text/javascript">	
+
 	$('.submit').on("click", function(e){
 
 		// Grab value that user selected
 		var user_choice = $('.choice input:checked').val();
 		// Compare with actual answer
 		if (user_choice == <%= @question.correct_answer%>){
-			$('.message').append("Correct");
+			$('.message').append("Correct!");
 			$('.submit').toggle();
 			$('.show').toggle();
+			$('.progress').toggle();
+			$('.progress').progressbar({
+				value: <%= progress(@user, @question.page) %>
+			});
 		}
 		else {
-			$('.message').append("InCorrect");
+			$('.message').append("InCorrect!");
 			$('.submit').toggle();
 			$('.show').toggle();
 		}		
