@@ -5,7 +5,6 @@ module PagesHelper
     next_page =  page.subject.pages.find_by_sequence_id(current_page + 1)
     if next_page.nil?
       # How do I grab the user id?
-      # update_course(user, current_page)
       return user_subjects_path
     else
       update_course(user, next_page)
