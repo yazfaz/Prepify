@@ -11,7 +11,7 @@ class InstructionsController < ApplicationController
   # GET /instructions/1.json
   def show
     @instruction = Instruction.find(params[:id])  
-    @user = User.find(params[:id])  
+    @user = User.find(params[:user_id])
   end
 
   # GET /instructions/new

@@ -6,7 +6,7 @@ module PagesHelper
     if next_page.nil?
       # How do I grab the user id?
       # update_course(user, current_page)
-      return subjects_path
+      return user_subjects_path
     else
       update_course(user, next_page)
       page_to_pageable_path(user, next_page) 

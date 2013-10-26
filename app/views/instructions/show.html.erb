@@ -5,5 +5,5 @@
   <%= @instruction.body %>
   <img src="<%= @instruction.image %>">
 </p>
-<%= link_to "Next Page", next_page(@instruction.page) %>
+<%= link_to "Next Page", next_page(@user, @instruction.page) %>
 
