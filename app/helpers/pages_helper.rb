@@ -4,8 +4,11 @@ module PagesHelper
     current_page = page.sequence_id.to_i
     next_page =  page.subject.pages.find_by_sequence_id(current_page + 1)
     if next_page.nil?
+      # How do I grab the user id?
+      # update_course(user, current_page)
       return subjects_path
     else
+      update_course(user, next_page)
       page_to_pageable_path(next_page) 
     end
   end

@@ -6,8 +6,7 @@
 	    	<div class="choice" >
 		    	<%= radio_button :question, :choices, choice %>
 		    	<%= choice %><br>
-		    </div>
-		       	
+		    </div>		       	
     	<%end%>
     	<div class="submit">
 				<button type="button">Check Answer</button> 
@@ -20,7 +19,7 @@
 	<%= link_to "Next Page", next_page(@question.page)%>
 </div>
 <div class="message">
-	</div>
+</div>
 
 
 <script type="text/javascript">		
@@ -38,9 +37,7 @@
 			$('.message').append("InCorrect");
 			$('.submit').toggle();
 			$('.show').toggle();
-		}
-		
-		
+		}		
 	});
 </script>
 
