@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1.json
   def show
     @question = Question.find(params[:id])
+    @user = User.find(params[:id])
     # question = @question
   end
 

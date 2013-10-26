@@ -1,11 +1,11 @@
 module ApplicationHelper
-  def page_to_pageable_path(page) 
+  def page_to_pageable_path(user, page) 
     if page.pageable_type == "Question"    
-      return subject_question_path(page.subject_id, page.pageable.id)
+      return user_subject_question_path(user.id, page.subject_id, page.pageable.id)
     elsif page.pageable_type == "Instruction"
-      return subject_instruction_path(page.subject_id, page.pageable.id)
+      return user_subject_instruction_path(user.id, page.subject_id, page.pageable.id)
     else
-      return subjects_path
+      return user_subjects_path
     end
   end
 

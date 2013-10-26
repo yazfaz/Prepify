@@ -11,6 +11,7 @@ class SubjectsController < ApplicationController
   # GET /subjects/1.json
   def show
     @subject = Subject.find(params[:id])
+    @user = User.find(params[:id])
     # @page = @pageable.page
     # @page = Page.find(params[:id])   
   end
