@@ -12,10 +12,6 @@ class Admin::QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @subject = Subject.find(params[:subject_id])
-    # @page = Page.find(params[:page_id])
-    # @pageable_id = @page.pageable_id
-    # @question = Question.find(@pageable_id)
-    # @instruction = Instruction.find(@pageable.id)
   end
 
   # GET /questions/new
@@ -28,9 +24,6 @@ class Admin::QuestionsController < ApplicationController
   def edit
     @subject = Subject.find(params[:subject_id])
     @question = Question.find(params[:id])
-    # @page = Page.find(params[:page_id])
-    # @pageable_id = @page.pageable_id
-    # @question = Question.find(@pageable_id)
   end
 
   # POST /questions

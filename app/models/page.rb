@@ -4,9 +4,10 @@ class Page < ActiveRecord::Base
 
   belongs_to :subject
 
-  # def check_sequence
-  #   last_page = Page.last
-  #   next_sequence_id = (last_page.sequence_id + 1)
-  #   return next_sequence_id
-  # end
+  # A page must have a subject id to be created. 
+  validates :subject_id, presence: true
+
+  # A page should only be created if it's associated subject is valid
+  validates_associated :subject
+ 
 end
