@@ -1,7 +1,7 @@
 class Question < ActiveRecord::Base
   
-  include ActiveModel::Validations
-  validates_with AdminFormValidator
+  # include ActiveModel::Validations
+  # validates_with AdminFormValidator
   
   serialize :choices, Array
   has_one :page, as: :pageable
@@ -29,6 +29,19 @@ class Question < ActiveRecord::Base
   def text_choices
     choices.join("\n")
   end
+
+  # def text_choices_a
+  #  choices.push 
+  # end
+
+  #  def text_choices_b
+  #   choices.push
+  # end
+
+  # def text_choices
+  #   text_choices = []
+  #   text
+  # end
 
   def text_choices=(text_choices)
     self.choices = text_choices.split("\n").map(&:strip)
