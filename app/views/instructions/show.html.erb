@@ -5,14 +5,14 @@
   <%= @instruction.body %>
   <img src="<%= @instruction.image %>">
 </p>
-<div class="progress">
-    <%#= progress_bar(<%= progess(@user, @question.page) %>
+<div class="progress large-6 success round">
+	<span class="meter"></span>
 </div>
 
 <script type="text/javascript">	
-$('.progress').progressbar({
+$('.meter').progressbar({
 				value: <%= progress(@user, @instruction.page) %>
-			});
+});
 </script>
 <%= link_to "Next Page", next_page(@user, @instruction.page) %>
 

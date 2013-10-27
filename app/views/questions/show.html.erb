@@ -20,8 +20,11 @@
 </div>
 <div class="message">
 </div>
-<div class="progress" visibility: hidden>
-    <%#= progress_bar(<%= progess(@user, @question.page) %>
+<!-- <div class="progress" visibility: hidden>
+	<span class="meter"></span>
+</div> -->
+<div class="progress large-6 success round" visibility: hidden>
+	<span class="meter"></span>
 </div>
 
 
@@ -37,14 +40,19 @@
 			$('.submit').toggle();
 			$('.show').toggle();
 			$('.progress').toggle();
-			$('.progress').progressbar({
+			$('.meter').progressbar({
 				value: <%= progress(@user, @question.page) %>
 			});
+
 		}
 		else {
-			$('.message').append("InCorrect!");
+			$('.message').append("Incorrect!");
 			$('.submit').toggle();
 			$('.show').toggle();
+			$('.progress').toggle();
+			$('.meter').progressbar({
+				value: <%= progress(@user, @question.page) %>
+			});
 		}		
 	});
 </script>
