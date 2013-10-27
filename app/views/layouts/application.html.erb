@@ -24,9 +24,10 @@
 
   <body id="<%= yield :body_id %>">
     <nav class="top-bar">
-      <ul class="title-area">
+      <% if current_user.try(:admin?) %>
+
+      <ul class="title-area">        
         <li class="name">
-        <% if current_user.try(:admin?) %>
           <h1><strong><%= link_to "Hello #{current_user.name}", edit_user_registration_path%></strong>
           </h1>
         </li>
@@ -41,19 +42,25 @@
           <li>
             <%= link_to "Sign out", destroy_user_session_path, method: :delete %> 
           </li>
-        <% else %>
-          <li class="divider"></li>>
-          <li>
-            <%= link_to "Sign up", new_user_registration_path %>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <%= link_to "Sign in", new_user_session_path %>
-          </li>
-        <% end %>
         </ul>
       </section>
     </nav>
+
+        <% else %>
+
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="divider"></li>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+        </ul>
+      </section>
+    </nav>
+
+        <% end %>
+        
+       
 
     <p class="notice">
       <%= notice unless notice.blank? %>
