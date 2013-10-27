@@ -1,9 +1,9 @@
 #registrations_new {
 $prepifycolor: #338aaa;
 $darkcolor: darken($prepifycolor, 40%);
-$lightcolor: lighten($prepifycolor, 60%);
+$lightcolor: lighten($prepifycolor, 20%);
 
-background-color: lighten($prepifycolor, 50%);
+background-color: $prepifycolor;
 background-image: url("school_logo.jpg");
 background-repeat: no-repeat;
 background-size: 100% 100%;
@@ -23,7 +23,7 @@ background-size: 100% 100%;
 		}
 		
 		h2, label {
-			color: $lightcolor;
+			color: white;
 			text-shadow:0px 0px 10px black;
 			font-family: 'Source Sans Pro', sans-serif;
 		}
@@ -46,6 +46,9 @@ background-size: 100% 100%;
 
 	.bottom {
 		text-align: center;
+		background-color: $lightcolor;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
 
 		.transparent{
 			background:rgba(255,255,255,0.5);
@@ -55,7 +58,7 @@ background-size: 100% 100%;
 			font-family: 'Source Sans Pro', sans-serif;
 			font-size: 1.25em;
 			color: white;
-			line-height: 2em;
+			line-height: 1.5em;
 			text-shadow:0px 0px 10px black;
 
 		}
