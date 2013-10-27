@@ -11,7 +11,8 @@
 
 <script type="text/javascript">	
 $('.meter').progressbar({
-				value: <%= progress(@user, @instruction.page) %>
+				value: <%= progress(@user, @instruction.page) %>,
+				text: "Your Progress"
 });
 </script>
 <%= link_to "Next Page", next_page(@user, @instruction.page) %>

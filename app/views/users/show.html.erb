@@ -6,5 +6,9 @@
 
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<h2>Your Progress</h2>
+<h3><% get_progress_report(@user, @courses)%></h3>
+<h3><%= @subject_completed%>: <%= @status%></h3>
+
+<%= link_to 'Back', users_path%>
+

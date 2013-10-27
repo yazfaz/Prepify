@@ -26,6 +26,7 @@ module ApplicationHelper
       course.update(page_id: page.id)
       page_to_pageable_path(user,page)
     else
+    course.completed_at = DateTime.new
     page_to_pageable_path(user, page)
     end
   end
