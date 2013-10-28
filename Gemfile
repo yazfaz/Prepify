@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem "compass-rails", "~> 2.0.alpha.0"
+
 gem "figaro"
 
 gem 'devise'
