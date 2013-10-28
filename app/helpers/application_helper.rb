@@ -30,6 +30,13 @@ module ApplicationHelper
     page_to_pageable_path(user, page)
     end
   end
+
+
+  
+  def progress_bar(width = 0)
+    string = '<div class="progress large-6 success round"><span class="meter" style="width: ' + width.to_s + '%"></span></div>'
+    string.html_safe
+  end
 end
 
 

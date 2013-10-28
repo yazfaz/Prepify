@@ -1,20 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+	<div class=content>
   <strong>Body:</strong>
   <%= @instruction.body %>
-  <img src="<%= @instruction.image %>">
-</p>
+  <div class="th radius">
+  	<img src="<%= @instruction.image %>"></div>
+</div>
 <div class="progress large-6 success round">
-	<span class="meter"></span>
+	<%= progress_bar(progress(@user, @instruction.page))%>
 </div>
 
-<script type="text/javascript">	
-$('.meter').progressbar({
-				value: <%= progress(@user, @instruction.page) %>,
-				text: "Your Progress"
-});
-</script>
+
 <%= link_to "Next Page", next_page(@user, @instruction.page) %>
 
 
