@@ -8,6 +8,12 @@ background-image: url("school_logo.jpg");
 background-repeat: no-repeat;
 background-size: 100% auto;
 
+.alert, .notice {
+	color: white;
+	text-shadow:0px 0px 10px black;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
 
 	#top {
 		
