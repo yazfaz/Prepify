@@ -8,6 +8,9 @@ module Admin::PagesHelper
     
   end
 
+
+  
+
   def show_body(pageable)
     if pageable.body.empty?
       "No content"

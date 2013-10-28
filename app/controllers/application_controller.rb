@@ -21,20 +21,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :name
   end
 
-  # def auto_sequence(subject, page_type) 
-  #   if subject.pages.count == 0
-  #     page = subject.pages.create
-  #     page.sequence_id = 1
-  #     page.pageable = page_type
-  #     page.save
-  #   else
-  #     last_page_sequence_id = subject.pages.order('sequence_id').last.sequence_id.to_i
-  #     next_sequence_id = last_page_sequence_id + 1
-  #     page = subject.pages.create
-  #     page.sequence_id = next_sequence_id
-  #     page.pageable = page_type
-  #     page.save
-  #   end
-  # end
 
 end

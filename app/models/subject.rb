@@ -11,7 +11,7 @@ class Subject < ActiveRecord::Base
     end
   end
 
-  # Order pages by sequence id
+   # Order pages by sequence id
    def page_order
     self.pages.order('sequence_id')
   end

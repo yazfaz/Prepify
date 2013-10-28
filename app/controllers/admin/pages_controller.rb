@@ -6,7 +6,6 @@ class Admin::PagesController < ApplicationController
   def index
     @subject = Subject.find(params[:subject_id])
     
-    @pages = @subject.pages
   end
 
   # GET /pages/1

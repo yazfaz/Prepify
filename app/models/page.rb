@@ -12,4 +12,9 @@ class Page < ActiveRecord::Base
      # the pages subject should be able to tell you what the next sequence_id is
      self.sequence_id ||= self.subject.next_sequence_id
    end
+
+  def body_snippet
+    self.pageable.body.to_s.truncate 50
+  end
+  
 end
