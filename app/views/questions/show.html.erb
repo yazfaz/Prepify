@@ -5,20 +5,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/foundation/4.3.1/js/foundation.min.js" type="text/javascript"></script>
 <!-- Header and Nav -->
-  
+<% content_for(:body_id, "lesson_pages") %>   
   <div class="row">
     <div class="large-3 columns">
       <h1></h1>
-    </div>
-    <div class="large-9 columns">
-    	
-      <ul class="inline-list right">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Your Progress</a></li>
-        <li><a href="#">All Lessons</a></li>
-        <li><a href="#"></a>Sign Out</li>
-      </ul>
-    
     </div>
   </div>
   
@@ -35,12 +25,12 @@
     <!-- Nav Sidebar -->
     <!-- This is source ordered to be pulled to the left on larger screens -->
     
-      <ul class="side-nav">
+      <!-- <ul class="side-nav">
         <li><a href="#">Home</a></li>
         <li><a href="#">Your Progress</a></li>
         <li><a href="#">All Lessons</a></li>
 
-      </ul>
+      </ul> -->
       
        	<h3><%= @question.body %></h3
 					<p>Choose the Correct Answer:</p>
@@ -67,7 +57,7 @@
 
 					<div class="panel callout" visibility: hidden >
 							<h2></h2>
-						<%= progress_bar(progress(@user, @question.page))%>
+						<%= progress_bar(progress(@question.page))%>
 				</div>
 				
 					  
@@ -109,15 +99,16 @@
 			$('.submit').toggle();
 			$('.show').toggle("clip");
 			$('.progress').toggle();
-			$('.progress').show();
+      $('.progress').show();
+			
 
 		}
 		else {
 			$('.message').append("Incorrect!");
 			$('.submit').toggle();
 			$('.show').toggle();
+			$('.progress').toggle();
 			$('.progress').show();
-			
 		}		
 	});
 </script>

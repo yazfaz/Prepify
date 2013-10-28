@@ -21,10 +21,10 @@
 
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-  	<%= stylesheet_link_tag   'jquery-ui-1.10.3.custom.min.css', "application" %>
+  	<%= stylesheet_link_tag "application" %>
   	<%= javascript_include_tag 'vendor/custom.modernizr' %>
-    <%= javascript_include_tag "jquery-1.9.1.js", 'text/css'%>
-    <%= javascript_include_tag 'jquery-ui-1.10.3.custom.js', 'jquery-ui-1.10.3.custom.min.js', 'text/css'%> 
+    
+    <%= javascript_include_tag  'text/css'%> 
     <%= javascript_include_tag "application" 'text/css'%>
    
     <%= csrf_meta_tags %>
@@ -35,8 +35,8 @@
       <% if current_user.try(:admin?) %>
 
       <ul class="title-area">        
-        <li class="name">
-          <h1><strong><%= link_to "Hello #{current_user.name}", edit_user_registration_path%></strong>
+        <li class="logo">
+          <h1><img src="/app/assets/images/school_logo.jpg">
           </h1>
         </li>
       </ul>

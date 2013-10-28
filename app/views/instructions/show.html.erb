@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<% content_for(:body_id, "lesson_pages") %> 
 
-<p>
-	<div class=content>
-  <strong>Body:</strong>
-  <%= @instruction.body %><br>
-<img src="<%= @instruction.image %>"></div>
 
-<%= progress_bar(progress(@user, @instruction.page))%>
+<div class="large-block-grid-4">
 
+ <li><h1><%= @instruction.body %></strong></h2><br>
+ </li>
+<li><img src="<%= @instruction.image %>"></li></div>
+</div>
+<div class="large-8 columns">
+<%= progress_bar( progress(@instruction.page) )%>
+</div>
 <%= link_to "Next Page", next_page(@user, @instruction.page) %>
-
+</div>
 
 
