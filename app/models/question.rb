@@ -1,7 +1,7 @@
 class Question < ActiveRecord::Base
   
-  # include ActiveModel::Validations
-  # validates_with AdminFormValidator
+  include ActiveModel::Validations
+  validates_with AdminFormValidator
   
   serialize :choices, Array
   has_one :page, as: :pageable
