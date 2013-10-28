@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+	<div class=content>
   <strong>Body:</strong>
-  <%= @instruction.body %>
-  <img src="<%= @instruction.image %>">
-</p>
-<%= link_to "Next Page", next_page(@instruction.page) %>
+  <%= @instruction.body %><br>
+<img src="<%= @instruction.image %>"></div>
+
+<%= progress_bar(progress(@user, @instruction.page))%>
+
+<%= link_to "Next Page", next_page(@user, @instruction.page) %>
+
+
 

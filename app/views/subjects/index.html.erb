@@ -14,7 +14,7 @@
       <tr>
         <td><%= subject.section %></td>
         <td><%= subject.name %></td>
-        <td><%= link_to "Start Lesson", start_page(subject) %></td>
+        <td><%= link_to "Start Lesson", start_page(@user, subject) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -21,9 +21,12 @@
 
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-  	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
-    <%= javascript_include_tag "application"%>
+  	<%= stylesheet_link_tag   'jquery-ui-1.10.3.custom.min.css', "application" %>
+  	<%= javascript_include_tag 'vendor/custom.modernizr' %>
+    <%= javascript_include_tag "jquery-1.9.1.js", 'text/css'%>
+    <%= javascript_include_tag 'jquery-ui-1.10.3.custom.js', 'jquery-ui-1.10.3.custom.min.js', 'text/css'%> 
+    <%= javascript_include_tag "application" 'text/css'%>
+   
     <%= csrf_meta_tags %>
   </head>
 
@@ -72,7 +75,7 @@
 
     <%= yield %>
     
-    <%= javascript_include_tag "application" %>
+    <%#= javascript_include_tag "application" %>
     <%= yield :javascript %>
   </body>
 </html>
