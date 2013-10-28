@@ -32,10 +32,11 @@ class Admin::InstructionsController < ApplicationController
     @subject = Subject.find(params[:subject_id])
     
     @instruction = Instruction.new(instruction_params)
-    @page = @subject.pages.create
+
 
     respond_to do |format|
       if @instruction.save
+        @page = @subject.pages.create
         @page.pageable = @instruction
         @page.save
   

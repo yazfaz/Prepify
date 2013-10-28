@@ -32,12 +32,12 @@ class Admin::QuestionsController < ApplicationController
     @subject = Subject.find(params[:subject_id])
     
     @question = Question.new(question_params)
-    @page = @subject.pages.create
+    
     
 
     respond_to do |format|
       if @question.save
-        
+        @page = @subject.pages.create
         @page.pageable = @question
         @page.save
         format.html { redirect_to admin_subject_pages_path, notice: 'Question was successfully created.' }
