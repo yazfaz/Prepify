@@ -3,14 +3,10 @@
 <p>
 	<div class=content>
   <strong>Body:</strong>
-  <%= @instruction.body %>
-  <div class="th radius">
-  	<img src="<%= @instruction.image %>"></div>
-</div>
-<div class="progress large-6 success round">
-	<%= progress_bar(progress(@user, @instruction.page))%>
-</div>
+  <%= @instruction.body %><br>
+<img src="<%= @instruction.image %>"></div>
 
+<%= progress_bar(progress(@user, @instruction.page))%>
 
 <%= link_to "Next Page", next_page(@user, @instruction.page) %>
 
