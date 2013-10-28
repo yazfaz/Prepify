@@ -27,7 +27,10 @@ class Question < ActiveRecord::Base
   end
 
   def text_choices
-    choices.join("\n")
+    # choices.join("\n")
+    # text_choices = []
+    # text_choices.push
+  
   end
 
   # def text_choices_a
@@ -44,7 +47,7 @@ class Question < ActiveRecord::Base
   # end
 
   def text_choices=(text_choices)
-    self.choices = text_choices.split("\n").map(&:strip)
+    # self.choices = text_choices.split("\n").map(&:strip)
   end
 
 end
