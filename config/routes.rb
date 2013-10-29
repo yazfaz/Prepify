@@ -1,12 +1,14 @@
 Prepify::Application.routes.draw do
  
-  devise_for :users, controllers: { registrations: "registrations"}
+  devise_for :users, controllers: { registrations: "registrations"} 
   resources :users do
     resources :subjects do 
       resources :instructions
       resources :questions
     end
-  end
+  
+end
+
 
   
   root 'admin/subjects#index'

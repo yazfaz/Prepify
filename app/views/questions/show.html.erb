@@ -1,19 +1,12 @@
 <% content_for(:body_id, "lesson_pages")%> 
-<head>
-    <title>So Boxy</title>
+
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/4.3.1/css/foundation.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/foundation/4.3.1/js/foundation.min.js"></script>
-  </head>
-  
-  <body>
-    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/foundation/4.3.1/js/foundation.min.js"></script>     
 <br>
         <div class="row">
-          <div class="columns large-12 large-centered">
+          <div class="columns large-12 centered">
             <div class="radius panel callout ">
               <h3><%= @question.page.subject.name %></h3>       
             </div>
@@ -22,7 +15,7 @@
       </div>
         <!-- End Header Content -->
          <div class="row">
-          <div class="columns large-12 large-centered">
+          <div class="columns large-12 centered">
             <div class="panel">
               <h3><%= @question.body %></h3>
              <div class="field">
@@ -46,7 +39,7 @@
         
           
           <div class="large-8 small-6 columns"> 
-            <div class="panel callout" visibility: hidden >
+            <div class="panel " visibility: hidden >
              <h4></h4>
               <h3><%= link_to 'Next Page', next_page(@user, @question.page)%></h3>
               <%= progress_bar(progress(@question.page))%>         
@@ -61,6 +54,7 @@
             <hr>
             <div class="row">
               <div class="large-6 columns">
+                <image src="school_logo_.jpg">
                 <p>&copy; Copyright Prepify LLC</p>
               </div>
               <div class="large-6 columns">
@@ -75,12 +69,7 @@
         </footer>
         <!-- End Footer -->
       </div>
-    </div>
-  </body>
-
-</html>
-
-      
+    </div>   
     
 
 <script type="text/javascript">	
