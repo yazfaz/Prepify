@@ -54,15 +54,26 @@
             <hr>
             <div class="row">
               <div class="large-6 columns">
-                <image src="school_logo_.jpg">
+                <div class="footer">
+                 <%#= image_tag("Prepify_logo.png", :class => "logo")%>
+                
                 <p>&copy; Copyright Prepify LLC</p>
               </div>
+              </div>
               <div class="large-6 columns">
-                <ul class="inline-list right">
+                <ul class="inline-list ">
                   <li><a href="#">Home</a></li>
-                  <li><a href="#">Your Progress</a></li>    
-                  <li><a href="#">All Lessons</a></li>
+                  <li><a href="#">Your Progress</a></li>
+                  <li>All Lessons
+                  <ul class="inline-list right">
+                  <li><a href="#">Lesson 1</a></li>
+                  <li><a href="#">Lesson 2</a></li>
+                  <li><a href="#">Lesson 3</a></li>
+                </ul> 
+                  
                 </ul>
+                <div class="large-6 columns">
+                
               </div>
             </div>
           </div>
