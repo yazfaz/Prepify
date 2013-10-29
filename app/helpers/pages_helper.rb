@@ -14,10 +14,10 @@ module PagesHelper
   end
 
   def progress(page)
-    current_page = page.sequence_id
-    total_pages = page.subject.pages.count
-    progress = current_page *100  /total_pages 
-    return progress.to_i
+    current_page = page.sequence_id.to_f
+    total_pages = page.subject.pages.count.to_f
+    progress = current_page / total_pages * 100
+    return progress
   end
 
 
