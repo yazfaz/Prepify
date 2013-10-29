@@ -3,14 +3,26 @@
 
 <div class="large-block-grid-4">
 
- <li><h1><%= @instruction.body %></strong></h2><br>
- </li>
-<li><img src="<%= @instruction.image %>"></li></div>
+ 
+<li></li></div>
 </div>
 <div class="large-8 columns">
-<%= progress_bar( progress(@instruction.page) )%>
+
 </div>
-<%= link_to "Next Page", next_page(@user, @instruction.page) %>
+
 </div>
 
 
+<div class="row">
+	<div class="columns large-12">
+		<li><h1><%= @instruction.body %></strong></h2><br></li>
+	</div>
+  <div class="columns large-12">
+    <img src="<%= @instruction.image %>" width="200" height="80">
+    <br>
+    <div class="panel">
+      <%= progress_bar( progress(@instruction.page) )%>
+      <h5><%= link_to "Next Page", next_page(@user, @instruction.page)%></h5>
+    </div>
+  </div>
+</div>
