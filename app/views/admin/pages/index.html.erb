@@ -17,7 +17,11 @@
         <td><%= page.sequence_id %></td>
         <td><%= page.pageable_type %></td>
         <td><%= page.body_snippet %></td>  
-        <td><%= link_to "Show Page" , admin_subject_page_path(@subject, page) %></td>
+        <td><% if page.pageable_type == "Question" %>
+          <%= link_to "Question Preview", admin_subject_question_path(@subject, page.pageable) %>
+          <td><% elsif page.pageable_type == "Instruction" %>
+          <%= link_to "Instruction Preview", admin_subject_instruction_path(@subject, page.pageable) %>
+          <% end %>
         <td><%= link_to "Update Page Sequence", edit_admin_subject_page_path(@subject, page) %></td>
         <td><%= link_to 'Destroy', admin_subject_page_path(@subject, page), method: :delete %></td>
         
