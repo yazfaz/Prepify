@@ -5,7 +5,8 @@ class SubjectsController < ApplicationController
   # GET /subjects.json
   def index
     @subjects = Subject.all_with_pages
-    @user = User.find(params[:user_id])
+    @user = current_user.id
+    @courses = CourseProgression.find_all_by_user_id(@user)
   end
 
   # GET /subjects/1

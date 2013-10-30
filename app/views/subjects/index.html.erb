@@ -1,4 +1,4 @@
-<% content_for(:body_id, "lesson_pages")%> 
+<% content_for(:body_id, "subject")%> 
 <body>
 <div class="row">
   <div class="columns large-12 large-centered">
@@ -9,10 +9,29 @@
 
   <% @subjects.each do |subject| %>
   <div class="row">
-    <div class="columns large-12 large-centered">
-      <div class="radius panel">
-        <h3><%= subject.name %></h3>
-        <h3><%= link_to "Start Lesson", start_page(@user, subject) %><h3>
+    <div class="panel">
+      <div class="row">
+        <div class="inline left">
+          <%= image_tag("algebra.gif", :class => "circular")%>
+          <h1><%= subject.section %></h1>
+        </div>
+      </div>
+        <div class="row">
+          <div class="inline left">
+           <h3><%= subject.name %> </h3>
+          </div>
+        </div> 
+      <div class="row">
+        <div class="inline right">
+          <%= progress_bar(@courses)%>
+        </div>
+      </div>
+      
+        <h4><%= link_to "Start Lesson", start_page(@user, subject) %></h4>
+     
+    </div>
+     
+      
       </div>
     </div>
   </div>

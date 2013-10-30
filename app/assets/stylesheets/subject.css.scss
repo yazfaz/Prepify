@@ -1,4 +1,4 @@
-#lesson_pages {
+#subject {
 $prepifycolor: #338aaa;
 $darkcolor: darken($prepifycolor, 40%);
 $lightcolor: lighten($prepifycolor, 20%);
@@ -7,7 +7,13 @@ background-color: $prepifycolor;
 background-image: url("ticks.png");
 background-repeat: no-repeat;
 background-size: 100% auto;
-
+		
+		.circular {
+			width: 80px ;
+			height: 80px ;
+			border-radius: 40px;
+			box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+		}	
 
 	#top {
 		
@@ -48,4 +54,6 @@ background-size: 100% auto;
 		border-top-right-radius: 20px;
 		background:rgba(51, 138, 170,0.4);
 	}
+
+	
 }
