@@ -1,40 +1,79 @@
 <% content_for(:body_id, "subject")%> 
 <body>
   <div class="row">
-    <div class="columns large-12 large-centered">
-      <h1>All Lessons</h1>
+    <div class="columns large-8 large-centered">
+      <h3>Get Prepared</h3>
     </div>
   </div>  
 
 
-  <% @subjects.each do |subject| %>
-    <div class="row">
-      <div class="panel">
-        <div class="row">
-          <div class="inline left">
-            <%= image_tag("algebra.gif", :class => "circular")%>
-            <h1><%= subject.section %></h1>
-          </div>
-        </div>
+  
+
+  <div class="large-8 columns">
           <div class="row">
-            <div class="inline left">
-             <h3><%= subject.name %> </h3>
+
+            <div class="large-4 small-6 columns">
+              <%= image_tag("math-2.jpeg")%>
+    
+              <div class="panel">
+                <h5><%= Subject.find(1).section %></h5>
+                <h6 class="subheader"><%= link_to "See Courses"%></h6>
+              </div>
             </div>
-          </div> 
-        <div class="row">
-          <div class="inline right">
-            
+
+            <div class="large-4 small-6 columns">
+              <%= image_tag("books-2.jpg")%>
+
+              <div class="panel">
+                <h5><%= Subject.find(2).section%></h5>
+                <h6 class="subheader"><%= link_to "See Courses"%></h6>
+              </div>
+            </div>
+
+            <div class="large-4 small-6 columns">
+              <%= image_tag("writing.jpeg")%>
+
+              <div class="panel">
+                <h5> <%= Subject.find(3).section%></h5>
+                <h6 class="subheader"><%= link_to "See Courses"%></h6>
+              </div>
+            </div>           
           </div>
-        </div>
-        
-        <h4><%= link_to "Start Lesson", start_page(@user, subject) %></h4>    
-      </div>
-    </div>
-  <% end %>
+
+    <!-- End Thumbnails -->
+
+
+ 
+ 
+  <!-- Footer -->
   <div class="row">
-    <div class="columns large-12-centered">
-      <%= link_to 'Home', user_path(@user) %>
-    </div>
+    <footer class="bottom">
+      <div class="large-12 columns">        
+        
+          <div class="large-6 columns">            
+            <p class="subtext">&copy; Copyright Prepify, LLC</p>
+          </div>
+          <div class="large-6 columns">
+            <ul class="inline-list right">
+              <li><%= link_to 'Home', user_path(@user) %></li>
+              <li>
+                <a href="#">Sign Up</a>
+              </li>
+              <li>
+                <a href="#">All Courses</a>
+                <ul class="ul-dash">                  
+                  <li class="subtext"><%= Subject.first.name %></li>
+                  <li class="subtext"><%= Subject.find(2).name %></li>
+                  <li class="subtext"><%= Subject.find(3).name %></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Practice SAT</a>
+              </li>
+            </ul>            
+          </div>        
+      </div>
+    </footer>
   </div>
 </body>
 

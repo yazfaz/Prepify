@@ -15,7 +15,25 @@ background-size: 100% auto;
 			box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 		}	
 
-	#top {
+		.ul-dash {
+		  margin: 0;
+		  font-color: #fff;
+		}
+
+		.ul-dash {
+		  margin-left: 0em;
+		  padding-left: 1.5em;
+		}
+
+		.ul-dash.hanging > li { /* remove '>' for IE6 support */
+		  padding-left: 1em;
+		  text-indent: -1em;
+		}  
+
+		
+
+
+	.top {
 		
 		.glowing-border {
     		border: 2px solid #dadada;
@@ -48,12 +66,24 @@ background-size: 100% auto;
 		}
 	}
 
+	.subtext {
+		color: #C3C7C3;
+	}
+
 	.bottom {
 		text-align: center;
 		border-top-left-radius: 20px;
 		border-top-right-radius: 20px;
 		background:rgba(51, 138, 170,0.4);
+		background-color: #4A4D4A;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: auto;
 	}
-
+	.radius {
+		border-radius: 10px;
+	}
+	
 	
 }
