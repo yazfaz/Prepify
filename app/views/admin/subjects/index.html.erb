@@ -6,92 +6,101 @@
     <br>
 
 <div class="row">
-  <div class="small-6 small-2 columns">
-<div class="panel">
-  <h3>Math</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Page Count</th>
-        
-      </tr>
-    </thead>
+  <div class="large-7 large-5 columns">
+    <div class="panel">
+      <h3>Math</h3>
+      <table width="100%">
+        <thead>
+        </thead>
   
-    <tbody>
+          <tbody>
 
-      <% @subjects.each do |subject| %>
-        
-        <tr>
-        <% if subject.section == "Math" %>
-          <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
-          <td><%= subject.pages.count %></td>
-          <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
-          <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
-        </tr>
-      <% end %>
-      <%end%>
-    </tbody>
-  </table> 
-</div> 
+            <% @subjects.each do |subject| %>
+              
+              <tr>
+              <% if subject.section == "Math" %>
+                <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
+                <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
+                <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
+              </tr>
+            <% end %>
+            <%end%>
+          </tbody>
+        </table> 
+      </div> 
 
-<div class="panel">
-  <h3>Critical Reading</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Page Count</th>
-        
-      </tr>
-    </thead>
-  
-    <tbody>
+    <div class="panel">
+      <h3>Critical Reading</h3>
+      <table width="100%">
+        <thead>
+          <tr> 
+            
+          </tr>
+        </thead>
+      
+        <tbody>
 
-      <% @subjects.each do |subject| %>
-        
-        <tr>
-        <% if subject.section == "Critical Reading" %>
-          <td><%= link_to "#{subject.name}", admin_subject_pages_path(subject) %></td>
-          <td><%= subject.pages.count %></td>
-          <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
-          <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
-        </tr>
-      <% end %>
-      <%end%>
-    </tbody>
-  </table>
-</div> 
+          <% @subjects.each do |subject| %>
+            
+            <tr>
+            <% if subject.section == "Critical Reading" %>
+              <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
+              <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
+              <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
+            </tr>
+          <% end %>
+          <%end%>
+        </tbody>
+      </table>
+    </div> 
 
-<div class="panel">
-  <h3>Writing</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Page Count</th>
-        
-      </tr>
-    </thead>
-  
-    <tbody>
+    <div class="panel">
+      <h3>Writing</h3>
+      <table width="100%">
+        <thead>
+          <tr>
+         
+          </tr>
+        </thead>
+      
+        <tbody>
 
-      <% @subjects.each do |subject| %>
-        
-        <tr>
-        <% if subject.section == "Writing" %>
-          <td><%= link_to "#{subject.name}", admin_subject_pages_path(subject) %></td>
-          <td><%= subject.pages.count %></td>
-          <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
-          <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
-        </tr>
-      <% end %>
-      <%end%>
-    </tbody>
-  </table>
-</div> 
+          <% @subjects.each do |subject| %>
+            
+            <tr>
+            <% if subject.section == "Writing" %>
+              <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
+              <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
+              <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
+            </tr>
+          <% end %>
+          <%end%>
+        </tbody>
+      </table>
+    </div> 
+  </div>
 
-
+  <div class= "large-5 columns">
+    <div class= "panel">
+      <table id="user_table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Admin?</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+          <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.admin? %></td>
+        <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 

@@ -5,6 +5,7 @@ class Admin::SubjectsController < ApplicationController
   # GET /subjects.json
   def index
     @subjects = Subject.all
+    @users= User.all
   end
 
   # GET /subjects/1

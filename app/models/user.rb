@@ -6,4 +6,10 @@ class User < ActiveRecord::Base
   has_many :subjects, through: :course_progressions
   has_many :course_progressions
 
+
+# to update current_user to admin
+# def make_admin
+# current_user.update_attribute :admin, true
+# end
+
 end
