@@ -14,8 +14,7 @@ class SubjectsController < ApplicationController
   def show
     @subject = Subject.find(params[:id])
     @user = User.find(params[:user_id])
-    # @page = @pageable.page
-    # @page = Page.find(params[:id])   
+      
   end
 
   # GET /subjects/new

@@ -14,14 +14,13 @@ module PagesHelper
   end
 
   def progress(page)
-    current_page = page.sequence_id.to_f
-    total_pages = page.subject.pages.count.to_f
+    current_page = page.sequence_id
+    total_pages = page.subject.pages.count
     progress = current_page / total_pages * 100
     return progress
   end
 
-
-  def show_image(pageable)
+ def show_image(pageable)
     if pageable.image?
       image_tag(pageable.image_url(:thumb))
     else  

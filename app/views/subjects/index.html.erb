@@ -1,40 +1,35 @@
 <% content_for(:body_id, "subject")%> 
 <body>
-<div class="row">
-  <div class="columns large-12 large-centered">
-    <h1>All Lessons</h1>
-  </div>
-</div>  
+  <div class="row">
+    <div class="columns large-12 large-centered">
+      <h1>All Lessons</h1>
+    </div>
+  </div>  
 
 
   <% @subjects.each do |subject| %>
-  <div class="row">
-    <div class="panel">
-      <div class="row">
-        <div class="inline left">
-          <%= image_tag("algebra.gif", :class => "circular")%>
-          <h1><%= subject.section %></h1>
-        </div>
-      </div>
+    <div class="row">
+      <div class="panel">
         <div class="row">
           <div class="inline left">
-           <h3><%= subject.name %> </h3>
+            <%= image_tag("algebra.gif", :class => "circular")%>
+            <h1><%= subject.section %></h1>
           </div>
-        </div> 
-      <div class="row">
-        <div class="inline right">
-          <%= progress_bar(@courses)%>
         </div>
+          <div class="row">
+            <div class="inline left">
+             <h3><%= subject.name %> </h3>
+            </div>
+          </div> 
+        <div class="row">
+          <div class="inline right">
+            
+          </div>
+        </div>
+        
+        <h4><%= link_to "Start Lesson", start_page(@user, subject) %></h4>    
       </div>
-      
-        <h4><%= link_to "Start Lesson", start_page(@user, subject) %></h4>
-     
     </div>
-     
-      
-      </div>
-    </div>
-  </div>
   <% end %>
   <div class="row">
     <div class="columns large-12-centered">
