@@ -1,27 +1,37 @@
-<h1>Admin Listing subjects</h1>
+<% content_for(:body_id, "admin_pages") %> 
+<div class="row">
+  <div class="columns large-12">
+    <h1>Admin Listing subjects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Section</th>
-      <th>Name</th>
-      
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @subjects.each do |subject| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= subject.section %></td>
-        <td><%= subject.name %></td>
-        <td><%= link_to 'Show', admin_subject_pages_path(subject) %></td>
-        <td><%= link_to 'Edit', edit_admin_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', admin_subject_path(subject), method: :delete %></td>
+        <th>Section</th>
+        <th>Name</th>
+        <th>Page Count</th>
+        
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+  
+    <tbody>
 
-<br>
+      <% @subjects.each do |subject| %>
+        
+        <tr>
 
-<%= link_to 'New Subject', new_admin_subject_path %>
+          <td><%= subject.section %></td>
+          <td><%= link_to "#{subject.name}", admin_subject_pages_path(subject) %></td>
+          <td><%= subject.pages.count %></td>
+          <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
+          <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <a href="<%= new_admin_subject_path %>" class="button">Create A New Subject</a>
+  
+  <br>
+  </div>
+</div>
+
+  
