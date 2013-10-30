@@ -10,8 +10,8 @@ class Admin::InstructionsController < ApplicationController
   # GET /instructions/1
   # GET /instructions/1.json
   def show
-    @question = Question.find(params[:id])
-    @instruction = Instruction.find(params[:instruction_id])
+    @instruction = Instruction.find(params[:id])
+    @subject = Subject.find(params[:subject_id])
   end
 
   # GET /instructions/new
