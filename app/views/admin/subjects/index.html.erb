@@ -1,12 +1,17 @@
 <% content_for(:body_id, "admin_pages") %> 
 <div class="row">
   <div class="columns large-12">
-    <h1>Admin Listing subjects</h1>
+     <h2>Current Subjects</h2>
+     <a href="<%= new_admin_subject_path %>" class="small button">Create A New Subject</a>
+    <br>
 
+<div class="row">
+  <div class="small-6 small-2 columns">
+<div class="panel">
+  <h3>Math</h3>
   <table>
     <thead>
       <tr>
-        <th>Section</th>
         <th>Name</th>
         <th>Page Count</th>
         
@@ -18,19 +23,75 @@
       <% @subjects.each do |subject| %>
         
         <tr>
+        <% if subject.section == "Math" %>
+          <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
+          <td><%= subject.pages.count %></td>
+          <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
+          <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
+        </tr>
+      <% end %>
+      <%end%>
+    </tbody>
+  </table> 
+</div> 
 
-          <td><%= subject.section %></td>
+<div class="panel">
+  <h3>Critical Reading</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Page Count</th>
+        
+      </tr>
+    </thead>
+  
+    <tbody>
+
+      <% @subjects.each do |subject| %>
+        
+        <tr>
+        <% if subject.section == "Critical Reading" %>
           <td><%= link_to "#{subject.name}", admin_subject_pages_path(subject) %></td>
           <td><%= subject.pages.count %></td>
           <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
           <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
         </tr>
       <% end %>
+      <%end%>
     </tbody>
   </table>
-  <a href="<%= new_admin_subject_path %>" class="button">Create A New Subject</a>
+</div> 
+
+<div class="panel">
+  <h3>Writing</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Page Count</th>
+        
+      </tr>
+    </thead>
   
-  <br>
+    <tbody>
+
+      <% @subjects.each do |subject| %>
+        
+        <tr>
+        <% if subject.section == "Writing" %>
+          <td><%= link_to "#{subject.name}", admin_subject_pages_path(subject) %></td>
+          <td><%= subject.pages.count %></td>
+          <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
+          <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
+        </tr>
+      <% end %>
+      <%end%>
+    </tbody>
+  </table>
+</div> 
+
+
   </div>
 </div>
 

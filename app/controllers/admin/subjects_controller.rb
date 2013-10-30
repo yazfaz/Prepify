@@ -10,7 +10,7 @@ class Admin::SubjectsController < ApplicationController
   # GET /subjects/1
   # GET /subjects/1.json
   def show
-    @subject = Subject.find(subject_params)
+    @subject = Subject.find(params[:id])
     @page = @subject.pages 
   end
 
@@ -43,7 +43,7 @@ class Admin::SubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @subject.update(subject_params)
-        format.html { redirect_to @subject, notice: 'Subject was successfully updated.' }
+        format.html { redirect_to admin_subjects_path, notice: 'Subject was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

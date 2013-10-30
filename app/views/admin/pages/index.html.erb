@@ -1,10 +1,10 @@
 <% content_for(:body_id, "admin_pages") %> 
 
-<div class="row">
+<div class="row lesson" id="lesson_pages">
   <div class="columns large-12">
   <h1>Lesson pages for <%= @subject.name %></h1>
 
-  <table width="100%" cellpadding="0" cellspacing="0">
+  <table width="100%">
     <thead>
       <tr>
         <th>Sequence</th>
@@ -14,6 +14,7 @@
       </tr>
     </thead>
 
+ 
     <tbody>
      
       <% @subject.page_order.each do |page| %>
@@ -42,14 +43,14 @@
   </table>
 
   <br>
-  <div id = "add_buttons">
+  <div class = "add_buttons">
     <a href="<%= new_admin_subject_question_path %>" class="button">Create A New Question</a>
    
     <a href="<%= new_admin_subject_instruction_path %>" class="button">Create A New Instruction</a>
    
     <br>
 
-    <a href="<%= admin_subjects_path %>" class="small button">Back to <%= @subject.name %> Main Page</a>
+    <a href="<%= admin_subjects_path %>" class="small button">Back to Admin Dashboard Main Page</a>
     
 
     </div>
