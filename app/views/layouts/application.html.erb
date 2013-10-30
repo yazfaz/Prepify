@@ -36,13 +36,13 @@
 
        <ul class="title-area">        
         <li class="name">
-          <h1><strong><%= link_to "Hello #{current_user.name}", edit_user_registration_path%></strong>
-          </h1>
+          <%= image_tag("Prepify_logo_white.png", size: "100") %>
         </li>
       </ul>
       <section class="top-bar-section">
         <ul class="right">
           <li>
+            <%= link_to "Hello #{current_user.name}", edit_user_registration_path%></strong>
             <%= link_to 'Edit Profile', edit_user_registration_path %>
           </li>
           <li>
