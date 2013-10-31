@@ -1,5 +1,5 @@
 class InstructionsController < ApplicationController
-
+  before_filter :authorize_current_student
   def show
     @instruction = Instruction.find(params[:id])  
     @page = @instruction.page

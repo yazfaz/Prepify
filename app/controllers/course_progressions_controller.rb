@@ -1,10 +1,12 @@
 class CourseProgressionsController < ApplicationController
   before_action :set_course_progression, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize_current_student
 
   # GET /course_progressions
   # GET /course_progressions.json
   def index
     @course_progressions = CourseProgression.all
+    
   end
 
   # GET /course_progressions/1

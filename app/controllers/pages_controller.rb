@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   before_filter :find_pageable
   before_action :set_page, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authorize_current_student
   # GET /pages
   # GET /pages.json
   def index

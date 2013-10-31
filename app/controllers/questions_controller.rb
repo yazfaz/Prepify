@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+ before_filter :authorize_current_student
 
   def show
     @question = Question.find(params[:id])

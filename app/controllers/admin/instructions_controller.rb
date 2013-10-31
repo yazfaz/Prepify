@@ -1,5 +1,6 @@
 class Admin::InstructionsController < ApplicationController
   before_action :set_instruction, only: [:update, :destroy]
+  before_filter :authorize_admin
 
   # GET /instructions
   # GET /instructions.json

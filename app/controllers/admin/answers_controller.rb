@@ -1,6 +1,6 @@
 class Admin::AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
-  before_filter
+  before_filter :authorize_admin
 
   # GET /answers
   # GET /answers.json

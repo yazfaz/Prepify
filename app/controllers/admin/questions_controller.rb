@@ -1,5 +1,6 @@
 class Admin::QuestionsController < ApplicationController
   before_action :set_question, only: [ :update, :destroy]
+  before_filter :authorize_admin
 
   # GET /questions
   # GET /questions.json

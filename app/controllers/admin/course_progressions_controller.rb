@@ -1,5 +1,6 @@
 class Admin::CourseProgressionsController < ApplicationController
   before_action :set_course_progression, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize_admin
 
   # GET /course_progressions
   # GET /course_progressions.json

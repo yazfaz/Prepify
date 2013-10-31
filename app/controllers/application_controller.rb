@@ -9,9 +9,9 @@ class ApplicationController < ActionController::Base
   # Accept the following parameters if in the devise controller
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def admin?
-    admin == true
-  end
+ def admin?
+  current_user.admin == true
+ end
 
   protected
 
@@ -27,5 +27,19 @@ class ApplicationController < ActionController::Base
     course_progression.update_attributes(:page_id => page.sequence_id)
   end
 
+  def authorize_admin
+    unless admin?
+      flash[:error] = "unauthorized access"
+      redirect_to user_subjects_path(current_user)
+    end
+  end
+
+  def authorize_current_student
+  
+    unless current_user.id.to_s == params[:user_id]
+      flash[:error] = "unauthorized access"
+      redirect_to user_subjects_path(current_user)
+    end
+  end
 
 end

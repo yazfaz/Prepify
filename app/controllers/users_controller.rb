@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-
+  before_filter :authorize_current_student
   before_action :set_user, only: [:show, :destroy]
-
   # GET /users
   # GET /users.json
   def index
