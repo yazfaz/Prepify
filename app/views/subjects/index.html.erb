@@ -1,27 +1,29 @@
 <% content_for(:body_id, "subject")%> 
 <body>
   <div class="row">
-    <div class="large-4 small-6 columns">
+    <div class="large-4 small-6 centered columns">
       <div class="panel"><h3>Get Prepared</h3>
-      <p>Find out more about the SAT</p>
-        <ul>
-        <li><a href="http://sat.collegeboard.org/home">Official Collegeboard </a></li>        
-        <li><a href="#">University Listing</a></li>
-        <li><a href="#">Connect with a Admissions Officer</a></li>
-      </ul>
+        <div class="slider">
+          <%= image_tag("basics.jpg")%>
+        </div>
+        
+          <h4>Student Resources</h4>      
+          <h6>Taking the SAT? Practice your skills with Prepify for <span class="label">free!</span>
+          </h6>      
+          <h5 class="subheader"><a href="http://sat.collegeboard.org/home">SAT Collegeboard</a></h5>     
+          <h5 class="subheader"><a href="#">University Listing</a></h5>     
+     
       </div>
-    </div>
-  </div> 
-    <div class="row">
-      <div class="large-4 small-12 columns">
+    </div>  
+      <div class="large-6 small-6 centered columns">
         <div class="panel">
           <h3>Get Started with SAT Basics!</h3>          
             <div class="slider">
               <%= image_tag("basics.jpg")%></div>   
-                <div class="panel">           
+                <div class="panel">        
                  
                     <%# if current_user.completed_subject?(@subject)%>
-                      <h3>Completed Lesson</h3>
+                      <h5>Completed Lesson</h5>
                     <%# elsif current_user.started_subject?(@subject) %>          
                       <h3><%#= link_to "Resume Lesson", current_page(current_user, @subject) %><h3>
                     <%# else %>
@@ -34,6 +36,13 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="large-4 small 6 column centered">
+    <div class="panel centered">
+      <h3>All Courses<h3>
+      </div>
+    </div>
+  </div>
 
   <div class="large-8 centered columns ">
           <div class="row">
@@ -103,7 +112,7 @@
           </div>        
       </div>
     </div>
-    </footer>
+    
   </div>
   
   <div class="row">
@@ -111,6 +120,7 @@
       <%= link_to 'Home', user_path(current_user) %>
     </div>
   </div>
+  </footer>
 </body>
 
 
