@@ -9,8 +9,7 @@ Prepify::Application.routes.draw do
   
 end
 
-
-  
+# root 'subjects#index'
   root 'admin/subjects#index'
 
   namespace :admin do

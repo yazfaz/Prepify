@@ -96,6 +96,8 @@
           <td><%= user.name %></td>
           <td><%= user.email %></td>
           <td><%= user.admin? %></td>
+          <td><%= current_user.id %></td>
+          <td><%= render 'admin/users/form' %>
         <% end %>
           </tr>
         </tbody>

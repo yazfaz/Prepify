@@ -6,6 +6,8 @@ class SubjectsController < ApplicationController
   def index
     @subjects = Subject.all_with_pages
     @user = User.find(params[:user_id])
+    
+   
   end
 
   # GET /subjects/1

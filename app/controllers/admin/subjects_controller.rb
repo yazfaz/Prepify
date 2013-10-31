@@ -6,6 +6,7 @@ class Admin::SubjectsController < ApplicationController
   def index
     @subjects = Subject.all
     @users= User.all
+    @user = current_user
   end
 
   # GET /subjects/1
