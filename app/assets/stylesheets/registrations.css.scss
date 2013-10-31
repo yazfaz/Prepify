@@ -51,10 +51,6 @@ background-size: 100% auto;
 		background:rgba(51, 138, 170,0.4);
 
 
-		.transparent{
-
-		}
-
 		p {
 			font-family: 'Source Sans Pro', sans-serif;
 			font-size: 1.25em;
@@ -69,11 +65,29 @@ background-size: 100% auto;
 			font-family: 'Sansita One';  
 			text-shadow: 4px 4px 0 #566074, 7px 7px 0 #338aaa;
 		}
+	}
 
+	.below {
+		background-color: white;
+		width: 90%;
+		height: 500px;
 
+		p {
+			font-size: 1.55em;
+			color: $darkcolor;
+			font-family: 'Source Sans Pro', sans-serif;
+		}
 
-
+		h2 {
+			font-size: 3em;
+			font-family: 'Sansita One';  
+		}
 
 	}
+
+
+
+
+
 }
 
