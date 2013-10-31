@@ -2,11 +2,12 @@
 <div class="row">
   <div class="columns large-12">
      <h2>All Lessons</h2>
-     <a href="<%= new_admin_subject_path %>" class="small button">Create A New Subject</a>
+     <a href="<%= admin_users_path %>" class="small button">View Users</a>
+    <a href="<%= new_admin_subject_path %>" class="small button">Create A New Subject</a>
     <br>
 
 <div class="row">
-  <div class="large-7 large-5 columns">
+  <div class="large-12 ">
     <div class="panel">
       <h3>Math Lessons</h3>
       <table width="100%">
@@ -79,32 +80,5 @@
       </table>
     </div> 
   </div>
-
-  <div class= "large-5 columns">
-    <div class= "panel">
-      <table id="user_table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Admin?</th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @users.each do |user| %>
-          <tr>
-          <td><%= user.name %></td>
-          <td><%= user.email %></td>
-          <td><%= user.admin? %></td>
-          <td><%= user.id %></td>
-          <td><%#= render 'admin/users/form' %></td>
-          <td><%= link_to "Edit Admin", edit_user_path(user.id) %></td>
-        <% end %>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
 
   
