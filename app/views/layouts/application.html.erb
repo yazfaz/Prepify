@@ -33,40 +33,77 @@
 
   <body id="<%= yield :body_id %>">
     <nav class="top-bar">
-      <% if current_user.try(:admin?) %>
+      <!-- If student -->
+      <% if current_user %>
+        <% if current_user.admin == false %>
 
-       <ul class="title-area">        
-        <li class="name">
-          <%= image_tag("Prepify_logo_white.png", size: "100", class:"logo") %>
-        </li>
-      </ul>
-      
-      <section class="top-bar-section">
-        <ul class="right">
-          <li class="divider"></li>
-          <li class="student-nav"><%= link_to 'Home', user_subjects_path(current_user) %></li>
-          <li class="divider"></li>
-          <li class="student-nav"><%= link_to 'Report Card', user_path(current_user) %></li>
-          <li class="divider"></li>
-          <li class= "has-dropdown student-nav"><a href="#" >Hello <%= current_user.name %></a>
-            <%#= link_to "Hello #{current_user.name}", edit_user_registration_path%><!-- </strong> -->
-            <ul class= "dropdown">
-              <li class="student-nav">
-                <%= link_to 'Edit Profile', edit_user_registration_path %></li>
-                <li class="divider"></li>
-                 <li class="student-nav">
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete %> 
+         <ul class="title-area">        
+          <li class="name">
+            <%= image_tag("Prepify_logo_white.png", size: "100", class:"logo") %>
           </li>
-            </ul>
-          </li>
-
-          
-         
         </ul>
-      </section>
-    </nav>
+        
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class="divider"></li>
+            <li class="student-nav"><%= link_to 'Home', user_subjects_path(current_user) %></li>
+            <li class="divider"></li>
+            <li class="student-nav"><%= link_to 'Report Card', user_path(current_user) %></li>
+            <li class="divider"></li>
+            <li class= "has-dropdown student-nav"><a href="#" >Hello <%= current_user.name %></a>
+              <%#= link_to "Hello #{current_user.name}", edit_user_registration_path%><!-- </strong> -->
+              <ul class= "dropdown">
+                <li class="student-nav">
+                  <%= link_to 'Edit Profile', edit_user_registration_path %></li>
+                  <li class="divider"></li>
+                   <li class="student-nav">
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete %> 
+            </li>
+              </ul>
+            </li>
 
-        <% else %>
+            
+           
+          </ul>
+        </section>
+      </nav>
+
+        <!-- If admin -->
+        <% elsif current_user.admin %>
+
+         <ul class="title-area">        
+          <li class="name">
+            <%= image_tag("Prepify_logo_white.png", size: "100", class:"logo") %>
+          </li>
+        </ul>
+        
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class="divider"></li>
+            <li class="admin-nav"><%= link_to 'Home', admin_subjects_path %></li>
+            <li class="divider"></li>
+            <li class="admin-nav"><%= link_to 'Users', admin_users_path %></li>
+            <li class="divider"></li>
+            <li class= "has-dropdown admin-nav"><a href="#" >Hello <%= current_user.name %></a>
+              <%#= link_to "Hello #{current_user.name}", edit_user_registration_path%><!-- </strong> -->
+              <ul class= "dropdown">
+                <li class="admin-nav">
+                  <%= link_to 'Edit Profile', edit_user_registration_path %></li>
+                  <li class="divider"></li>
+                   <li class="admin-nav">
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete %> 
+            </li>
+              </ul>
+            </li>
+
+            
+           
+          </ul>
+        </section>
+      </nav>
+        <% end %>
+
+      <% else %>
 
       <section class="top-bar-section">
         <ul class="right">

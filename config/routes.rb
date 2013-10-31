@@ -11,11 +11,13 @@ Prepify::Application.routes.draw do
 end
 
 # root 'subjects#index'
-  root 'admin/subjects#index'
+  root 'subjects#home_page'
 # devise_scope :user do
 #   root 'devise/sessions#new'
 # end
-
+authenticated :admin do
+  root 'admin/subjects#index', :as => "admin"
+end
   namespace :admin do
     resources :users
     resources :subjects do
