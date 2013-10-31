@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @courses = CourseProgression.find_all_by_user_id(@user)
+    @courses = current_user.course_progressions
   end
 
   # GET /users/new

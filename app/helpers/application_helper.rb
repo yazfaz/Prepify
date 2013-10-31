@@ -8,17 +8,6 @@ module ApplicationHelper
       return user_subjects_path
     end
   end
-
-  def new_course(user,page)
-    new_course = CourseProgression.create(user_id: user.id, subject_id: page.subject_id , page_id: page.sequence_id)
-    page_to_pageable_path(user, page)
-  end
-
-  def update_course(user, page)
-    course = CourseProgression.find_by(user_id: user.id, subject_id: page.subject_id)
-    course.update(page_id: page.sequence_id)
-    page_to_pageable_path(user,page)
-  end
   
   def progress_bar(width)
     string = '<div class="progress large-6 success round"><span class="meter" style="width: ' + width.to_s + '%"></span></div>'

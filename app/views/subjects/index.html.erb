@@ -12,14 +12,20 @@
     <div class="columns large-12 large-centered">
       <div class="radius panel">
         <h3><%= subject.name %></h3>
-        <h3><%= link_to "Start Lesson", start_page(@user, subject) %><h3>
+        <% if current_user.completed_subject?(subject)%>
+          <h3>Completed Lesson</h3>
+        <% elsif current_user.started_subject?(subject) %>          
+          <h3><%= link_to "Resume Lesson", current_page(current_user, subject) %><h3>
+        <% else %>
+          <h3><%= link_to "Start Lesson", start_page(current_user, subject) %><h3>
+        <% end %>
       </div>
     </div>
   </div>
   <% end %>
   <div class="row">
     <div class="columns large-12-centered">
-      <%= link_to 'Home', user_path(@user) %>
+      <%= link_to 'Home', user_path(current_user) %>
     </div>
   </div>
 </body>

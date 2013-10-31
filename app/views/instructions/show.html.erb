@@ -21,8 +21,8 @@
     <img src="<%= @instruction.image %>" width="200" height="80">
     <br>
     <div class="panel">
-      <%= progress_bar( progress(@instruction.page) )%>
-      <h5><%= link_to "Next Page", next_page(@user, @instruction.page)%></h5>
+      <%= progress_bar( progress(@page) )%>
+      <h5><%= link_to "Next Page", next_page(current_user, @page)%></h5>
     </div>
   </div>
 </div>

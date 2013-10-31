@@ -20,6 +20,10 @@ class Subject < ActiveRecord::Base
   def last_page
     self.pages.order('sequence_id').last
   end
+
+  def first_page
+    self.pages.order('sequence_id').first
+  end
  
   
   #Method to  find out what this last last_sequence_id of a subject is.
@@ -32,4 +36,9 @@ class Subject < ActiveRecord::Base
   def next_sequence_id
     last_sequence_id + 1
   end
+
+  def first_sequence_id
+    first_page ? first_page.sequence_id : 0
+  end
+
 end
