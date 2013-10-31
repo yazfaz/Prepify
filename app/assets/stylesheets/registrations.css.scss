@@ -51,15 +51,15 @@ background-size: 100% auto;
 		text-align: center;
 		border-top-left-radius: 20px;
 		border-top-right-radius: 20px;
-		height: 30px;
-		width: 700px;
+		height: 20px;
+		width: 800px;
 	
 
 		.button {
 			background-color: #2BA6CB;
 			color: white;
 			width: 200px;
-			border: 5px solid white;
+			border: 10px solid white;
 			border-radius:15px;
 			font-family: 'Leckerli One', cursive;
 			font-size: 2em;
@@ -95,8 +95,8 @@ background-size: 100% auto;
 	}
 
 	.below:first-child {
-		border-top-right-radius: 30px;
-		border-top-left-radius: 30px; 
+		border-top-right-radius: 50px;
+		border-top-left-radius: 50px; 
 	}
 
 
