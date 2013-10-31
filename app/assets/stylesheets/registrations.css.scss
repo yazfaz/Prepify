@@ -71,16 +71,19 @@ background-size: 100% auto;
 		background-color: white;
 		width: 90%;
 		height: 500px;
+		white-space: pre-wrap;
 
 		p {
-			font-size: 1.55em;
+			font-size: 1.5em;
 			color: $darkcolor;
 			font-family: 'Source Sans Pro', sans-serif;
 		}
 
 		h2 {
 			font-size: 3em;
-			font-family: 'Sansita One';  
+			font-family: 'Sansita One';
+			text-align: center;
+			color: $prepifycolor;  
 		}
 
 	}
