@@ -1,55 +1,68 @@
 <% content_for(:body_id, "subject")%> 
 <body>
   <div class="row">
-    <div class="large-8-centered columns ">
-      <h3>Get Prepared</h3>
+    <div class="large-4 small-6 columns">
+      <div class="panel"><h3>Get Prepared</h3>
+      <p>Find out more about the SAT</p>
+        <ul>
+        <li><a href="http://sat.collegeboard.org/home">Official Collegeboard </a></li>        
+        <li><a href="#">University Listing</a></li>
+        <li><a href="#">Connect with a Admissions Officer</a></li>
+      </ul>
+      </div>
     </div>
   </div> 
-
-       <!-- First Band (Slider) -->
     <div class="row">
-      <div class="large-12 columns centered columns">
+      <div class="large-4 small-12 columns">
         <div class="panel">
           <h3>Get Started with SAT Basics!</h3>          
             <div class="slider">
-              <div class="main"><div class="round"><%= image_tag("basics.jpg")%></div>   
-                <div class="panel">
-                  <h5 class="subheader"><%= link_to "Start Course"%></h5>
-                </div>
-              </div>
+              <%= image_tag("basics.jpg")%></div>   
+                <div class="panel">           
+                 
+                    <%# if current_user.completed_subject?(@subject)%>
+                      <h3>Completed Lesson</h3>
+                    <%# elsif current_user.started_subject?(@subject) %>          
+                      <h3><%#= link_to "Resume Lesson", current_page(current_user, @subject) %><h3>
+                    <%# else %>
+                      <h3><%#= link_to "Start Lesson", start_page(current_user, @subject) %><h3>
+                    <%# end %>
+                  <h5 class="subheader"><%= link_to "Start Course" %></h5>
             </div>          
           </div>
           <hr>
         </div>
       </div>
     </div>
-  <div class="large-8 centered columns">
+
+  <div class="large-8 centered columns ">
           <div class="row">
-            #offset by 4
-            <div class="large-4 small-6 columns">
+            
+            <div class="large-4 small-6 column offset by 4">
               <%= image_tag("math-2.jpeg")%>
     
               <div class="panel">
                 <h5><%= Subject.find(1).section %></h5>
-                <h6 class="subheader"><%= link_to "See Courses"%></h6>
+                <h6 class="subheader"><%= link_to "See Courses", user_subject_path(current_user, Subject.find(1))%></h6>
               </div>
             </div>
-            #center 
-            <div class="large-4 small-6 columns">
+            
+            <div class="large-4 small-6 columns centered">
               <%= image_tag("books-2.jpg")%>
 
+  
               <div class="panel">
                 <h5><%= Subject.find(2).section%></h5>
-                <h6 class="subheader"><%= link_to "See Courses"%></h6>
+                <h6 class="subheader"><%= link_to "See Courses" , user_subject_path(current_user, Subject.find(2))%></h6>
               </div>
             </div>
-              #offset by 8
-            <div class="large-4 small-6 columns">
+              
+            <div class="large-4 small-6 columns offset 8">
               <%= image_tag("writing.jpeg")%>
 
               <div class="panel">
                 <h5> <%= Subject.find(3).section%></h5>
-                <h6 class="subheader"><%= link_to "See Courses"%></h6>
+                <h6 class="subheader"><%= link_to "See Courses", user_subject_path(current_user, Subject.find(3))%></h6>
               </div>
             </div>           
           </div>
@@ -61,6 +74,8 @@
  
   <!-- Footer -->
   <div class="row">
+    <div class="columns large-12 large-centered">
+      <div class="radius panel">
     <footer class="bottom">
       <div class="large-12 columns">        
         
@@ -87,7 +102,14 @@
             </ul>            
           </div>        
       </div>
+    </div>
     </footer>
+  </div>
+  
+  <div class="row">
+    <div class="columns large-12-centered">
+      <%= link_to 'Home', user_path(current_user) %>
+    </div>
   </div>
 </body>
 

@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Section:</strong>
-  <%= @subject.section %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @subject.name %>
-</p>
-
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
+<% content_for(:body_id, "subject")%> 
+<body>
+	<br>
+<div class="row">
+	<div class="columns large-12 centered">
+	  <div class="radius panel">
+	   <h3><%= @subject.name %></h3>
+	    <% if current_user.completed_subject?(@subject)%>
+	      <div class="success label round">Completed Lesson</div>
+	    <% elsif current_user.started_subject?(@subject) %>          
+	      <h3><%= link_to "Resume Lesson", current_page(current_user, @subject) %><h3>
+	    <% else %>
+	      <h3><%= link_to "Start Lesson", start_page(current_user, @subject) %><h3>
+	    <% end %>
+	  </div>
+	</div>
+</div>
+</body>
+<%= link_to 'Back', user_subjects_path(current_user) %>

@@ -1,3 +1,0 @@
-module CourseProgressionsHelper
-  
-end

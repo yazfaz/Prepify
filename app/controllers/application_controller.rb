@@ -21,5 +21,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :name
   end
 
+  def update_course_progression(subject, page)
+    course_progression = current_user.course_progressions.where(subject_id: subject.id).first
+    course_progression ||= current_user.course_progressions.create(subject_id: subject.id)
+    course_progression.update_attributes(:page_id => page.sequence_id)
+  end
+
 
 end

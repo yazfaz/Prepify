@@ -4,12 +4,9 @@ module PagesHelper
     current_page = page.sequence_id
     next_page =  page.subject.pages.find_by_sequence_id(current_page + 1)
     if next_page.nil?
-      # How do I grab the user id?
-      course = CourseProgression.find_by(user_id: user.id, subject_id: page.subject.id)
-      course.update(completed_at: DateTime.new)
-      return user_path(@user.id)
+      return user_subject_complete_path(user, page.subject)
     else
-      update_course(user, next_page) 
+      page_to_pageable_path(user, next_page) 
     end
   end
 

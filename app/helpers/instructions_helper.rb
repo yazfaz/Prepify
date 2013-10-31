@@ -1,3 +1,0 @@
-module InstructionsHelper
-  
-end

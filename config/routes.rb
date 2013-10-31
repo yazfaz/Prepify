@@ -3,6 +3,7 @@ Prepify::Application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations"} 
   resources :users do
     resources :subjects do 
+      get "complete"
       resources :instructions
       resources :questions
     end
