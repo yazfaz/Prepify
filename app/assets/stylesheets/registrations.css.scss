@@ -8,6 +8,15 @@ background-image: url("school_logo.jpg");
 background-repeat: no-repeat;
 background-size: 100% auto;
 
+	.logo {
+		width: 80%;
+		-moz-border-radius: 150px/150px;
+    	-webkit-border-radius: 150px 150px;
+    	border-radius: 250px/250px;;
+    	width:250px;
+    	height:250px;
+    	text-align: center;
+   	}
 
 
 
@@ -75,7 +84,7 @@ background-size: 100% auto;
 	.below {
 		background-color: white;
 		width: 90%;
-		height: 650px;
+		height: 700px;
 		white-space: pre-wrap;
 
 
@@ -86,10 +95,11 @@ background-size: 100% auto;
 		}
 
 		h2 {
-			font-size: 3em;
+			font-size: 5em;
 			font-family: 'Sansita One';
 			text-align: center;
-			color: $prepifycolor;  
+			color: #2BA6CB;
+			margin: 0px; 
 		}
 
 	}
