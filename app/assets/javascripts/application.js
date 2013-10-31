@@ -13,8 +13,7 @@
 // = require jquery
 // = require jquery_ujs
 // = require foundation
-// = require turbolinks
-// = require_tree .
+// = require jquery-ui-1.10.3.custom
 
 $(function(){ $(document).foundation(); });
 
