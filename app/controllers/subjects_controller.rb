@@ -1,6 +1,7 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
-  before_filter :authorize_current_student
+  before_filter :authorize_current_student, :except => :home_page
+ 
 
   # GET /subjects
   # GET /subjects.json
@@ -28,6 +29,7 @@ class SubjectsController < ApplicationController
       if current_user.admin?
         redirect_to  admin_subjects_path
       elsif 
+  
         redirect_to user_subjects_path(current_user)
       end
   end
