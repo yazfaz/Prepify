@@ -15,4 +15,12 @@
 
  *= require_tree .*/
  
+ .logo {
+  margin-left: 10px;
+  margin-top:10px;
+ }
+
+ .student-nav {
+  font-size: .75em;
+ }
  

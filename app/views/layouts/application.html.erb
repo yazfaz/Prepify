@@ -37,24 +37,30 @@
 
        <ul class="title-area">        
         <li class="name">
-          <%= image_tag("Prepify_logo_white.png", size: "100") %>
+          <%= image_tag("Prepify_logo_white.png", size: "100", class:"logo") %>
         </li>
       </ul>
       
       <section class="top-bar-section">
         <ul class="right">
-          <li class= "has-dropdown"><a href="#">Hello <%= current_user.name %></a>
+            <li class="student-nav"><%= link_to 'Home', user_subjects_path(current_user) %></li>
+            <li class="divider"></li>
+            <li class="student-nav"><%= link_to 'Report Card', user_path(current_user) %></li>
+            <li class="divider"></li>
+          <li class= "has-dropdown student-nav"><a href="#" >Hello <%= current_user.name %></a>
             <%#= link_to "Hello #{current_user.name}", edit_user_registration_path%><!-- </strong> -->
             <ul class= "dropdown">
-              <li>
+              <li class="student-nav">
                 <%= link_to 'Edit Profile', edit_user_registration_path %></li>
+                <li class="divider"></li>
+                 <li class="student-nav">
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete %> 
+          </li>
             </ul>
           </li>
 
           
-          <li>
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete %> 
-          </li>
+         
         </ul>
       </section>
     </nav>
