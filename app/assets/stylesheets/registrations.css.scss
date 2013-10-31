@@ -48,8 +48,8 @@ background-size: 100% auto;
 		text-align: center;
 		border-top-left-radius: 20px;
 		border-top-right-radius: 20px;
-		background:rgba(51, 138, 170,0.4);
-
+		height: 100px;
+		//background-color: 
 
 		p {
 			font-family: 'Source Sans Pro', sans-serif;
@@ -65,6 +65,14 @@ background-size: 100% auto;
 			font-family: 'Sansita One';  
 			text-shadow: 4px 4px 0 #566074, 7px 7px 0 #338aaa;
 		}
+
+		.button {
+			background-color: #19295B;
+			color: white;
+			width: 150px;
+			border-radius: 25px;
+		}
+
 	}
 
 	.below {
