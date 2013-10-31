@@ -6,6 +6,8 @@ class SubjectsController < ApplicationController
   def index
     @subjects = Subject.all_with_pages
     @user = current_user
+    
+   
   end
 
   # GET /subjects/1
