@@ -1,14 +1,14 @@
 <% content_for(:body_id, "admin_pages") %> 
 <div class="row">
   <div class="columns large-12">
-     <h2>Current Subjects</h2>
+     <h2>All Lessons</h2>
      <a href="<%= new_admin_subject_path %>" class="small button">Create A New Subject</a>
     <br>
 
 <div class="row">
   <div class="large-7 large-5 columns">
     <div class="panel">
-      <h3>Math</h3>
+      <h3>Math Lessons</h3>
       <table width="100%">
         <thead>
         </thead>
@@ -30,7 +30,7 @@
       </div> 
 
     <div class="panel">
-      <h3>Critical Reading</h3>
+      <h3>Critical Reading Lessons</h3>
       <table width="100%">
         <thead>
           <tr> 
@@ -55,7 +55,7 @@
     </div> 
 
     <div class="panel">
-      <h3>Writing</h3>
+      <h3>Writing Lessons</h3>
       <table width="100%">
         <thead>
           <tr>
@@ -96,8 +96,9 @@
           <td><%= user.name %></td>
           <td><%= user.email %></td>
           <td><%= user.admin? %></td>
-          <td><%= current_user.id %></td>
-          <td><%= render 'admin/users/form' %>
+          <td><%= user.id %></td>
+          <td><%#= render 'admin/users/form' %></td>
+          <td><%= link_to "Edit Admin", edit_user_path(user.id) %></td>
         <% end %>
           </tr>
         </tbody>

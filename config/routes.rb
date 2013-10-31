@@ -17,7 +17,7 @@ end
 # end
 
   namespace :admin do
-    root 'admin/subjects#index'
+    # resources :users
     resources :subjects do
       resources :pages  
         resources :instructions

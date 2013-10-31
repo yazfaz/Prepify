@@ -6,7 +6,7 @@ class Admin::SubjectsController < ApplicationController
   def index
     @subjects = Subject.all
     @users= User.all
-    @user = current_user
+    
   end
 
   # GET /subjects/1
@@ -23,6 +23,7 @@ class Admin::SubjectsController < ApplicationController
 
   # GET /subjects/1/edit
   def edit
+   
   end
 
   # POST /subjects
