@@ -13,10 +13,15 @@ end
 root 'subjects#home_page'
 
 
+
+
   namespace :admin do
+    match 'subjects/new/math' => 'subjects#new_math', via: [:get]
+    match 'subjects/new/reading' => 'subjects#new_reading', via: [:get, :post]
+    match 'subjects/new/writing' => 'subjects#new_writing', via: [:get, :post]
     resources :users
     resources :subjects do
-      get '/new/math' => 'subjects#new_math'
+
       resources :pages  
         resources :instructions
         resources :questions  

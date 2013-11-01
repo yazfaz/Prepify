@@ -3,13 +3,14 @@
   <div class="columns large-12">
      <h2>All Lessons</h2>
      <a href="<%= admin_users_path %>" class="small button">View Users</a>
-    <a href="<%= new_admin_subject_path %>" class="small button">Create A New Subject</a>
+   
     <br>
 
 <div class="row">
   <div class="large-12 ">
     <div class="panel">
       <h3>Math Lessons</h3>
+       <a href="<%= admin_subjects_new_math_path %>" class="small button">Create A New Math Subject</a>
       <table width="100%">
         <thead>
         </thead>
@@ -32,6 +33,7 @@
 
     <div class="panel">
       <h3>Critical Reading Lessons</h3>
+      <a href="<%= admin_subjects_new_reading_path %>" class="small button">Create A New Critical Reading Subject</a>
       <table width="100%">
         <thead>
           <tr> 
@@ -57,6 +59,7 @@
 
     <div class="panel">
       <h3>Writing Lessons</h3>
+      <a href="<%= admin_subjects_new_writing_path %>" class="small button">Create A New Writing Subject</a>
       <table width="100%">
         <thead>
           <tr>
