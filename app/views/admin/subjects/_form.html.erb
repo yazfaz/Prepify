@@ -12,8 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :section %><br>
-    <%= f.text_field :section %>
+    <%#= f.label :section %><br>
+    <%#= f.text_field :section %>
+    <%= f.hidden_field(:section, :value => "Math") %>
   </div>
   <div class="field">
     <%= f.label :name %><br>

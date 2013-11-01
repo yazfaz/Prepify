@@ -16,6 +16,7 @@ root 'subjects#home_page'
   namespace :admin do
     resources :users
     resources :subjects do
+      get '/new/math' => 'subjects#new_math'
       resources :pages  
         resources :instructions
         resources :questions  

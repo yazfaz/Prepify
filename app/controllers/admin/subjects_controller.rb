@@ -42,6 +42,19 @@ class Admin::SubjectsController < ApplicationController
     end
   end
 
+    def new_math
+    @subject = Subject.new(subject_params)
+    respond_to do |format|
+      if @subject.save
+        format.html { redirect_to admin_subjects_path, notice: 'Subject was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @subject }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @subject.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # PATCH/PUT /subjects/1
   # PATCH/PUT /subjects/1.json
   def update
