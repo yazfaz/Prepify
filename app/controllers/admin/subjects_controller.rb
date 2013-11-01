@@ -7,6 +7,7 @@ class Admin::SubjectsController < ApplicationController
   def index
     @subjects = Subject.all
     @users= User.all
+    @subject = Subject.new
     
   end
 

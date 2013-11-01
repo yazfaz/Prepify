@@ -19,10 +19,10 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit
+  # def edit
 
-    @user = User.find(params[:id])
-  end
+  #   @user = User.find(params[:id])
+  # end
 
   # POST /users
   # POST /users.json
@@ -44,6 +44,9 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    # unless admin?
+    #   authorize_current_student
+    # end
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update(user_params)

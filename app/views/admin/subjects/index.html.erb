@@ -10,7 +10,8 @@
   <div class="large-12 ">
     <div class="panel">
       <h3>Math Lessons</h3>
-       <a href="<%= admin_new_subject_with_section_path(section: 'Math') %>" class="small button">Create A New Math Subject</a>
+      <%= render partial: 'new_math_form', locals: {subject: @subject} %>
+  <!--      <a href="<%#= admin_new_subject_with_section_path(section: 'Math') %>" class="small button">Create A New Math Subject</a> -->
       <table width="100%">
         <thead>
         </thead>
@@ -23,7 +24,7 @@
               <% if subject.section == "Math" %>
                 <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
                 <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
-                <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
+                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
               </tr>
             <% end %>
             <%end%>
@@ -33,7 +34,7 @@
 
     <div class="panel">
       <h3>Critical Reading Lessons</h3>
-      <a href="<%= admin_new_subject_with_section_path(section: 'Reading') %>" class="small button">Create A New Critical Reading Subject</a>
+      <%= render partial: 'new_reading_form', locals: {subject: @subject} %>
       <table width="100%">
         <thead>
           <tr> 
@@ -49,7 +50,7 @@
             <% if subject.section == "Reading" %>
               <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
               <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
-              <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
+              <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
             </tr>
           <% end %>
           <%end%>
@@ -59,7 +60,7 @@
 
     <div class="panel">
       <h3>Writing Lessons</h3>
-      <a href="<%= admin_new_subject_with_section_path(section: 'Writing') %>" class="small button">Create A New Writing Subject</a>
+      <p><%= render partial: 'new_writing_form', locals: {subject: @subject} %></p>
       <table width="100%">
         <thead>
           <tr>
@@ -75,7 +76,7 @@
             <% if subject.section == "Writing" %>
               <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
               <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
-              <td><%= link_to 'Delete', admin_subject_path(subject), method: :delete %></td>
+              <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
             </tr>
           <% end %>
           <%end%>

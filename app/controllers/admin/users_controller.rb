@@ -5,7 +5,7 @@ class Admin::UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    # @user = User.find(params[:id])
+    # @user = User.find(params[:user_id])
 
   end
 
