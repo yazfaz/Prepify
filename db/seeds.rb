@@ -8,8 +8,8 @@
 
 #Create Subjects 
 algebra = Subject.create(section: "Math",name:"Algebra")
-english = Subject.create(section: "English", name: "Reading")
-science = Subject.create(section: "Science", name: "Reasoning")
+english = Subject.create(section: "Reading", name: "Comprehension")
+science = Subject.create(section: "Writing", name: "Grammar")
 #Create Pages
 page_1 = algebra.pages.create(sequence_id: 1)
 page_2 = algebra.pages.create(sequence_id: 2)
@@ -23,7 +23,7 @@ page_9 = science.pages.create(sequence_id: 7)
 
 #Create Questions
 ques_1 = Question.create(body: "What is 2 + 2?", choices: [1,3,4,6], correct_answer: 4)
-ques_2 = Question.create(body: "Can you read this?", choices: ["yes", "no"], correct_answer: "yes")
+
 ques_3 = Question.create(body: "This format presents students 
 
 and interpretation of information presented in tables, diagrams, and figures.", choices: [36, 48, 98], correct_answer: 48)
@@ -39,7 +39,7 @@ instruc_6 = Instruction.create(body: "Lorem ipsum dolor sit amet, consectetur ad
 page_1.pageable = instruc_1
 page_2.pageable = ques_1
 page_3.pageable = instruc_2
-page_4.pageable = ques_2
+
 page_5.pageable = instruc_3
 page_6.pageable = instruc_4
 page_7.pageable = instruc_5
@@ -48,7 +48,7 @@ page_9.pageable = instruc_6
 page_1.save!
 page_2.save!
 page_3.save!
-page_4.save!
+
 page_5.save!
 page_6.save!
 page_7.save!

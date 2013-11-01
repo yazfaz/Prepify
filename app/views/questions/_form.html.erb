@@ -1,0 +1,32 @@
+<%= form_for [current_user, @subject, @question] do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sequence_id %><br>
+    <%= f.number_field :sequence_id %>
+  </div> 
+  <div class="field">
+    <%= f.label :pageable_type %><br>
+    <%= f.collection_select(:pageable_id, Page.all.select("DISTINCT(pageable_type)"), :id, :pageable_type) %>
+  </div>
+
+  <div class="choice" >
+    <%= radio_button :question, :choices, choice %>
+    <%= choice %><br>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>

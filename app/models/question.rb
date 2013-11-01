@@ -15,10 +15,6 @@ class Question < ActiveRecord::Base
 
   # In order to create a question, the page must be valid. 
   validates_associated :page
-
-
-
-
   
   def page_attributes=(page_attributes)
     page_attributes.each do |attributes|

@@ -3,6 +3,7 @@ $prepifycolor: #338aaa;
 $darkcolor: darken($prepifycolor, 40%);
 $lightcolor: lighten($prepifycolor, 20%);
 
+
 background-image: url("retina_wood.png");
 background-repeat: no-repeat;
 background-size: 100% auto;
@@ -80,11 +81,11 @@ background-size: 100% auto;
 		border-top-right-radius: 20px;
 		background:rgba(51, 138, 170,0.4);
 		background-color: #4A4D4A;
-		background-repeat: no-repeat;
 		background-size: 100% auto;
 		max-width: 100%;
 		height: auto;
 	}
+
 	.radius {
 		border-radius: 10px;
 	}
@@ -100,6 +101,15 @@ background-size: 100% auto;
 		background-repeat: no-repeat;
 		background-size: 100% auto;
 
+	}
+
+	.center-header {
+		opacity: 0.4;
+		
+	}
+
+	.image {
+		
 	}
 	
 	

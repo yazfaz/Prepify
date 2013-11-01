@@ -6,5 +6,4 @@ class QuestionsController < ApplicationController
     @subject = Subject.find(params[:subject_id])    
     update_course_progression(@subject, @page) 
   end
-
 end

@@ -17,49 +17,7 @@ class CourseProgressionsController < ApplicationController
     @course_progression = CourseProgression.new
   end
 
-  # GET /course_progressions/1/edit
-  def edit
-  end
 
-  # POST /course_progressions
-  # POST /course_progressions.json
-  def create
-    @course_progression = CourseProgression.new(course_progression_params)
-
-    respond_to do |format|
-      if @course_progression.save
-        format.html { redirect_to @course_progression, notice: 'Course progression was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @course_progression }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @course_progression.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /course_progressions/1
-  # PATCH/PUT /course_progressions/1.json
-  def update
-    respond_to do |format|
-      if @course_progression.update(course_progression_params)
-        format.html { redirect_to @course_progression, notice: 'Course progression was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @course_progression.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /course_progressions/1
-  # DELETE /course_progressions/1.json
-  def destroy
-    @course_progression.destroy
-    respond_to do |format|
-      format.html { redirect_to course_progressions_url }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -7,6 +7,7 @@
 	   <h3><%= @subject.name %></h3>
 	    <% if current_user.completed_subject?(@subject)%>
 	      <div class="success label round">Completed Lesson</div>
+	      <div class="label"><%= link_to "Review", start_page(current_user, @subject)%></div>
 	    <% elsif current_user.started_subject?(@subject) %>          
 	      <h3><%= link_to "Resume Lesson", current_page(current_user, @subject) %><h3>
 	    <% else %>
