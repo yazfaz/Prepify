@@ -11,8 +11,6 @@
   </div>
 
   <div class="large-4 large-offset-2 columns">
-    <h2>Sign in</h2>
-
 	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   	<div><%= f.label :email %><br />
   	<%= f.email_field :email, :autofocus => true, class: "glowing-border" %>
@@ -42,11 +40,11 @@
   </div>
 </div>
 
-<div class="row below">
+<div class="row below border">
   
   <div class="large-5 large-offset-1 columns">
     <h2 id="freelanding">Free</h2>
-    <h2><%= image_tag("money.jpg", class: "logo")%></h2>
+    <h2><%= image_tag("money.jpg", class: "pics")%></h2>
   </div>
   
   <div class="large-5 columns">
@@ -55,6 +53,8 @@
     <p>Prepify is free now and forever, with no ads, books, or keys required.</p>
     <p>We believe everyone should have the tools they need to attend the college they want.</p>
   </div>
+
+  <div class="large-1 columns"></div>
 
 </div>
 
@@ -66,18 +66,27 @@
     <p id="talentedlanding">Take quizes and complete exercises to get recruited by admissions officers from top schools across the country. Work hard and get seen.</p>
   </div>
   
-  <div class="large-6 columns">
-    <h2>Talented</h2>    
+  <div class="large-5 columns">
+    <h2>Talented</h2>
+    <h2><%= image_tag("university_grounds.jpg", class: "pics")%></h2>    
   </div>
+
+  <div class="large-1 columns"></div>
+
 </div>
 
 <div class="row below">
   
   <div class="large-5 large-offset-1 columns">
     <h2 id="adaptivelanding">Adaptive</h2>
+    <h2><%= image_tag("test.jpg", class: "pics")%></h2>
   </div>
   
   <div class="large-5 columns">
+    <br>
+    <br>
     <p>Prepify tests adapt their difficulty to continually challenge and expand your abilities. The better you do, the more difficult your questions become.</p>
   </div>
+  
+  <div class="large-1 columns"></div>
 </div>
