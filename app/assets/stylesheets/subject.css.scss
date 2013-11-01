@@ -3,7 +3,6 @@ $prepifycolor: #338aaa;
 $darkcolor: darken($prepifycolor, 40%);
 $lightcolor: lighten($prepifycolor, 20%);
 
-background-color: $prepifycolor;
 background-image: url("ticks.png");
 background-repeat: no-repeat;
 background-size: 100% auto;
@@ -67,10 +66,15 @@ background-size: 100% auto;
 	}
 
 	.subtext {
-		color: #C3C7C3;
+		color: #656665;
+		font-size: 12px;
 	}
-
-	.bottom {
+	
+	h2, h3, h5, .bottom-nav {
+		font-family: 'Covered By Your Grace';
+	}
+	
+	.bottom .nav{
 		text-align: center;
 		border-top-left-radius: 20px;
 		border-top-right-radius: 20px;
@@ -90,5 +94,12 @@ background-size: 100% auto;
 	// 	height: 500px;
 	// 	border-radius: 250px;
 	// }
+
+	.panel .image {	
+		background-image: url("start-2.jpg");
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+	}
+	
 	
 }

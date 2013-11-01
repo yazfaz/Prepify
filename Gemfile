@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'html2haml'
+gem 'haml'
+
 gem "compass-rails", "~> 2.0.alpha.0"
 
 gem "figaro"
