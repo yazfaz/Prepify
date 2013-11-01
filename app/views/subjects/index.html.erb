@@ -43,8 +43,8 @@
 
   <div class="row">         
     <div class="large-4 small-6 columns centered">
-      <%= image_tag("math-2.jpeg")%>
-      <div class="panel">     
+      <%= image_tag("math.jpg")%>
+      <div class="dash panel">     
         <h3><%= Subject.find(1).section %></h3>
         <%= link_to "See Courses", user_subject_path(current_user, Subject.find(1))%>
       </div>
@@ -52,15 +52,15 @@
     
     <div class="large-4 small-6 columns centered">
       <%= image_tag("word.jpg")%>
-      <div class="panel">
+      <div class="dash panel">
         <h3><%= Subject.find(2).section%></h3>
         <h6 class="subheader"><%= link_to "See Courses" , user_subject_path(current_user, Subject.find(2))%></h6>
       </div>
     </div>
               
     <div class="large-4 small-6 columns centered">
-      <%= image_tag("writing.jpeg")%>
-      <div class="panel">
+      <%= image_tag("write.jpeg")%>
+      <div class="dash panel">
         <h3><%= Subject.find(3).section%></h3>
         <label><%= link_to "See Courses", user_subject_path(current_user, Subject.find(3))%></label>
       </div>
@@ -83,17 +83,17 @@
           </div>
           <div class="large-6 columns">
             <ul class="inline-list right">
-              <li><h5 class="bottom-nav"><%= link_to 'Home', user_path(@user) %></h5><li>|</li></li>
+              <li><h5 class="bottom-nav"><%= link_to 'Home', user_path(@user) %></h5><li><h5 class="bottom-nav">|</h5></li></li>
               <li>
                 <h5 class="bottom-nav"><%= link_to 'Sign Out'%></h5> 
-                <li>|</li>
+                <li><h5 class="bottom-nav">|</h5></li>
               </li>
               <li>
                 <h5 class="bottom-nav"><%= link_to 'Courses'%></h5>                          
                   <!-- <div class="subtext"><%= Subject.first.name %></div>
                    <div class="subtext"><%= Subject.find(2).name %></div>
                    <div class="subtext"><%= Subject.find(3).name %></div> -->               
-                <li>|</li>
+                <li><h5 class="bottom-nav">|</h5></li>
               </li>
               <li>
                 <h5 class="bottom-nav"><%= link_to 'Practice SAT'%></h5>
