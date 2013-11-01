@@ -19,7 +19,7 @@ class Admin::SubjectsController < ApplicationController
 
   # GET /subjects/new
   def new
-    @subject = Subject.new
+    @subject = Subject.new(section: params[:section].capitalize)
   end
 
   # GET /subjects/1/edit
@@ -42,47 +42,7 @@ class Admin::SubjectsController < ApplicationController
     end
   end
 
-    def new_math
-    @subject = Subject.new
-    respond_to do |format|
-      if @subject.save
-        @subject.section = "Math"
-        format.html { redirect_to admin_subjects_path, notice: 'Subject was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @subject }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @subject.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def new_reading
-    @subject = Subject.new
-    respond_to do |format|
-      if @subject.save
-        @subject.section = "Critical Reading"
-        format.html { redirect_to admin_subjects_path, notice: 'Subject was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @subject }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @subject.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def new_writing
-    @subject = Subject.new
-    respond_to do |format|
-      if @subject.save
-        @subject.section = "Writing"
-        format.html { redirect_to admin_subjects_path, notice: 'Subject was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @subject }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @subject.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+    
 
   # PATCH/PUT /subjects/1
   # PATCH/PUT /subjects/1.json
