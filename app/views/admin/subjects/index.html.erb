@@ -26,7 +26,13 @@
                   <td><%= subject.name %></td>
                   <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
                   <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
-                  <td><%= render partial: 'publish', locals: {subject: subject} %></td>
+                  <td>
+                    <% if subject.published == false %>
+                      <%= render partial: 'publish', locals: {subject: subject} %>
+                    <% else %>
+                      <%= render partial: 'unpublish', locals: {subject: subject} %>
+                    <% end %>
+                  </td>
                 </tr>
               <% end %>
               <%end%>
@@ -56,6 +62,13 @@
                 <td><%= subject.name %></td>
                 <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
                 <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
+                <td>
+                  <% if subject.published == false %>
+                    <%= render partial: 'publish', locals: {subject: subject} %>
+                  <% else %>
+                    <%= render partial: 'unpublish', locals: {subject: subject} %>
+                  <% end %>
+                </td>
               </tr>
             <% end %>
             <%end%>
@@ -85,6 +98,13 @@
                 <td><%= subject.name %></td>
                 <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
                 <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
+                <td>
+                  <% if subject.published == false %>
+                    <%= render partial: 'publish', locals: {subject: subject} %>
+                  <% else %>
+                    <%= render partial: 'unpublish', locals: {subject: subject} %>
+                  <% end %>
+                </td>
               </tr>
             <% end %>
             <%end%>

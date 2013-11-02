@@ -12,9 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.hidden_field(:published, :value => true) %>
+    <%= f.hidden_field(:published, :value => false) %>
   </div>
   <div class="large-5 columns actions">
-    <%= f.submit "Publish", class: 'tiny button' %>
+    <%= f.submit "Unpublish", class: 'tiny button' %>
   </div>
 <% end %>
