@@ -1,6 +1,6 @@
 class CourseProgressionsController < ApplicationController
   before_action :set_course_progression, only: [:show, :edit, :update, :destroy]
-  before_filter :authorize_current_student
+  # before_filter :authorize_current_student
 
   # GET /course_progressions
   # GET /course_progressions.json
