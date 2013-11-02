@@ -62,6 +62,7 @@ class Admin::SubjectsController < ApplicationController
   def publish
     respond_to do |format|
       if @subject.update(subject_params)
+        @subject.published = true
         format.html { redirect_to admin_subjects_path, notice: 'Subject was successfully updated.' }
         format.json { head :no_content }
       else
@@ -89,6 +90,6 @@ class Admin::SubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
-      params.require(:subject).permit(:name, :section)
+      params.require(:subject).permit(:name, :section, :published)
     end
 end

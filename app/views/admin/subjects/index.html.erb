@@ -26,6 +26,7 @@
                   <td><%= subject.name %></td>
                   <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
                   <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
+                  <td><%= render partial: 'publish', locals: {subject: subject} %></td>
                 </tr>
               <% end %>
               <%end%>
