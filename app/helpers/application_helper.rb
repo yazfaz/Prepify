@@ -13,6 +13,10 @@ module ApplicationHelper
     string = '<div class="progress large-6 success round"><span class="meter" style="width: ' + width.to_s + '%"></span></div>'
     string.html_safe
   end
+
+  def admin?
+  current_user.admin == true
+  end
 end
 
 

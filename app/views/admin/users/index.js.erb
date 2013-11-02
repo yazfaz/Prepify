@@ -1,0 +1,20 @@
+
+ (function () {
+  var projectHtml = "<%= j render('show', :user => user) %>";
+   $('users-<%=user.id%>').replaceWith(projectHtml);
+    })();
+
+/* console.log('blah';)
+
+/* $('#admin-row').html('<%= j render(user) %>');
+
+$(function() {
+    /* Convenience for forms or links that return HTML from a remote ajax call.
+    The returned markup will be inserted into the element id specified.
+     
+
+    $('actions').on('ajax:success', function(evt, data) {
+        var target = $(this).data('update-target');
+        $('#update-container' + target).html(data);
+    });
+});

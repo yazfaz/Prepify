@@ -56,15 +56,15 @@ background-size: 100% auto;
       text-align:center;
     }
 
-    .lesson_table {
+  /*  .lesson_table {
       margin:auto;
-    }
+    }*/
 
     .lesson {
       margin:auto;
     }
 
-    #user_table {
+    .user-table {
       margin:auto;
     }
 
@@ -93,6 +93,10 @@ background-size: 100% auto;
     font-family: 'Sansita One';
     text-align: center;
     color: $prepifycolor; 
+  }
+  .user-info {
+    margin: auto;
+    width:50%;
   }
 }
 

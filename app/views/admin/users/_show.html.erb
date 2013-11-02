@@ -1,0 +1,11 @@
+<tr id='users-<%=user.id%>'>
+             <td>
+               <% if user.admin? %>
+                 <%= user.name %> (Admin)
+               <% else %>
+                 <%= user.name %>
+               <% end %>
+             </td>
+             <td><%= link_to '<i class="fa fa-eye"></i>'.html_safe, admin_user_path(user) %></td>
+             <td><%= link_to '<i class="fa fa-envelope"></i>'.html_safe, admin_user_path(user) %></td>
+             <td><%= render partial: 'form', locals: {user: user} %></td>

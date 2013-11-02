@@ -1,33 +1,39 @@
 <% content_for(:body_id, "admin_pages") %> 
-<h1>Listing users</h1>
+<h1 class="page-title">Users</h1>
 <div class="row">
   <div class= "large-12 columns">
+    <div class= "large-6 columns">
       <div class= "panel">
-        <table id="user_table">
+        <h3>Admin</h3>
+        <table width="100%">
           <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>User ID </th>
-              <th>Admin?</th>
-            </tr>
           </thead>
           <tbody>
-          <% @users.each do |user| %>
             <tr>
-            <td>
-              <% if user.admin? %>
-                <%= user.name %> (Admin)
-              <% else %>
-                <%= user.name %>
-              <% end %>
-            </td>
-            <td><%= user.email %></td>
-            <td><%= user.id %></td>
-            <td><%= render partial: 'form', locals: {user: user} %></td>
-    
-             <% end %>
-          
+              <% @users.each do |user| %>
+              <% if user.admin == true %>
+                <%= render "show", user: user %>
+                <% end %>
+               <% end %>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <div class= "large-6 columns">
+      <div class= "panel user-table">
+        <h3>Students</h3>
+        <table width="100%">
+          <thead>
+          </thead>
+          <tbody> 
+            <tr>   
+              <% @users.each do |user| %>
+                <% if user.admin == false %>
+                  <%= render "show", user: user %>
+                  <% end %>
+                <% end %>     
             </tr>
           </tbody>
         </table>
@@ -35,6 +41,6 @@
     </div>
   </div>
 </div>
-  
+
 
 
