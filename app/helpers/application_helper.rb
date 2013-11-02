@@ -10,8 +10,12 @@ module ApplicationHelper
   end
   
   def progress_bar(width)
-    string = '<div class="progress large-6 success round"><span class="meter" style="width: ' + width.to_s + '%"></span></div>'
-    string.html_safe
+    if width > 0
+      string = '<span class="meter" style="width: ' + width.to_s + '%"></span>'
+    else 
+      string = '<div></div>'
+      string.html_safe
+    end
   end
 end
 

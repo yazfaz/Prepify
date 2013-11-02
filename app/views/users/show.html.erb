@@ -1,16 +1,22 @@
 <% content_for(:body_id, "lesson_pages")%> 
 
 <body>
+
 <div class="row">
-  <div class="columns large-12 large-centered">
-		<h2>Your Progress</h2>
-	</div>
-</div>
-<div class="row">
-  <div class="columns large-12 large-centered">
-		<h3><%= progress_report(@courses)%></h3>
-	</div>
-</div>
+        <div class="small-3 large-2 columns"><%= image_tag "math.jpg"%></div>
+        <div class="small-9 large-10 columns">
+        	<div class="panel">
+          <h3><%= progress_report(@courses)%></h3>    
+          </div>    
+        </div>
+      </div>
+		</div>
+
+
+
+
+
+
 <div class="row">
   <div class="columns large-12 large-centered">
 		<%= link_to 'Back', users_path%>

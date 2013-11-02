@@ -8,12 +8,7 @@ background-image: url("retina_wood.png");
 background-repeat: no-repeat;
 background-size: 100% auto;
 		
-		.circular {
-			width: 80px ;
-			height: 80px ;
-			border-radius: 40px;
-			box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-		}	
+		
 
 		.ul-dash {
 		  margin: 0;
@@ -46,13 +41,6 @@ background-size: 100% auto;
     		box-shadow: 0 0 20px #9ecaed;
 		}
 		
-		h2, label {
-			color: white;
-			text-shadow:0px 0px 10px black;
-			font-family: 'Source Sans Pro', sans-serif;
-		}
-
-
 		label {
 			font-size: 1.20em;
 		}
@@ -71,7 +59,7 @@ background-size: 100% auto;
 		font-size: 12px;
 	}
 	
-	h2, h3, h5, .bottom-nav {
+	h1, h2, .bottom-nav {
 		font-family: 'Covered By Your Grace';
 	}
 	
@@ -90,27 +78,19 @@ background-size: 100% auto;
 		border-radius: 10px;
 	}
 
-	// .round {
-	// 	width: 500px;
-	// 	height: 500px;
-	// 	border-radius: 250px;
-	// }
+	
 
 	.dash {
 		background-image: url("retina_wood.png");
 		background-repeat: no-repeat;
 		background-size: 100% auto;
 
+	}	
+
+	.complete {
+		color: #5da423;
 	}
 
-	.center-header {
-		opacity: 0.4;
-		
-	}
 
-	.image {
 		
-	}
-	
-	
 }
