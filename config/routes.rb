@@ -21,7 +21,6 @@ Prepify::Application.routes.draw do
 
     get 'subjects/new/:section' => 'subjects#new', as: 'new_subject_with_section'
 
-    put 'subjects/publish' => 'subjects#publish', as: 'publish_subject'
   end
 
   

@@ -59,19 +59,6 @@ class Admin::SubjectsController < ApplicationController
     end
   end
 
-  def publish
-    respond_to do |format|
-      if @subject.update(subject_params)
-        @subject.published = true
-        format.html { redirect_to admin_subjects_path, notice: 'Subject was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @subject.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /subjects/1
   # DELETE /subjects/1.json
   def destroy
