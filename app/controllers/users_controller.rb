@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authorize_current_student
+  before_filter :authorize_current_student, except: [:show]
   before_action :set_user, only: [:show, :destroy]
   # GET /users
   # GET /users.json
