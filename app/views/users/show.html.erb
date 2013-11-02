@@ -1,19 +1,16 @@
-<% content_for(:body_id, "lesson_pages")%> 
+<% content_for(:body_id, "report")%> 
 <link rel="stylesheet" href="foundation-icons.css" />
 <body>
 
 <div class="row">
-        <div class="small-3 large-2 columns"><%= image_tag "math.jpg"%></div>
-        <div class="small-9 large-10 columns">
-        	<div class="panel">
+        <div class="small-3 large-2 columns"></div>
+        <div class="small-9 large-10 centered columns">
+        	<div class="report panel">
           <h3><%= progress_report(@courses)%></h3>    
           </div>    
         </div>
       </div>
 		</div>
-
-
-
 
 
 
@@ -23,4 +20,7 @@
 		<%= link_to 'Back to Lessons', user_subjects_path(@user)%>
 	</div>
 </div>
+
+
+<i class="fi-[icon]"></i>
 </body>

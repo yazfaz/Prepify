@@ -2,15 +2,24 @@
 $prepifycolor: #338aaa;
 $darkcolor: darken($prepifycolor, 40%);
 $lightcolor: lighten($prepifycolor, 20%);
+$incomplete: darken(red, 40%);
+$complete: darken(#5da423, 40%);
 
 background-color: $prepifycolor;
 background-image: url("retina_wood.png");
 background-repeat: no-repeat;
 background-size: 100% auto;
 
-h3 .complete .panel {
-	background-color: red;
-	opacity: 0.4;
+.report .panel {
+	background: url("retina_wood.png");
+	opacity: 0.4;	
+		
 	}
-
+	
+.incomplete { 
+			color: $incomplete;
+		}
+.complete {
+			color: $complete;
+		}	
 }

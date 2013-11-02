@@ -5,7 +5,10 @@ class SubjectsController < ApplicationController
   # GET /subjects.json
   def index
    @subjects = Subject.all_with_pages
-    @user = current_user
+   @math_subjects = Subject.where(:section => "Math")
+   @read_subjects = Subject.where(:section => "Critical Reading")
+   @write_subjects = Subject.where(:section => "Writing")
+   @user = current_user
   end
 
   # GET /subjects/1
