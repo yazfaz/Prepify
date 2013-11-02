@@ -2,8 +2,12 @@ class Page < ActiveRecord::Base
   before_create :set_sequence_id 
   belongs_to :pageable, polymorphic: true
   belongs_to :subject
+  # Use PageFormValidator to make sure sequence_id is at least 1.
+  # include ActiveModel::Validations
+  # validates_with PageFormValidator
   # A page must have a subject id to be created. 
   validates :subject_id, presence: true
+
   # A page should only be created if it's associated subject is valid
   validates_associated :subject
  

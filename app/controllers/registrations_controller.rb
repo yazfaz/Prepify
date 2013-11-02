@@ -8,4 +8,11 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  # def index
+  #   if current_user.admin?
+  #     redirect to admin_subjects_path
+  #   else
+  #     redirect to user_subjects_path(current_user)
+  # end
+
 end

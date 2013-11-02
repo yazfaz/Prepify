@@ -4,7 +4,7 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.json
   def index
-    @subjects = Subject.all_with_pages
+   @subjects = Subject.all_with_pages
     @user = current_user
   end
 
@@ -21,6 +21,15 @@ class SubjectsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def home_page
+    if signed_in?
+      if current_user.admin?
+        redirect_to  admin_subjects_path
+      elsif 
+        redirect_to user_subjects_path(current_user)
+      end
+  end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

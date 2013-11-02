@@ -10,11 +10,11 @@ Prepify::Application.routes.draw do
   
 end
 
+root 'subjects#home_page'
 
-  
-  root 'admin/subjects#index'
 
   namespace :admin do
+    resources :users
     resources :subjects do
       resources :pages  
         resources :instructions

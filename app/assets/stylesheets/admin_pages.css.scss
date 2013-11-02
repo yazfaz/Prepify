@@ -1,0 +1,79 @@
+#admin_pages {
+$prepifycolor: #338aaa;
+$darkcolor: darken($prepifycolor, 40%);
+$lightcolor: lighten($prepifycolor, 20%);
+
+background-color: $prepifycolor;
+background-image: url("ticks.png");
+background-repeat: no-repeat;
+background-size: 100% auto;
+
+  
+
+  #top {
+    
+    .glowing-border {
+        border: 2px solid #dadada;
+        border-radius: 7px;
+    }
+
+    .glowing-border:focus { 
+        outline: none;
+        border-color: #9ecaed;
+        box-shadow: 0 0 20px #9ecaed;
+    }
+    
+    h2, label {
+      color: white;
+      text-shadow:0px 0px 10px black;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+
+    label {
+      font-size: 1.20em;
+    }
+
+    p {
+      font-family: 'Leckerli One', cursive;
+      font-size: 2.25em;
+      color: white;
+      text-shadow:0px 0px 10px black;
+      text-align: center;
+    }
+
+
+  }
+
+  .bottom {
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background:rgba(51, 138, 170,0.4);
+}
+}
+
+  .add_buttons {
+    text-align:center;
+  }
+
+  .lesson_table {
+    margin:auto;
+  }
+
+  .lesson {
+    margin:auto;
+  }
+
+  #user_table {
+    margin:auto;
+  }
+
+  .logo {
+  margin-left: 10px;
+  margin-top:10px;
+ }
+
+ .admin-nav {
+  font-size: .75em;
+ }

@@ -1,14 +1,28 @@
-<p id="notice"><%= notice %></p>
+<% content_for(:body_id, "admin_pages") %> 
 
-<p>
-  <strong>Body:</strong>
-  <%= @instruction.body %>
-</p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @instruction.image %>
-</p>
+<div class="large-block-grid-4">
 
-<%= link_to 'Edit', edit_instruction_path(@instruction) %> |
-<%= link_to 'Back', instructions_path %>
+ </div>
+</div>
+<div class="large-8 columns">
+
+</div>
+
+</div>
+
+
+<div class="row">
+  <div class="columns large-12">
+    <h1><%= @instruction.body %></strong></h2><br>
+  </div>
+  <div class="columns large-12">
+    <img src="<%= @instruction.image %>" width="200" height="80">
+    <br>
+  </div>
+  <%= link_to "Edit Content" , edit_admin_subject_instruction_path(@subject, @instruction) %></button>
+  <br>
+  <%= link_to "Back to #{@subject.name} page", admin_subject_pages_path(@subject) %>
+</div>
+
+
