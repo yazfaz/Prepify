@@ -1,0 +1,15 @@
+#report {
+$prepifycolor: #338aaa;
+$darkcolor: darken($prepifycolor, 40%);
+$lightcolor: lighten($prepifycolor, 20%);
+
+background-color: $prepifycolor;
+background-image: url("retina_wood.png");
+background-repeat: no-repeat;
+background-size: 100% auto;
+
+.panel {
+	opacity: 0.4;
+	}
+
+}
