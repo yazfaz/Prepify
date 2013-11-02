@@ -3,6 +3,7 @@
 <div class="row lesson" id="lesson_pages">
   <div class="columns large-12">
   <h1>Lesson pages for <%= @subject.name %></h1>
+  <%= link_to 'Edit Title', edit_admin_subject_path(@subject) %>
 
   <table width="100%">
     <thead>
@@ -43,7 +44,7 @@
   </table>
 
   <br>
-  <div class = "add_buttons">
+  <div class = "center-buttons">
     <a href="<%= new_admin_subject_question_path %>" class="button">Create A New Question</a>
    
     <a href="<%= new_admin_subject_instruction_path %>" class="button">Create A New Instruction</a>

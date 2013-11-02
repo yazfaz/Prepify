@@ -1,8 +1,9 @@
 <% content_for(:body_id, "admin_pages") %> 
-<div class="row">
+
   <div class="columns large-12">
-     <h2>All Lessons</h2>
-     <a href="<%= admin_users_path %>" class="small button">View Users</a>
+     <h2 class='page-title'>All Lessons</h2>
+     <div class="center-buttons"><a href="<%= admin_users_path %>" class=" button">View Users</a>
+     </div>
   </div>
 </div>
 
@@ -23,8 +24,8 @@
                 
                 <tr>
                 <% if subject.section == "Math" %>
-                  <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
-                  <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
+                  <td><%= subject.name %></td>
+                  <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
                   <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
                 </tr>
               <% end %>
@@ -52,8 +53,8 @@
               
               <tr>
               <% if subject.section == "Reading" %>
-                <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
-                <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
+                <td><%= subject.name %></td>
+                <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
                 <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
               </tr>
             <% end %>
@@ -81,8 +82,8 @@
               
               <tr>
               <% if subject.section == "Writing" %>
-                <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
-                <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
+                <td><%= subject.name %></td>
+                <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
                 <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
               </tr>
             <% end %>

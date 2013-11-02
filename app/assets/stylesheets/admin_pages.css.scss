@@ -45,39 +45,57 @@ background-size: 100% auto;
 
   }
 
-  .bottom {
+    .bottom {
     text-align: center;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     background:rgba(51, 138, 170,0.4);
+    }
+
+    .center-buttons {
+      text-align:center;
+    }
+
+    .lesson_table {
+      margin:auto;
+    }
+
+    .lesson {
+      margin:auto;
+    }
+
+    #user_table {
+      margin:auto;
+    }
+
+    .logo {
+    margin-left: 10px;
+    margin-top:10px;
+   }
+
+   .admin-nav {
+    font-size: .75em;
+   }
+
+  .flush-left {
+    padding-left: 0;
+  }
+
+  #banner {
+    background-image: url("school_logo_admin.jpg");
+    background-position: center center;
+    height: 200px;
+    width: 100%;
+  } 
+
+  .page-title {
+    font-size: 3em;
+    font-family: 'Sansita One';
+    text-align: center;
+    color: $prepifycolor; 
+  }
 }
-}
 
-  .add_buttons {
-    text-align:center;
-  }
 
-  .lesson_table {
-    margin:auto;
-  }
 
-  .lesson {
-    margin:auto;
-  }
 
-  #user_table {
-    margin:auto;
-  }
-
-  .logo {
-  margin-left: 10px;
-  margin-top:10px;
- }
-
- .admin-nav {
-  font-size: .75em;
- }
-
-.flush-left {
-  padding-left: 0;
-}
