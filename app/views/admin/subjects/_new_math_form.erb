@@ -12,15 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%#= f.label :section %><br>
-    <%#= f.text_field :section %>
     <%= f.hidden_field(:section, :value => "Math") %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
+  <div class="large-7 columns field flush-left">
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'tiny button' %>
   </div>
 <% end %>

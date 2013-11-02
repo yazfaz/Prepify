@@ -3,25 +3,55 @@
   <div class="columns large-12">
      <h2>All Lessons</h2>
      <a href="<%= admin_users_path %>" class="small button">View Users</a>
-   
-    <br>
+  </div>
+</div>
 
 <div class="row">
-  <div class="large-12 ">
-    <div class="panel">
-      <h3>Math Lessons</h3>
-      <%= render partial: 'new_math_form', locals: {subject: @subject} %>
-  <!--      <a href="<%#= admin_new_subject_with_section_path(section: 'Math') %>" class="small button">Create A New Math Subject</a> -->
-      <table width="100%">
-        <thead>
-        </thead>
-  
+  <div class="large-12 columns ">
+    <div class="large-4 columns">
+      <div class="panel">
+        <h3>Math</h3>
+        <div class="form-input"><%= render partial: 'new_math_form', locals: {subject: @subject} %>
+        </div>
+        <table width="100%">
+          <thead>
+          </thead>
+    
+            <tbody>
+
+              <% @subjects.each do |subject| %>
+                
+                <tr>
+                <% if subject.section == "Math" %>
+                  <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
+                  <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
+                  <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
+                </tr>
+              <% end %>
+              <%end%>
+            </tbody>
+          </table> 
+        </div> 
+      </div>
+
+    <div class="large-4 columns">
+      <div class="panel">
+        <h3>Critical Reading</h3>
+        <div class="form-input"><%= render partial: 'new_reading_form', locals: {subject: @subject} %>
+        </div>
+        <table width="100%">
+          <thead>
+            <tr> 
+              
+            </tr>
+          </thead>
+        
           <tbody>
 
             <% @subjects.each do |subject| %>
               
               <tr>
-              <% if subject.section == "Math" %>
+              <% if subject.section == "Reading" %>
                 <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
                 <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
                 <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
@@ -29,60 +59,39 @@
             <% end %>
             <%end%>
           </tbody>
-        </table> 
+        </table>
       </div> 
+    </div>
 
-    <div class="panel">
-      <h3>Critical Reading Lessons</h3>
-      <%= render partial: 'new_reading_form', locals: {subject: @subject} %>
-      <table width="100%">
-        <thead>
-          <tr> 
-            
-          </tr>
-        </thead>
-      
-        <tbody>
-
-          <% @subjects.each do |subject| %>
-            
+    <div class="large-4 columns">
+      <div class="panel">
+        <h3>Writing</h3>
+        <div><%= render partial: 'new_writing_form', locals: {subject: @subject} %>
+        </div>
+        <table width="100%">
+          <thead>
             <tr>
-            <% if subject.section == "Reading" %>
-              <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
-              <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
-              <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
+           
             </tr>
-          <% end %>
-          <%end%>
-        </tbody>
-      </table>
-    </div> 
+          </thead>
+        
+          <tbody>
 
-    <div class="panel">
-      <h3>Writing Lessons</h3>
-      <p><%= render partial: 'new_writing_form', locals: {subject: @subject} %></p>
-      <table width="100%">
-        <thead>
-          <tr>
-         
-          </tr>
-        </thead>
-      
-        <tbody>
-
-          <% @subjects.each do |subject| %>
-            
-            <tr>
-            <% if subject.section == "Writing" %>
-              <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
-              <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
-              <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
-            </tr>
-          <% end %>
-          <%end%>
-        </tbody>
-      </table>
-    </div> 
+            <% @subjects.each do |subject| %>
+              
+              <tr>
+              <% if subject.section == "Writing" %>
+                <td><%= link_to "#{subject.name} (#{subject.pages.count} pages)", admin_subject_pages_path(subject) %></td>
+                <td><%= link_to 'Edit Subject Information', edit_admin_subject_path(subject) %></td>
+                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
+              </tr>
+            <% end %>
+            <%end%>
+          </tbody>
+        </table>
+      </div> 
+    </div>
   </div>
+</div>
 
   
