@@ -7,7 +7,8 @@ class SubjectsController < ApplicationController
   # GET /subjects.json
   def index
 
-   @subjects = Subject.all_with_pages
+   @published_subjects = Subject.where(published:true)
+   @subjects = @published_subjects.all_with_pages
     @user = current_user
   end
 
