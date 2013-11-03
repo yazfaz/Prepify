@@ -1,4 +1,4 @@
-<% content_for(:body_id, "admin_pages") %> 
+<% content_for(:body_id, "admin-pages") %> 
 
   <div class="columns large-12">
    <h2 class='page-title'>All Lessons</h2>
@@ -25,7 +25,7 @@
                 <% if subject.section == "Math" %>
                   <td><%= subject.name %></td>
                   <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
-                  <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
+                  <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), confirm: "Are you sure?", method: :delete %></td>
                   <td>
                     <% if subject.published == false %>
                       <%= render partial: 'publish', locals: {subject: subject} %>
@@ -61,7 +61,7 @@
               <% if subject.section == "Reading" %>
                 <td><%= subject.name %></td>
                 <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
-                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
+                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), confirm: "Are you sure?", method: :delete %></td>
                 <td>
                   <% if subject.published == false %>
                     <%= render partial: 'publish', locals: {subject: subject} %>
@@ -97,7 +97,7 @@
               <% if subject.section == "Writing" %>
                 <td><%= subject.name %></td>
                 <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
-                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), method: :delete %></td>
+                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), confirm: "Are you sure?", method: :delete %></td>
                 <td>
                   <% if subject.published == false %>
                     <%= render partial: 'publish', locals: {subject: subject} %>

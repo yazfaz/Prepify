@@ -1,8 +1,8 @@
-<% content_for(:body_id, "admin_pages") %> 
+<% content_for(:body_id, "admin-pages") %> 
 
-<div class="row lesson" id="lesson_pages">
+<div class="row lesson" id="lesson-pages">
   <div class="columns large-12">
-  <h1>Lesson pages for <%= @subject.name %></h1>
+  <h1 class="page-title"><%= @subject.name %></h1>
   <%= link_to 'Edit Title', edit_admin_subject_path(@subject) %>
 
   <table width="100%">
@@ -26,11 +26,11 @@
           <td><% if page.pageable_type == "Question" %>
             <%= link_to "Question Preview", admin_subject_question_path(@subject, page.pageable) %>
             <td><%= link_to "Update Page Sequence", edit_admin_subject_page_path(@subject, page) %></td>
-            <td><%= link_to 'Destroy', admin_subject_page_path(@subject, page), method: :delete %></td>
+            <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_page_path(@subject, page), confirm: "Are you sure?", method: :delete %></td>
             <td><% elsif page.pageable_type == "Instruction" %>
             <%= link_to "Instruction Preview", admin_subject_instruction_path(@subject, page.pageable) %>
             <td><%= link_to "Update Page Sequence", edit_admin_subject_page_path(@subject, page) %></td>
-            <td><%= link_to 'Destroy', admin_subject_page_path(@subject, page), method: :delete %></td>
+            <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_page_path(@subject, page), confirm: "Are you sure?", method: :delete %></td>
             <% end %>
           
           
@@ -51,7 +51,7 @@
    
     <br>
 
-    <a href="<%= admin_subjects_path %>" class="small button">Back to Admin Dashboard Main Page</a>
+    <a href="<%= admin_subjects_path %>" class="small button">Back to Admin Subject Page</a>
     
 
     </div>
