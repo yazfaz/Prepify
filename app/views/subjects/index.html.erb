@@ -20,7 +20,7 @@
         <h6 class="math-subheader">See Courses</h6>
         <div class="math-slider" visibility: hidden>
           <% @math_subjects.each do |subject| %>
-          <p><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></p>
+          <p><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id)%></p>
           <% end %> 
         </div>
       </div>
@@ -67,11 +67,6 @@
   $('.math-subheader').mouseover(function(e){
     $('.math-slider').toggle("slide");
   });
-
-  
-  
-
-
 </script>
 
 
