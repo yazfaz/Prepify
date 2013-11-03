@@ -15,16 +15,13 @@
 // = require foundation
 // = require jquery-ui-1.10.3.custom
 // = require login.js
+// = require admin/users
 
 $(function(){ $(document).foundation(); });
 $(document).on('ajax:success', function(e, data) {
   console.log('Ajax Response data:', data);
 });
-$(function() {
-  $('.edit_user input[type=checkbox]').click(function(){
-  alert('checkbox!');
-  });
-});
+
 
 
 
