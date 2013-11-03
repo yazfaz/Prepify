@@ -1,14 +1,51 @@
-<p id="notice"><%= notice %></p>
+<% content_for(:body_id, "subject")%> 
+<link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+<meta charset="utf-8" />
 
-<p>
-  <strong>Section:</strong>
-  <%= @subject.section %>
-</p>
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
 
-<p>
-  <strong>Name:</strong>
-  <%= @subject.name %>
-</p>
+  <title>Welcome to Foundation | Feed</title>
 
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
+  <!-- Included CSS Files -->
+  
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.min.css">
+
+  <!-- Link to experimental Foundation 5 grid containing medium styles -->
+  <link rel="stylesheet" href="css/grid-5.css">
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+<body>
+	<br>
+  <div class="row">
+
+    <div class="small-12 medium-8 large-6 columns medium-push-4 large-push-3">
+
+      <!-- Feed Entry -->
+      <div class="row">
+        
+        <div class="small-9 large-10 columns">
+        <h2><%= @subject.name %></h2>
+	    <% if current_user.completed_subject?(@subject)%>
+	      <h6 class="complete">Completed Lesson</h6>	     	
+	      <h6 class="subheader"><%= link_to "Review", start_page(current_user, @subject)%></h6>
+	    <% elsif current_user.started_subject?(@subject) %>          
+	      <h3><%= link_to "Resume Lesson", current_page(current_user, @subject) %><h3>
+	    <% else %>
+	      <h3><%= link_to "Start Lesson", start_page(current_user, @subject) %><h3>
+	    <% end %>                 
+        
+          <h6 class="subheader">Some information about the test.
+          Some information about the test.
+          Some information about the test.
+          Some information about the test.
+          Some information about the test.
+          Some information about the test.
+          Some information about the test.
+          Some information about the test. </h6>
+       </div>
+      </div>
+		</div>
+</body>
+<%= link_to 'Back', user_subjects_path(current_user) %>

@@ -1,0 +1,19 @@
+#report {
+$prepifycolor: #338aaa;
+$darkcolor: darken($prepifycolor, 40%);
+$lightcolor: lighten($prepifycolor, 20%);
+$incomplete: darken(red, 40%);
+$complete: darken(#5da423, 40%);
+
+background-color: $prepifycolor;
+background-image: url("retina_wood.png");
+background-repeat: no-repeat;
+background-size: 100% auto;
+
+h2, h3 {
+	font-family: 'Covered By Your Grace'; 
+	}
+.panel {
+	max-width: 400px;
+}
+}

@@ -1,0 +1,96 @@
+#subject {
+$prepifycolor: #338aaa;
+$darkcolor: darken($prepifycolor, 40%);
+$lightcolor: lighten($prepifycolor, 20%);
+
+
+background-image: url("retina_wood.png");
+background-repeat: no-repeat;
+background-size: 100% auto;
+		
+		
+
+		.ul-dash {
+		  margin: 0;
+		  font-color: #fff;
+		}
+
+		.ul-dash {
+		  margin-left: 0em;
+		  padding-left: 1.5em;
+		}
+
+		.ul-dash.hanging > li { /* remove '>' for IE6 support */
+		  padding-left: 1em;
+		  text-indent: -1em;
+		}  
+
+		
+
+
+	.top {
+		
+		.glowing-border {
+    		border: 2px solid #dadada;
+    		border-radius: 7px;
+		}
+
+		.glowing-border:focus { 
+    		outline: none;
+    		border-color: #9ecaed;
+    		box-shadow: 0 0 20px #9ecaed;
+		}
+		
+		label {
+			font-size: 1.20em;
+		}
+
+		p {
+			font-family: 'Leckerli One', cursive;
+			font-size: 2.25em;
+			color: white;
+			text-shadow:0px 0px 10px black;
+			text-align: center;
+		}
+	}
+
+	.subtext {
+		color: #656665;
+		font-size: 12px;
+	}
+	
+	h1, h2, .bottom-nav {
+		font-family: 'Covered By Your Grace';
+	}
+	
+	.bottom .nav{
+		text-align: center;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		background:rgba(51, 138, 170,0.4);
+		background-color: #4A4D4A;
+		background-size: 100% auto;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.radius {
+		border-radius: 10px;
+	}
+
+	
+
+	.dash {
+		background-image: url("retina_wood.png");
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+
+	}	
+
+	.complete {
+		color: #5da423;
+	}
+
+
+		
+}

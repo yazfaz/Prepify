@@ -1,20 +1,39 @@
-<% content_for(:body_id, "lesson_pages")%> 
-
+<% content_for(:body_id, "report")%> 
+<link rel="stylesheet" href="foundation-icons.css" />
+<link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
 <body>
-<div class="row">
-  <div class="columns large-12 large-centered">
-		<h2>Your Progress</h2>
-	</div>
+
+<!-- <div class="row">   -->      
+  <!-- <div class="report"> -->
+		<!-- <div class="large-4 columns"> -->
+    
+			<% if progress_report(@courses).empty? %>					
+    	<div class="panel">
+	    	<div class="row"> 
+    		 <h2 align="center">Get Started!</h2>  
+    			<h3 align="center"><%= link_to "See Courses", user_subjects_path(current_user)%></h3>
+    		</div>
+    	</div>       
+  		<% else%>
+  		<div class="row">
+  		<div class="small-3 large-2 columns"></div>
+    		<div class="small-9 large-10 centered columns">
+  	   	<h2><%= progress_report(@courses)%></h2> 
+     	<% end %>   
+      	</div>    
+    	</div>
+  </div>
 </div>
-<div class="row">
-  <div class="columns large-12 large-centered">
-		<h3><%= progress_report(@courses)%></h3>
-	</div>
-</div>
+
+
+
 <div class="row">
   <div class="columns large-12 large-centered">
 		<%= link_to 'Back', users_path%>
 		<%= link_to 'Back to Lessons', user_subjects_path(@user)%>
 	</div>
 </div>
+
+
+<i class="fi-[icon]"></i>
 </body>

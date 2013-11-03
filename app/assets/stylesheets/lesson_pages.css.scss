@@ -4,7 +4,7 @@ $darkcolor: darken($prepifycolor, 40%);
 $lightcolor: lighten($prepifycolor, 20%);
 
 background-color: $prepifycolor;
-background-image: url("ticks.png");
+background-image: url("retina_wood.png");
 background-repeat: no-repeat;
 background-size: 100% auto;
 
@@ -41,8 +41,6 @@ background-size: 100% auto;
 			text-shadow:0px 0px 10px black;
 			text-align: center;
 		}
-
-
 	}
 
 	.bottom {
@@ -50,8 +48,10 @@ background-size: 100% auto;
 		border-top-left-radius: 20px;
 		border-top-right-radius: 20px;
 		background:rgba(51, 138, 170,0.4);
-}
-}
+
+	}
+
+
 
 .logo {
   margin-left: 10px;
@@ -61,3 +61,4 @@ background-size: 100% auto;
  .student-nav {
   font-size: .75em;
  }
+}

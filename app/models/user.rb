@@ -8,13 +8,13 @@ class User < ActiveRecord::Base
 
 
   def started_subject?(subject)
-    course_progressions.where(:subject_id => subject.id).exists?
+    course_progressions.where(:subject_id => subject.id).present?
   end
 
   def completed_subject?(subject)
     course_progressions
         .where(:subject_id => subject.id)
         .where("completed_at is not null")
-        .exists?
+        .present?
   end
 end

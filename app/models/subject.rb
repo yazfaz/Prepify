@@ -5,6 +5,7 @@ class Subject < ActiveRecord::Base
 
   validates :section, :name, presence: true
 
+  # Checks and rejects if a subject does not have pages. 
   def self.all_with_pages
     Subject.includes(:pages).all.reject do |subject|
       subject.pages.size == 0
