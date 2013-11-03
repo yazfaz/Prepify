@@ -7,19 +7,24 @@ Prepify::Application.routes.draw do
       resources :instructions
       resources :questions
     end
-  
-end
+  end
 
-root 'subjects#home_page'
-
+  root 'subjects#home_page'
 
   namespace :admin do
     resources :users
     resources :subjects do
       resources :pages  
-        resources :instructions
-        resources :questions  
-    end 
+      resources :instructions
+      resources :questions  
+    end
+
+    get 'subjects/new/:section' => 'subjects#new', as: 'new_subject_with_section'
+
   end
+
+  
+  
+
 end
 

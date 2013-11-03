@@ -1,26 +1,46 @@
-<% content_for(:body_id, "admin_pages") %> 
-<h1>Listing users</h1>
+<% content_for(:body_id, "admin-pages") %> 
+<div class="row">
+  <div class="large-12 columns">
+    <h1 class="page-title">Users</h1>
+    <div class="center-buttons">
+      <a href="<%= admin_subjects_path %>" class="tiny button">Back to Admin Subject Page</a>
+    </div>
+  </div>
+</div>
+
+
 <div class="row">
   <div class= "large-12 columns">
+    <div class= "large-6 columns">
       <div class= "panel">
-        <table id="user_table">
+        <h3>Admin:</h3>
+        <table width="100%">
           <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Admin?</th>
-            </tr>
           </thead>
           <tbody>
-          <% @users.each do |user| %>
-            <tr>
-            <td><%= user.name %></td>
-            <td><%= user.email %></td>
-            <td><%= user.admin? %></td>
-            <td><%= user.id %></td>
-            <td><%= render 'form' %></td>
-            <td><%= link_to "Edit Admin", edit_admin_user_path(user) %></td>
-          <% end %>
+              <% @users.each do |user| %>
+              <% if user.admin == true %>
+                <%= render "show", user: user %>
+                <% end %>
+               <% end %>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <div class= "large-6 columns">
+      <div class= "panel user-table">
+        <h3>Students:</h3>
+        <table width="100%">
+          <thead>
+          </thead>
+          <tbody>    
+              <% @users.each do |user| %>
+                <% if user.admin == false %>
+                  <%= render "show", user: user %>
+                  <% end %>
+                <% end %>     
             </tr>
           </tbody>
         </table>
@@ -28,6 +48,6 @@
     </div>
   </div>
 </div>
-  
+
 
 

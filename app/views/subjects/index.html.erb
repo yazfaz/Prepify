@@ -19,8 +19,10 @@
         <h3><%= Subject.find(1).section %></h3>
         <h6 class="math-subheader">See Courses</h6>
         <div class="math-slider" visibility: hidden>
-          <% @math_subjects.each do |subject| %>
-          <p><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id)%></p>
+          <% @subjects.each do |subject| %>
+            <% if subject.section == "Math" %>
+              <p><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id)%></p>
+            <% end %>
           <% end %> 
         </div>
       </div>
@@ -32,8 +34,10 @@
         <h3><%= Subject.find(2).section%></h3>
         <h6 class="reading-subheader">See Courses</h6>
         <div class="reading-slider" visibility: hidden>
-          <% @read_subjects.each do |subject| %>
-          <p><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></p>
+          <% @subjects.each do |subject| %>
+            <% if subject.section == "Critical Reading" %>
+              <p><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></p>
+              <% end %>
           <% end %> 
         </div>
       </div>
@@ -45,8 +49,10 @@
         <h3><%= Subject.find(3).section%></h3>
         <h6 class="writing-subheader">See Courses</h6>
         <div class="writing-slider" visibility: hidden>
-          <% @write_subjects.each do |subject| %>
-          <p><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></p>
+          <% @subjects.each do |subject| %>
+            <% if subject.section == "Writing" %>
+              <p><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></p>
+              <% end %>
           <% end %> 
         </div>
       </div>

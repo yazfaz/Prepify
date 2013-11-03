@@ -35,10 +35,11 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize_current_student
-  
-    unless current_user.id.to_s == params[:user_id]
-      flash[:error] = "unauthorized access"
-      redirect_to user_subjects_path(current_user)
+    if current_user.admin == false
+      unless current_user.id.to_s == params[:user_id]
+        flash[:error] = "unauthorized access"
+        redirect_to user_subjects_path(current_user)
+      end
     end
   end
 

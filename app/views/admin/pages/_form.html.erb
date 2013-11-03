@@ -11,17 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :sequence_id %><br>
+  <div class="field small-field center-form">
+    <%= f.label :sequence_id, "Sequence:" %><br>
     <%= f.number_field :sequence_id %>
   </div> 
-  <!-- <div class="field">
-    <%#= f.label :pageable_type %><br>
-    <%#= f.collection_select(:pageable_id, Page.all.select("DISTINCT(pageable_type)"), :id, :pageable_type) %>
-  </div> -->
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions center-buttons">
+    <%= f.submit class:'tiny button ' %>
+    <%= link_to 'Back', admin_subject_pages_path(@subject), class:'tiny button' %>
   </div>
 </div>
 <% end %>

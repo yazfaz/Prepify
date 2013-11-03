@@ -10,6 +10,8 @@
 
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Gochi+Hand|Karla|Leckerli+One|Sansita+One' rel='stylesheet' type='text/css'>
+<!-- FontAwesome -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
 
 
 
@@ -51,7 +53,6 @@
             <li class="student-nav"><%= link_to 'Report Card', user_path(current_user)  %></li>
             <li class="divider"></li>
             <li class= "has-dropdown student-nav"><a href="#" >Hello <%= current_user.name %></a>
-              <%#= link_to "Hello #{current_user.name}", edit_user_registration_path%><!-- </strong> -->
               <ul class= "dropdown">
                 <li class="student-nav">
                   <%= link_to 'Edit Profile', edit_user_registration_path %></li>
@@ -70,7 +71,7 @@
 
         <!-- If admin -->
         <% elsif current_user.admin %>
-
+  
          <ul class="title-area">        
           <li class="name">
             <%= image_tag("Prepify_logo_white.png", size: "100", class:"logo") %>
@@ -101,6 +102,9 @@
           </ul>
         </section>
       </nav>
+      <div class="row"></div>
+
+      <div id="banner"></div>
         <% end %>
 
       <% else %>

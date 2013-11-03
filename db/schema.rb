@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20131102160041) do
   create_table "subjects", force: true do |t|
     t.string   "section"
     t.string   "name"
+    t.boolean  "published",  default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

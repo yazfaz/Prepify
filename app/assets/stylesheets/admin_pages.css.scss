@@ -1,4 +1,4 @@
-#admin_pages {
+#admin-pages {
 $prepifycolor: #338aaa;
 $darkcolor: darken($prepifycolor, 40%);
 $lightcolor: lighten($prepifycolor, 20%);
@@ -45,35 +45,73 @@ background-size: 100% auto;
 
   }
 
-  .bottom {
+    .bottom {
     text-align: center;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     background:rgba(51, 138, 170,0.4);
+    }
+
+    .center-buttons {
+      text-align:center;
+    }
+
+
+    .user-table {
+      margin:auto;
+    }
+
+    .logo {
+    margin-left: 10px;
+    margin-top:10px;
+   }
+
+   .admin-nav {
+    font-size: .75em;
+   }
+
+  .flush-left {
+    padding-left: 0;
+  }
+
+  #banner {
+    background-image: url("school_logo_admin.jpg");
+    background-position: center center;
+    height: 200px;
+    width: 100%;
+  } 
+
+  .page-title {
+    font-size: 3em;
+    font-family: 'Sansita One';
+    text-align: center;
+    color: $prepifycolor;
+    margin-bottom:5px; 
+  }
+  .user-info {
+    margin: auto;
+    width:50%;
+  }
+
+  .edit-table {
+    margin:auto;
+    width: 80%;
+  }
+  .small-edit-table {
+    margin:auto;
+    width: 30%;
+  }
+
+  .small-field{
+    width:20%;
+  }
+  .center-form {
+    margin:auto;
+  }
+
+ 
 }
-}
 
-  .add_buttons {
-    text-align:center;
-  }
 
-  .lesson_table {
-    margin:auto;
-  }
 
-  .lesson {
-    margin:auto;
-  }
 
-  #user_table {
-    margin:auto;
-  }
-
-  .logo {
-  margin-left: 10px;
-  margin-top:10px;
- }
-
- .admin-nav {
-  font-size: .75em;
- }

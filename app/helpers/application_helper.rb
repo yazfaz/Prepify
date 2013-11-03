@@ -17,6 +17,10 @@ module ApplicationHelper
     end
     string.html_safe
   end
+
+  def admin?
+  current_user.admin == true
+  end
 end
 
 

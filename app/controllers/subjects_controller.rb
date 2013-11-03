@@ -6,12 +6,12 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.json
   def index
-
-   @subjects = Subject.all_with_pages
-   @math_subjects = Subject.where(:section => "Math")
-   @read_subjects = Subject.where(:section => "Critical Reading")
-   @write_subjects = Subject.where(:section => "Writing")
-   @user = current_user
+  @published_subjects = Subject.where(published:true)
+  @subjects = @published_subjects.all_with_pages
+  # @write_subjects = Subject.where(:section => "Writing")
+  # @math_subjects = Subject.where(:section => "Math")
+  # @read_subjects = Subject.where(:section => "Critical Reading")
+  @user = current_user
   end
 
   # GET /subjects/1

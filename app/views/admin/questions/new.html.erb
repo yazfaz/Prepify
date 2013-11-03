@@ -1,18 +1,15 @@
-<% content_for(:body_id, "admin_pages") %>
+<% content_for(:body_id, "admin-pages") %>
 <div class="row">
-  <div class="columns large-12">
-    <h1>New Question Page</h1>
+  <div class="large-12 columns">
+    <h1 class="page-title">New <%=@subject.name %> Question Page</h1>
   </div>
 </div>
 
 <div class="row">
-  <div class="small-6 small-2 columns">
-    <%= render 'form' %>
-</div>
-
-
-<div class="row">
-  <div class="columns large-12">
-  <%= link_to 'Back', admin_subject_pages_path %>
+  <div class="large-12 columns ">
+    <div class="panel pageable-table">
+      <%= render 'form' %>
+    </div>
   </div>
 </div>
+

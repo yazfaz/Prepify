@@ -3,6 +3,7 @@ class CreateSubjects < ActiveRecord::Migration
     create_table :subjects do |t|
       t.string :section
       t.string :name
+      t.boolean :published, :default => false
 
       t.timestamps
     end

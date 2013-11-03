@@ -7,6 +7,7 @@ class Admin::SubjectsController < ApplicationController
   def index
     @subjects = Subject.all
     @users= User.all
+    @subject = Subject.new
     
   end
 
@@ -19,7 +20,7 @@ class Admin::SubjectsController < ApplicationController
 
   # GET /subjects/new
   def new
-    @subject = Subject.new
+    @subject = Subject.new(section: params[:section].capitalize)
   end
 
   # GET /subjects/1/edit
@@ -42,6 +43,8 @@ class Admin::SubjectsController < ApplicationController
     end
   end
 
+    
+
   # PATCH/PUT /subjects/1
   # PATCH/PUT /subjects/1.json
   def update
@@ -63,6 +66,7 @@ class Admin::SubjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_subjects_path   }
       format.json { head :no_content }
+      format.js
     end
   end
 
@@ -74,6 +78,6 @@ class Admin::SubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
-      params.require(:subject).permit(:section, :name)
+      params.require(:subject).permit(:name, :section, :published)
     end
 end
