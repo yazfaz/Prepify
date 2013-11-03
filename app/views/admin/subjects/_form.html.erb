@@ -17,10 +17,11 @@
     <%= f.hidden_field(:section) %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, "Title:" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class:'tiny button' %>
+     <%= link_to 'Back', admin_subject_pages_path(@subject), class:'tiny button' %>
   </div>
 <% end %>

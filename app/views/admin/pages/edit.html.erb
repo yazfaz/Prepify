@@ -1,18 +1,13 @@
 <% content_for(:body_id, "admin-pages") %>
 <div class="row">
   <div class="columns large-12">
-    <h1>Edit Page Sequence</h1>
+    <h1 class="page-title">Edit Page Sequence</h1>
   </div>
 </div>
 
 <div class="row">
-  <div class="small-6 small-2 columns">
-    <%= render 'form' %>
+  <div class="large-12 columns">
+    <div class="panel small-edit-table">
+    <div class="center-form"><%= render 'form' %></div>
 </div>
 
-<div class="row">
-  <div class="columns large-12">
-  <%= link_to 'Show', admin_subject_page_path %> |
-  <%= link_to 'Back', admin_subject_pages_path %>
-  </div>
-</div>
