@@ -1,3 +1,37 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#blog {
+background-color: white;
+	
+	.row {
+		background-color: white;
+		padding: 20px;
+		max-width: 70%;
+		font-family: "Source Sans Pro";
+		color: darken(gray, 20%);
+		font-size: 1.15em;
+	}
+
+
+	h1, h2 {
+		font-family: "Sansita One";
+		color: #2BA6CB;
+	}
+
+	h6 {
+		font-family: "Source Sans Pro";
+		color: darken(gray, 20%);
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
