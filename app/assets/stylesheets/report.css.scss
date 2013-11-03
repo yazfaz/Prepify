@@ -12,18 +12,8 @@ background-size: 100% auto;
 
 h2, h3 {
 	font-family: 'Covered By Your Grace'; 
+	}
+.panel {
+	max-width: 400px;
 }
-
-
-.report {
-	
-	color: white;
-}
-
-.report .incomplete { 
-			color: $incomplete;
-		}
-.report  .complete {
-			color: $complete;
-		}	
 }
