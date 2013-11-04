@@ -1,0 +1,5 @@
+
+
+(function () {
+  $('[data-subject-id=<%= @subject.id %>]').replaceWith("<%= j render('admin/subjects/writing_row', subject: @subject) %>");
+})();
