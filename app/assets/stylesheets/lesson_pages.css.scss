@@ -62,7 +62,15 @@ background-size: 100% auto;
   font-size: .75em;
  }
 
- h2, h3, h4, h5 {
+ h2, h3, h4 {
  	font-family: 'Sansita One';
+ 	color: white;
+ 	text-shadow: black .1em .1em .2em;
+ }
+
+
+ h5, p {
+ 	color: #3E4040;
+ 	
  }
 }
