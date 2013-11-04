@@ -13,7 +13,6 @@ $(document).on('ajax:success', function(e, data) {
 $(function() {
   $('.edit_user input[type=submit]').remove();
     $('.edit_user input[type=checkbox]').click(function(){
-    alert('checked!');
   $('.edit_user').parent().find('form').submit();
   });
     

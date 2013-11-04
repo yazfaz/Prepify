@@ -6,8 +6,8 @@
    </div>
 </div>
 
-<div class="row">
-  <div class="large-12 columns ">
+<div class="row large-row">
+  <div class="large-12 columns">
     <div class="large-4 columns">
       <div class="panel">
         <h3>Math</h3>
@@ -23,7 +23,7 @@
                 
                 <tr id='<%= subject.id %>'>
                 <% if subject.section == "Math" %>
-                  <td><%= subject.name %></td>
+                  <td class="word-wrap"><%= subject.name %></td>
                   <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
                   <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), data: {confirm: "Are you sure?"}, method: :delete, remote: true %></td>
                   <td>

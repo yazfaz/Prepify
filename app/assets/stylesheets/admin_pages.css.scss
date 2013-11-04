@@ -75,6 +75,9 @@ background-size: 100% auto;
   .flush-left {
     padding-left: 0;
   }
+  .flush-right {
+    padding-right: 0;
+  }
 
   #banner {
     background-image: url("school_logo_admin.jpg");
@@ -111,6 +114,12 @@ background-size: 100% auto;
     margin:auto;
   }
 
+  .word-wrap {
+    word-wrap:break-word;
+  }
+ .large-row {
+  max-width: 70em;
+ }
  
 }
 
