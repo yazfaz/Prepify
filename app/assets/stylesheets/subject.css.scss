@@ -7,8 +7,11 @@ $lightcolor: lighten($prepifycolor, 20%);
 background-image: url("retina_wood.png");
 background-repeat: no-repeat;
 background-size: 100% auto;
-		
-		
+	
+	p {
+		color: gray;
+		font-size: .8em;
+	}
 
 	.ul-dash {
 	  margin: 0;
