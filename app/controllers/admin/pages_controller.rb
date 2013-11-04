@@ -5,8 +5,10 @@ class Admin::PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @subject = Subject.find(params[:subject_id])
     
+    @subject = Subject.find(params[:subject_id])
+
+
   end
 
   # GET /pages/1
@@ -68,6 +70,7 @@ class Admin::PagesController < ApplicationController
       else
         format.html { render action: 'edit' }
         format.json { render json: @page.errors, status: :unprocessable_entity }
+        format.js { render layout: false }
       end
     end
   end
@@ -95,7 +98,7 @@ class Admin::PagesController < ApplicationController
       page.sequence_id = params['page'].index(page.id.to_s) + 1
       page.save
     end
-    render nothing: true
+    render 'index'
   end
 
   private

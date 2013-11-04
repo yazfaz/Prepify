@@ -17,7 +17,13 @@ $(document).ready(function(){
         dataType: 'script',
         complete: function(request){
           $('#sortable-pages').effect('highlight');
+         
+          // $('table').html(response)
         }
+      });
+      // $( "#sortable-pages" ).sortable( "refresh" );
+      $('#sortable-pages tr').each(function(i){
+        $(this).children('td:first-child').html(i+1);
       });
     }
   });
