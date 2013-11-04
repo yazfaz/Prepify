@@ -1,4 +1,4 @@
-<tr class='users-<%=user.id%>'>
+<tr data-user-id='<%= user.id %>'>
              <td>
                <% if user.admin? %>
                  <%= user.name %> (Admin)
@@ -9,7 +9,7 @@
              <td><%= link_to '<i class="fa fa-eye"></i>'.html_safe, admin_user_path(user) %></td>
              <td><%= link_to '<i class="fa fa-envelope"></i>'.html_safe, admin_user_path(user) %></td>
              <td><%= render partial: 'form', locals: {user: user}, remote: true %></td>
-             <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_users_path, confirm: "Are you sure?", method: :delete %></td>
+             <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_user_path(user), data: {confirm: "Are you sure?"}, method: :delete, remote: true %></td>
 
 
 

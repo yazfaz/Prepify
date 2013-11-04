@@ -27,18 +27,18 @@
         </thead>
         <tbody>
           <% @subject.page_order.each do |page| %>
-            <tr>
+            <tr data-page-id='<%= page.id %>'>
               <td><%= page.sequence_id %></td>
               <td><%= page.pageable_type %></td>
               <td><%= page.body_snippet %></td>  
               <td><% if page.pageable_type == "Question" %>
-                <%= link_to "Question Preview", admin_subject_question_path(@subject, page.pageable) %>
+                <%= link_to '<i class="fa fa-eye"> Preview</i>'.html_safe, admin_subject_question_path(@subject, page.pageable) %>
                 <td><%= link_to "Update Page Sequence", edit_admin_subject_page_path(@subject, page) %></td>
-                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_page_path(@subject, page), confirm: "Are you sure?", method: :delete %></td>
+                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_page_path(@subject, page), data: {confirm: "Are you sure?"}, method: :delete, remote: true %></td>
                 <td><% elsif page.pageable_type == "Instruction" %>
-                <%= link_to "Instruction Preview", admin_subject_instruction_path(@subject, page.pageable) %>
+                <%= link_to '<i class="fa fa-eye"> Preview</i>'.html_safe, admin_subject_instruction_path(@subject, page.pageable) %>
                 <td><%= link_to "Update Page Sequence", edit_admin_subject_page_path(@subject, page) %></td>
-                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_page_path(@subject, page), confirm: "Are you sure?", method: :delete %></td>
+                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_page_path(@subject, page), data: {confirm: "Are you sure?"}, method: :delete, remote: true %></td>
                 <% end %>
             </tr>
           <% end %>

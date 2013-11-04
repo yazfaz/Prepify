@@ -70,7 +70,7 @@ class Admin::SubjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admin_subjects_path   }
       format.json { head :no_content }
-      format.js
+      format.js { render layout: false }
     end
   end
 
