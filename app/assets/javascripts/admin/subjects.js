@@ -13,7 +13,6 @@ $(document).on('click', '.show-lesson-form', function (e) {
 });
 
 $(document).on('click', '.change-published-status', function (e) {
-  alert('hi');
   e.preventDefault();
   var form = $(e.currentTarget).closest('form');
   console.log('form:', form);
