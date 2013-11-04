@@ -59,8 +59,9 @@ background-size: 100% auto;
 		font-size: 12px;
 	}
 	
-	h1, h2, .bottom-nav {
-		font-family: 'Covered By Your Grace';
+	h1, h2, h3, .bottom-nav {
+		font-family: 'Sansita One';
+		color: $prepifycolor;
 	}
 	
 	.bottom .nav{
@@ -91,6 +92,9 @@ background-size: 100% auto;
 		color: #5da423;
 	}
 
-
+	.img-wrap{
+		min-height: 100%;
+		min-width: 100%;
+	}
 		
 }
