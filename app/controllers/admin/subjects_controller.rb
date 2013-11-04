@@ -8,6 +8,7 @@ class Admin::SubjectsController < ApplicationController
     @subjects = Subject.all
     @users= User.all
     @subject = Subject.new
+    @user = current_user
     
   end
 

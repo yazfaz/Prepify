@@ -6,10 +6,10 @@
                  <%= user.name %>
                <% end %>
              </td>
-             <td><%= link_to '<i class="fa fa-eye"></i>'.html_safe, admin_user_path(user) %></td>
-             <td><%= link_to '<i class="fa fa-envelope"></i>'.html_safe, admin_user_path(user) %></td>
              <td><%= render partial: 'form', locals: {user: user}, remote: true %></td>
-             <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_user_path(user), data: {confirm: "Are you sure?"}, method: :delete, remote: true %></td>
+             <td><%= link_to '<i class="fa fa-eye"></i>'.html_safe, admin_user_path(user), title:"View User Information" %></td>
+             <td><%= link_to '<i class="fa fa-envelope"></i>'.html_safe, admin_user_path(user), title:"Email User" %></td>  
+             <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_user_path(user), data: {confirm: "Are you sure?"}, method: :delete, remote: true, title:"Delete User" %></td>
 
 
 

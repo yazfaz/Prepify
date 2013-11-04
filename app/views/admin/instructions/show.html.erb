@@ -1,5 +1,4 @@
-<% content_for(:body_id, "admin-pages") %> 
-
+<% content_for(:body_id, "lesson_pages")%> 
 
 <div class="large-block-grid-4">
 
@@ -20,9 +19,8 @@
     <img src="<%= @instruction.image %>" width="200" height="80">
     <br>
   </div>
-  <%= link_to "Edit Content" , edit_admin_subject_instruction_path(@subject, @instruction) %></button>
-  <br>
-  <%= link_to "Back to #{@subject.name} page", admin_subject_pages_path(@subject) %>
+  <%= link_to "Edit Content" , edit_admin_subject_instruction_path(@subject, @instruction), class:"button center-buttons" %></button>
+  <%= link_to "Back to #{@subject.name} page", admin_subject_pages_path(@subject), class:"button center-buttons" %>
 </div>
 
 

@@ -1,4 +1,4 @@
-<% content_for(:body_id, "admin-pages")%> 
+<% content_for(:body_id, "lesson_pages")%> 
 
 
 
@@ -35,9 +35,8 @@
         </div>
         <!-- End Search Bar -->
         <!-- Thumbnails -->
-          <%= link_to "Edit Question Content" , edit_admin_subject_question_path(@subject, @question) %> 
-          <br>
-          <%= link_to "Back to #{@subject.name} page", admin_subject_pages_path(@subject) %>
+          <%= link_to "Edit Question Content" , edit_admin_subject_question_path(@subject, @question), class:"button center-buttons" %> 
+          <%= link_to "Back to #{@subject.name} page", admin_subject_pages_path(@subject), class:"button center-buttons" %>
           </div>
    
     
