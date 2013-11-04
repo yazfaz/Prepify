@@ -1,4 +1,7 @@
-<% content_for(:body_id, "admin-pages") %> 
+<% content_for(:body_id, "admin-pages") %>  
+
+
+
 <div class="row">
   <div class="large-12 columns">
     <h1 class="page-title">Users</h1>
@@ -17,7 +20,7 @@
         <table width="100%">
           <thead>
           </thead>
-          <tbody>
+          <tbody id="admin-user-table">
               <% @users.each do |user| %>
               <% if user.admin == true %>
                 <%= render "show", user: user %>
@@ -35,7 +38,7 @@
         <table width="100%">
           <thead>
           </thead>
-          <tbody>    
+          <tbody id="student-user-table">    
               <% @users.each do |user| %>
                 <% if user.admin == false %>
                   <%= render "show", user: user %>

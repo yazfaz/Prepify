@@ -4,8 +4,14 @@ class Admin::UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    # @users = User.all
     # @user = User.find(params[:user_id])
+  
+    respond_to do |format|
+      format.html { @users = User.all }
+      
+      format.js 
+      end
 
   end
 
