@@ -11,20 +11,14 @@
         </div>
       </div>
 
-<!-- End Header Content --> 
-            
+<!-- End Header Content -->         
 
-
-
-
-
-
-        <div class="row ">
-          <div class="large-4 columns recommended">
+        <div class="row"> 
+         <div class="large-4 columns centered">
           <ul class="pricing table">
             <div class="panel">
               <h6><%= @question.body %></h6>
-              <div class="field">
+              <div class="field centered">
                 <div class="choices subheader ">
                   <% @question.choices.each do |choice| %>
                     <div class="choice slider" >
@@ -38,8 +32,13 @@
                 </div>
                 <div class="panel-notify" visibility: hidden>
                     <h4></h4>
-                    <%= progress_bar(progress(@page))%>
-                    <h3><%= link_to 'Next Page', next_page(current_user, @page)%></h3>                
+                    <div class="row">
+                    <!-- <h5 class="center">Progress: <%= progress_bar(progress(@page))%></h5> -->
+                  </div>
+                    <div class="row">
+                    <h5 class="inline left"><%= link_to 'Next Page', next_page(current_user, @page)%></h5>         
+                     <h5 class="inline right"><%= link_to 'Previous Page',user_subjects_path(current_user, @page)%></h5>  
+                     </div>             
                   </div>      
               </div>
             </div> 
