@@ -64,6 +64,7 @@ class Admin::SubjectsController < ApplicationController
   # DELETE /subjects/1
   # DELETE /subjects/1.json
   def destroy
+    @subject_id = @subject.id
     @subject.destroy
     respond_to do |format|
       format.html { redirect_to admin_subjects_path   }

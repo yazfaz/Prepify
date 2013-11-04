@@ -21,7 +21,7 @@
 
               <% @subjects.each do |subject| %>
                 
-                <tr id='<%= subject.id %>'>
+                <tr class='<%= subject.id %>'>
                 <% if subject.section == "Math" %>
                   <td class="word-wrap"><%= subject.name %></td>
                   <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
@@ -57,11 +57,11 @@
 
             <% @subjects.each do |subject| %>
               
-              <tr>
+              <tr class='<%= subject.id %>'>
               <% if subject.section == "Critical Reading" %>
                 <td><%= subject.name %></td>
                 <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
-                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), confirm: "Are you sure?", method: :delete %></td>
+                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), confirm: "Are you sure?", method: :delete, remote: true  %></td>
                 <td>
                   <% if subject.published == false %>
                     <%= render partial: 'publish', locals: {subject: subject} %>
@@ -93,11 +93,11 @@
 
             <% @subjects.each do |subject| %>
               
-              <tr>
+              <tr class='<%= subject.id %>'>
               <% if subject.section == "Writing" %>
                 <td><%= subject.name %></td>
                 <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject) %></td> 
-                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), confirm: "Are you sure?", method: :delete %></td>
+                <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), confirm: "Are you sure?", method: :delete, remote: true  %></td>
                 <td>
                   <% if subject.published == false %>
                     <%= render partial: 'publish', locals: {subject: subject} %>
