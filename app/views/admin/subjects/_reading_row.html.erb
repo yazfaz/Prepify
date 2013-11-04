@@ -1,7 +1,12 @@
 <tr data-subject-id='<%= subject.id %>'>
-  <td><%= subject.name %></td>
+  <td>
+    <%= subject.name %> 
+    <% if subject.pages.count > 0 %>
+      <%= link_to '<i class="fa fa-eye link-padding"> Preview</i>'.html_safe, user_subject_path(@user, subject), title:'Preview Lesson' %>
+    <%end%>
+</td>
   <td><%= link_to '<i class="fa fa-wrench"></i>'.html_safe, admin_subject_pages_path(subject), title:"Edit Lesson" %></td> 
-  <td><%= link_to '<i class="fa fa-eye"></i>'.html_safe, user_subject_path(@user, subject), title:'Preview Lesson' %></td>
+ 
   <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_subject_path(subject), confirm: "Are you sure?", method: :delete, remote: true, title:"Delete Lesson"  %></td>
   <td>
     <% if subject.published == false %>
