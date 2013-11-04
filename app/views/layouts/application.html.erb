@@ -72,9 +72,23 @@
     <p class="alert">
       <%#= alert unless alert.blank? %>
     </p> -->
-
+  <section id="wrap">
     <%= yield %>
-    
+  </section>
+  <footer id="footer">
+    <div class="row">
+      <div class="small-6 columns"></div>
+      <div class="small-3 columns"></div>
+      <div class="small-3 columns">
+        <ul>Prepify online</ul>
+          <li>Follow us on Twitter</li>
+          <li>Like us on Facebook</li>
+          <li>Read our blog</li>
+        </ul>
+      </div>
+    </div>
+  </footer>  
+
     <%#= javascript_include_tag "application" %>
     <%= yield :javascript %>
   </body>
