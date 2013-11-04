@@ -14,7 +14,9 @@ Prepify::Application.routes.draw do
   namespace :admin do
     resources :users
     resources :subjects do
-      resources :pages  
+      resources :pages do
+        post 'sort', :on => :collection
+      end
       resources :instructions
       resources :questions  
     end

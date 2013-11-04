@@ -25,9 +25,9 @@
             <th>Content</th>     
           </tr>
         </thead>
-        <tbody>
+        <tbody id="sortable-pages">
           <% @subject.page_order.each do |page| %>
-            <tr data-page-id='<%= page.id %>'>
+            <tr data-page-id='<%= page.id %>' id="page_<%= page.id %>">
               <td><%= page.sequence_id %></td>
               <td><%= page.pageable_type %></td>
               <td><%= page.body_snippet %></td>  

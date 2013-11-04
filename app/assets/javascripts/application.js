@@ -17,6 +17,7 @@
 // = require login.js
 // = require admin/users
 // = require admin/subjects
+// = require admin/pages
 
 
 $(function(){ $(document).foundation(); });

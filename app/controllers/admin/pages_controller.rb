@@ -88,6 +88,16 @@ class Admin::PagesController < ApplicationController
     end
   end
 
+  def sort
+    @subject = Subject.find(params[:subject_id])
+    @pages = @subject.pages
+    @pages.each do |page|
+      page.sequence_id = params['page'].index(page.id.to_s) + 1
+      page.save
+    end
+    render nothing: true
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.    
     def set_page
