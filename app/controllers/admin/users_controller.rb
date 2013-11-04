@@ -18,6 +18,8 @@ class Admin::UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
+    @courses = @user.course_progressions
   end
 
   # GET /users/new

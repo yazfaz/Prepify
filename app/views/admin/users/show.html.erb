@@ -20,7 +20,7 @@
         <p><strong>Name: </strong><%= @user.name %></p>
         <p><strong>Email: </strong><%= @user.email %></p>
         <p><strong>School: </strong></p>
-        <p><strong>View Report Card: </strong></p>
+        <p><strong>View Report Card: </strong>  <h2><%= admin_progress_report(@courses)%></h2> </p>
       </div>
     <% end %>
 
