@@ -1,4 +1,4 @@
-$footer-height: 9em; // Set to however many lines of text you want to have in your footer. Sorry, no dynamic option here.
+$footer-height: 13em; // Set to however many lines of text you want to have in your footer. Sorry, no dynamic option here.
 
 html, body { 
 	height: 100%; 
@@ -8,11 +8,11 @@ html, body {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto ($footer-height * -1);
+ //   margin: 0 auto ($footer-height * -1);
 }
 
 #wrap > *:last-child {
-    padding-bottom: $footer-height;
+  //  padding-bottom: $footer-height;
 }
 
 
@@ -22,6 +22,12 @@ html, body {
     color: white;
     padding-top: 10px; 
     font-family: "Source Sans Pro";
-    line-height: 1.35em;
+    line-height: 2em;
+    padding-top: 30px;
+
+    ul {
+        font-family: 'Leckerli One';
+    }
+
 
 }
