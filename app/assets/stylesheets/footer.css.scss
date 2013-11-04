@@ -23,7 +23,12 @@ html, body {
     padding-top: 10px; 
     font-family: "Source Sans Pro";
     line-height: 2em;
-    padding-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+    .columns {
+        float:right
+    }
 
     ul {
         font-family: 'Leckerli One';
