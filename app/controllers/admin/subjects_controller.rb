@@ -20,7 +20,7 @@ class Admin::SubjectsController < ApplicationController
 
   # GET /subjects/new
   def new
-    @subject = Subject.new(section: params[:section].capitalize)
+    @subject = Subject.new(section: params[:section])
   end
 
   # GET /subjects/1/edit

@@ -1,0 +1,11 @@
+
+
+
+$('#new_math_lesson').hide().after('<%= j render partial: 'new_math_form', locals: {subject: @subject} %>');
+
+$('#new_reading_lesson').hide().after('<%= j render partial: 'new_reading_form', locals: {subject: @subject} %>');
+
+$('#new_writing_lesson').hide().after('<%= j render partial: 'new_writing_form', locals: {subject: @subject} %>')
+
+
+
