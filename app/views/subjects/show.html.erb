@@ -26,21 +26,33 @@
         
         <div class="small-9 large-10 columns">
         <h2><%= @subject.name %></h2>
-	    <% if current_user.completed_subject?(@subject)%>
-	      <h6 class="complete">Completed Lesson</h6>	     	
-	      <h6 class="subheader"><%= link_to "Review", start_page(current_user, @subject)%></h6>
-	    <% elsif current_user.started_subject?(@subject) %>          
-	      <h3><%= link_to "Resume Lesson", current_page(current_user, @subject) %><h3>
-	    <% else %>
-	      <h3><%= link_to "Start Lesson", start_page(current_user, @subject) %><h3>
-	    <% end %>                 
+	               
         
-          <h6 class="subheader">The Math skills required for the SAT are of a basic standard that should be within the reach of a tenth grade student. You don't need to learn up lots of new formulae but you will need to sharpen up your thinking skills. 
+          <h5 class="subheader">The Math skills required for the SAT are of a basic standard that should be within the reach of a tenth grade student. You don't need to learn up lots of new formulae but you will need to sharpen up your thinking skills. 
 
-          You are allowed to use a calculator and you should have one with you while doing tests. But for most questions you won't need it: use it mainly to check your arithmetic. You are allowed to do rough work on the paper, so have some rough sheets available when you start the mini tests. Remember, math skills improve with practice.</h6>
+          You are allowed to use a calculator and you should have one with you while doing tests. But for most questions you won't need it: use it mainly to check your arithmetic. You are allowed to do rough work on the paper, so have some rough sheets available when you start the mini tests. Remember, math skills improve with practice.</h5>
 
+          <% if current_user.completed_subject?(@subject)%>
+        <h6 class="complete">Completed Lesson</h6>        
+        <h5 class="left"><a href="<%= user_subjects_path(current_user)%>"><i class="fa fa-arrow-circle-left"> </i> Back</a></h5>
+        <h5 class="inline right"><a href="<%=start_page(current_user, @subject)%>">Review Lesson <i class="fa fa-arrow-circle-right"></i></a></h5>
+
+        <% elsif current_user.started_subject?(@subject) %>          
+        <h5 class="left"><a href="<%= user_subjects_path(current_user)%>"><i class="fa fa-arrow-circle-left"> </i> Back</a></h5>
+        <h5 class="inline right"><a href="<%=current_page(current_user, @subject)%>">Resume Lesson <i class="fa fa-arrow-circle-right"></i></a></h5>
+
+
+        <% else %>
+        <div class="row">
+          <div class="small-9 large-10 columns">
+          
+        <h5 class="left"><a href="<%= user_subjects_path(current_user)%>"><i class="fa fa-arrow-circle-left"> </i> Back</a></h5>
+        <h5 class="inline right"><a href="<%=start_page(current_user, @subject)%>">Start Lesson <i class="fa fa-arrow-circle-right"></i></a></h5>
+        <% end %>
+        </div>      
+        </div>
        </div>
       </div>
 		</div>
 </body>
-<%= link_to 'Back', user_subjects_path(current_user) %>
+
