@@ -1,4 +1,15 @@
-
+// $(document).on('ajax:success', function(e, data) {
+//   console.log('Ajax Response data:', data);
+//   window.e = e;
+//   alert(e.target.id);
+//   // if (e.target.id) == "new_math_lesson") {
+//   // console.log('test');
+// //   var math = <%= raw render partial: 'new_math_form', locals: {subject: @subject} %>
+// //   $(e.target.id).hide().after();
+// // //   $('#new_reading_lesson').show();
+// // }
+// });
+alert('hshd');
 
 
 $('#new_math_lesson').hide().after('<%= j render partial: 'new_math_form', locals: {subject: @subject} %>');
@@ -7,5 +18,8 @@ $('#new_reading_lesson').hide().after('<%= j render partial: 'new_reading_form',
 
 $('#new_writing_lesson').hide().after('<%= j render partial: 'new_writing_form', locals: {subject: @subject} %>')
 
-
-
+// $(function(){
+// if (e.target.id) == "new_math_lesson") {
+//   $(e.target.id).hide().after('<%= j render partial: 'new_math_form', locals: {subject: @subject} %>');
+//   $('#new_reading_lesson').show();
+// })();

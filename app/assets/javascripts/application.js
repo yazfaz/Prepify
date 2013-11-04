@@ -16,6 +16,7 @@
 // = require jquery-ui-1.10.3.custom
 // = require login.js
 // = require admin/users
+// = require admin/subjects
 
 
 $(function(){ $(document).foundation(); });
