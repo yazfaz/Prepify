@@ -9,7 +9,7 @@
   	<meta charset="utf-8" />
 
 <!-- Google Fonts -->
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Gochi+Hand|Karla|Leckerli+One|Sansita+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Gochi+Hand|Karla|Tinos|Leckerli+One|Sansita+One' rel='stylesheet' type='text/css'>
 
 
 
@@ -123,9 +123,32 @@
     <p class="alert">
       <%#= alert unless alert.blank? %>
     </p> -->
-
+  <section id="wrap">
     <%= yield %>
-    
+  </section>
+  <footer id="footer">
+    <div class="row">
+      <div class="large-6 columns"></div>
+
+      <div class="small-3 columns">
+        <ul>MORE RESOURCES</ul>
+          <li>College Board</li>
+          <li>Flash Cards</li>
+          <li>SAT info</li>
+          <li>More Stuff</li>
+
+        </ul>
+      </div>
+      <div class="small-3 columns">
+        <ul>PREPIFY</ul>
+          <li>Follow us on Twitter</li>
+          <li>Like us on Facebook</li>
+          <li>Read our blog</li>
+        </ul>
+      </div>
+    </div>
+  </footer>  
+
     <%#= javascript_include_tag "application" %>
     <%= yield :javascript %>
   </body>
