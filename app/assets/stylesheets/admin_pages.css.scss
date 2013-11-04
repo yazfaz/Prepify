@@ -1,16 +1,18 @@
 #admin-pages {
-$prepifycolor: #338aaa;
-$darkcolor: darken($prepifycolor, 40%);
-$lightcolor: lighten($prepifycolor, 20%);
+  $prepifycolor: #338aaa;
+  $darkcolor: darken($prepifycolor, 40%);
+  $lightcolor: lighten($prepifycolor, 20%);
 
-background-color: $prepifycolor;
-/*background-image: url("retina_wood.png");*/
-background-image: url("ticks.png");
+  background-color: $prepifycolor;
+  /*background-image: url("retina_wood.png");*/
+  background-image: url("ticks.png");
 
-background-repeat: no-repeat;
-background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 
-  
+  form.new_subject {
+    display: none;
+  }
 
   #top {
     

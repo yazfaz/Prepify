@@ -20,7 +20,9 @@ class Admin::SubjectsController < ApplicationController
 
   # GET /subjects/new
   def new
-    @subject = Subject.new(section: params[:section])
+    respond_to do |format|
+      format.js {@subject = Subject.new(section: params[:section])}
+    end
   end
 
   # GET /subjects/1/edit
