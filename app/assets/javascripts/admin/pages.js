@@ -17,11 +17,9 @@ $(document).ready(function(){
         dataType: 'script',
         complete: function(request){
           $('#sortable-pages').effect('highlight');
-         
-          // $('table').html(response)
         }
       });
-      // $( "#sortable-pages" ).sortable( "refresh" );
+      // Update sequence-id column in table upon moving to be index + 1 (same logic as sort method that sets sequence if)
       $('#sortable-pages tr').each(function(i){
         $(this).children('td:first-child').html(i+1);
       });
