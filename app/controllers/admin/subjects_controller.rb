@@ -59,6 +59,7 @@ class Admin::SubjectsController < ApplicationController
       else
         format.html { render action: 'edit' }
         format.json { render json: @subject.errors, status: :unprocessable_entity }
+        format.js { render layout: false }
       end
     end
   end
