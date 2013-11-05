@@ -31,7 +31,7 @@
                 <div class="submit">
                   <button class="button small" type="button">Check Answer</button> 
                 </div>
-                <div class="panel-notify" visibility: hidden>
+                <div class="panel-notify" style="display: none;">
                     <h4></h4>
                     <p></p>
                     <div class="row">
@@ -53,6 +53,7 @@
 <script type="text/javascript">	
 
 	$('.submit').on("click", function(e){
+    e.preventDefault();
 		// Grab value that user selected
 		var user_choice = $('.choice input:checked').val();
 		// Compare with actual answer
