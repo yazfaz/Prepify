@@ -53,6 +53,7 @@
 <script type="text/javascript">	
 
 	$('.submit').on("click", function(e){
+    e.preventDefault();
 		// Grab value that user selected
 		var user_choice = $('.choice input:checked').val();
 		// Compare with actual answer

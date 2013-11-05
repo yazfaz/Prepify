@@ -68,15 +68,18 @@
 
 <script type="text/javascript"> 
  $('.writing-subheader').mouseover(function(e){
+  e.preventDefault();
     $('.writing-slider').toggle("slide");
   }); 
  
   $('.reading-subheader').mouseover(function(e){
+    e.preventDefault();
     $('.reading-slider').toggle("slide");
   });
 
 
   $('.math-subheader').mouseover(function(e){
+    e.preventDefault();
     $('.math-slider').toggle("slide");
   });
 </script>
