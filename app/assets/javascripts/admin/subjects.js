@@ -20,4 +20,3 @@ $(document).on('click', '.change-published-status', function (e) {
 });
 
 
-

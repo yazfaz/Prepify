@@ -3,7 +3,11 @@
   <div class="large-12 columns">
     <div>
       <h1 class="page-title"><%= @subject.name %></h1>
-      <div class="center-buttons"><%= link_to 'Edit Title', edit_admin_subject_path(@subject), class: 'tiny button' %>
+      <div class="center-buttons">
+          <a href="#" class="show-edit-title-form tiny button ">Edit Title</a>
+         <%= render 'admin/subjects/form', subject: @subject %>
+       </div>
+    <!--   <div class#="center-buttons"><%#= link_to 'Edit Title', edit_admin_subject_path(@subject), class: 'tiny button' %> -->
      
     </div>
   </div>

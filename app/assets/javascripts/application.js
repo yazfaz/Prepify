@@ -20,7 +20,12 @@
 // = require admin/pages
 
 
-$(function(){ $(document).foundation(); });
+$(function(){ 
+  $(document).foundation(); 
+  $.ajaxSetup({
+    cache:false
+  });
+});
 
 
 

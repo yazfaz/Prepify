@@ -60,6 +60,7 @@ class Admin::PagesController < ApplicationController
       if @page.update(page_params)
         format.html { redirect_to admin_subject_pages_path, notice: 'Page was successfully updated.' }
         format.json { head :no_content }
+        format.js { render layout: false }
       else
         format.html { render action: 'edit' }
         format.json { render json: @page.errors, status: :unprocessable_entity }

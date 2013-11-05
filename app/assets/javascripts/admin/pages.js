@@ -26,3 +26,20 @@ $(document).ready(function(){
     }
   });
 });
+
+
+$(document).on('click', '.show-edit-title-form', function (e) {
+  e.preventDefault();
+  $(e.currentTarget).hide();
+  var form = $(e.currentTarget).siblings('form');
+  console.log('form:', form);
+  form.show();
+});
+
+
+// $(document).on('click', '.change-title', function (e) {
+//   e.preventDefault();
+//   var form = $(e.currentTarget).parent().find('form');
+//   console.log('form:', form);
+//   form.submit();
+// });
