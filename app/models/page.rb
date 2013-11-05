@@ -7,6 +7,7 @@ class Page < ActiveRecord::Base
   # validates_with PageFormValidator
   # A page must have a subject id to be created. 
   validates :subject_id, presence: true
+  validates :pageable, presence: true
 
   # A page should only be created if it's associated subject is valid
   validates_associated :subject

@@ -1,5 +1,4 @@
 <% content_for(:body_id, "admin-pages") %> 
-
 <div class="row">
   <div class="large-12 columns">
     <div>
@@ -28,7 +27,7 @@
 
           </tr>
         </thead>
-        <tbody id="sortable-pages">
+        <tbody id="sortable-pages" data-sort-url="<%= sort_admin_subject_pages_path(@subject) %>">
           <% @subject.page_order.each do |page| %>
             <tr data-page-id='<%= page.id %>' id="page_<%= page.id %>" class="hover-move">
               <td><%= page.sequence_id %></td>

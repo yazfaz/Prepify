@@ -11,7 +11,7 @@ $(document).ready(function(){
     scroll: true,
     update: function(){
       $.ajax({
-        url:'/admin/subjects/4/pages/sort',
+        url: $('#sortable-pages').data('sort-url'),
         type:'post',
         data: $('#sortable-pages').sortable('serialize'),
         dataType: 'script',
