@@ -33,6 +33,7 @@
                 </div>
                 <div class="panel-notify" visibility: hidden>
                     <h4></h4>
+                    <p></p>
                     <div class="row">
                     <!-- <h5 class="center">Progress: <%= progress_bar(progress(@page))%></h5> -->
                   </div>
@@ -53,9 +54,9 @@
 
 	$('.submit').on("click", function(e){
 		// Grab value that user selected
-		var user_choice = $('.choice input:checked').get();
+		var user_choice = $('.choice input:checked').val();
 		// Compare with actual answer
-		if (user_choice == <%= @question.correct_answer%>){
+		if (user_choice == "<%= @question.correct_answer%>"){
 			$('.panel-notify').toggle();
 			$('.panel-notify h4').addClass('success label').append("Correct!");
 			$('.submit').hide();
@@ -68,6 +69,7 @@
 		else {
       $('.panel-notify').toggle('slide');
 			$('.panel-notify h4').addClass('alert label').append("Incorrect!");
+      $('.panel-notify p').append("<%= @question.explanation %>");
 			$('.submit').toggle();
 			$('.progress').toggle();
 			$('.progress').show();

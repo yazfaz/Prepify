@@ -33,7 +33,7 @@ page_14 = trigonometry.pages.create(sequence_id: 1)
 page_15 = trigonometry.pages.create(sequence_id: 2)
 
 #Create Questions
-ques_1 = Question.create(body: "What is 2 + 2?", choices: [1,3,4,6], correct_answer: 4)
+ques_1 = Question.create(body: "What is 2 + 2?", choices: [1,3,4,6], explanation: "Add them up!", correct_answer: 4)
 ques_2 = Question.create(body: "Pick 48.", choices: [36, 48, 98], correct_answer: 48)
 ques_3 = Question.create(body: "Can you read?", choices: ["yes", "no"], correct_answer: "yes")
 ques_4 = Question.create(body: "What is 5 * 5?", choices: [25, 250, 2500,25000], correct_answer: 25)
