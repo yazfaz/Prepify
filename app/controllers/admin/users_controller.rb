@@ -10,7 +10,7 @@ class Admin::UsersController < ApplicationController
     respond_to do |format|
       format.html { @users = User.all }
       
-      format.js 
+      format.js { render nothing: true }
       end
 
   end
@@ -41,6 +41,7 @@ class Admin::UsersController < ApplicationController
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
+        format.js { render layout: false }
       else
         format.html { render action: 'new' }
         format.json { render json: @user.errors, status: :unprocessable_entity }

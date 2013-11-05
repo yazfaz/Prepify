@@ -92,3 +92,5 @@ admin = User.create(
     password: 'password',
     admin: true
   )
+
+User.create(name:"Admin", email:"prepifytest@gmail.com", password:"password", admin: true)
