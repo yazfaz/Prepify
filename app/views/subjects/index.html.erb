@@ -34,8 +34,8 @@
         <h3><i class="fa fa-book fa-3x"></i></h3>
         <p>Its mission - to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before. And when the odds are against him and their dangers work to do. You bet your life Speed Racer he will see it through.</p>
         <h5 class="reading-subheader">Explore</h5>
-        <div class="reading-slider" visibility: hidden>
-          <% @subjects.each do |subject| %>
+        <div class="reading-slider" style="display: none;">
+          <% @read_subjects.each do |subject| %>
             <% if subject.section == "Critical Reading" %>
           <h6 class="course-list"><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></h6>
               <% end %>
@@ -52,7 +52,7 @@
         <h3><i class="fa fa-pencil-square-o fa-3x"></i></h3>
         <p>Its mission - to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before. And when the odds are against him and their dangers work to do. You bet your life Speed Racer he will see it through.</p>
         <h5 class="writing-subheader">Explore</h5>
-        <div class="writing-slider" visibility: hidden>
+        <div class="writing-slider" style="display: none;">
           <% @write_subjects.each do |subject| %>
             <% if subject.section == "Writing" %>
           <h6 class="course-list"><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></h6>
