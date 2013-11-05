@@ -10,6 +10,16 @@ module PagesHelper
     end
   end
 
+  def previous_page(user,page)
+    current_page = page.sequence_id
+    previous_page = page.subject.pages.find_by_sequence_id(current_page - 1)
+    if previous_page.nil?
+      return user_subjects_path(user)
+    else
+      return page_to_pageable_path(user, previous_page)
+    end
+  end
+
   def progress(page)
     current_page = page.sequence_id
     total_pages = page.subject.pages.count

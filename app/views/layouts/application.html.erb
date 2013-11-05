@@ -9,7 +9,7 @@
   	<meta charset="utf-8" />
 
 <!-- Google Fonts -->
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Gochi+Hand|Karla|Leckerli+One|Sansita+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Karla|Tinos|Leckerli+One|Covered+By+Your+Grace|Sansita+One' rel='stylesheet' type='text/css'>
 <!-- FontAwesome -->
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
 
@@ -52,6 +52,8 @@
             <li class="divider"></li>
             <li class="student-nav"><%= link_to 'Report Card', user_path(current_user)  %></li>
             <li class="divider"></li>
+            <li class="student-nav"><%= link_to 'Blog', posts_path %></li>
+            <li class="divider"></li>
             <li class= "has-dropdown student-nav"><a href="#" >Hello <%= current_user.name %></a>
               <ul class= "dropdown">
                 <li class="student-nav">
@@ -85,8 +87,9 @@
             <li class="divider"></li>
             <li class="admin-nav"><%= link_to 'Users', admin_users_path %></li>
             <li class="divider"></li>
+            <li class="admin-nav"><%= link_to 'Blog', posts_path %></li>
+            <li class="divider"></li>
             <li class= "has-dropdown admin-nav"><a href="#" >Hello <%= current_user.name %></a>
-              <%#= link_to "Hello #{current_user.name}", edit_user_registration_path%><!-- </strong> -->
               <ul class= "dropdown">
                 <li class="admin-nav">
                   <%= link_to 'Edit Profile', edit_user_registration_path %></li>
@@ -127,9 +130,37 @@
     <p class="alert">
       <%#= alert unless alert.blank? %>
     </p> -->
-
+  <section id="wrap">
     <%= yield %>
-   
+  </section>
+  
+  <footer id="footer">
+    <div class="row">
+      <div class="small-3 columns">
+        <ul>PREPIFY</ul>
+          <li><i class="fa fa-twitter"></i> Follow us on Twitter</li>
+          <li><i class="fa fa-facebook-square"></i> Like us on Facebook</li>
+          <li><i class="fa fa-rss-square"></i><%= link_to " Read our Blog", posts_path %></li>
+        </ul>
+      </div>
+      <div class="small-3 columns">
+        <ul>MORE RESOURCES</ul>
+          <li><i class="fa fa-long-arrow-right"></i> College Board</li>
+          <li><i class="fa fa-long-arrow-right"></i> Flash Cards</li>
+          <li><i class="fa fa-long-arrow-right"></i> SAT Info</li>
+          <li><i class="fa fa-long-arrow-right"></i> More Stuff</li>
+        </ul>
+      </div>
+
+      <div class="small-5 columns">
+        <ul><%= image_tag("Prepify_logo_white.png", size: "150", class:"logo")%>
+          <li>SAT prep for everyone</li>
+        </ul>
+      </ul>
+
+    </div>
+  </footer>  
+
     <%#= javascript_include_tag "application" %>
     <%= yield :javascript %>
   </body>

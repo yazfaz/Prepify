@@ -1,27 +1,26 @@
-<link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
 
 <% content_for(:body_id, "subject")%> 
 
 
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.css" rel="stylesheet">
 
-<div class="panel">
-  <div class="row">
-    <div class="large-4 centered columns ">      
-        <h1 class="bottom-nav ">All Courses</h1>
-    </div>
-  </div>
-</div>
+
+<!-- <div class="panel"> -->
+
+<!-- </div> -->
 
   <div class="row">         
-    <div class="large-4 columns centered ">
-      <%= image_tag("math.jpg")%>
-      <div class="panel">        
-        <h3>Math</h3>
-        <h6 class="math-subheader">See Courses</h6>
+    <div class="large-4 columns centered">
+      
+      <div class="panel subtopic">        
+        <h1>Math</h1>
+        <h3><i class="fa fa-superscript fa-3x"></i></h3>
+         <p>They're creepy and they're kooky mysterious and spooky. They're all together ooky the Addams Family. You wanna be where you can see our troubles are all the same. You wanna be where everybody knows Your name. Straightnin' the curves. Flatnin' the hills Someday the mountain might get ‘em but the law never will.</p>
+        <h5 class="math-subheader">Explore</h5>
         <div class="math-slider" visibility: hidden>
-          <% @subjects.each do |subject| %>
+          <% @math_subjects.each do |subject| %>
             <% if subject.section == "Math" %>
-              <p><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id)%></p>
+          <h6 class="course-list"><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id)%></h6>
             <% end %>
           <% end %> 
         </div>
@@ -29,14 +28,16 @@
     </div>
     
     <div class="large-4 columns centered">
-      <%= image_tag("math.jpg")%>
-      <div class="panel">
-        <h3><%= Subject.find(2).section%></h3>
-        <h6 class="reading-subheader">See Courses</h6>
+      
+      <div class="panel subtopic">
+        <h1>Reading</h1>
+        <h3><i class="fa fa-book fa-3x"></i></h3>
+        <p>Its mission - to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before. And when the odds are against him and their dangers work to do. You bet your life Speed Racer he will see it through.</p>
+        <h5 class="reading-subheader">Explore</h5>
         <div class="reading-slider" visibility: hidden>
           <% @subjects.each do |subject| %>
             <% if subject.section == "Critical Reading" %>
-              <p><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></p>
+          <h6 class="course-list"><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></h6>
               <% end %>
           <% end %> 
         </div>
@@ -44,20 +45,25 @@
     </div>
               
     <div class="large-4 columns centered">
-      <%= image_tag("math.jpg")%>
-      <div class="panel">
-        <h3><%= Subject.find(3).section%></h3>
-        <h6 class="writing-subheader">See Courses</h6>
+      
+     
+      <div class="panel subtopic">
+        <h1>Writing</h1>
+        <h3><i class="fa fa-pencil-square-o fa-3x"></i></h3>
+        <p>Its mission - to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before. And when the odds are against him and their dangers work to do. You bet your life Speed Racer he will see it through.</p>
+        <h5 class="writing-subheader">Explore</h5>
         <div class="writing-slider" visibility: hidden>
-          <% @subjects.each do |subject| %>
+          <% @write_subjects.each do |subject| %>
             <% if subject.section == "Writing" %>
-              <p><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></p>
+          <h6 class="course-list"><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></h6>
               <% end %>
           <% end %> 
         </div>
       </div>
     </div>           
   </div>
+
+
   <!-- End Thumbnails -->
 
 <script type="text/javascript"> 
@@ -80,41 +86,7 @@
 
 
 
-
-  <!-- Footer -->
-<footer class="bottom">
-  <div class="row">
-    <div class="large-12 columns ">        
-          <div class="large-6 columns">            
-            <p class="bottom-nav">&copy; Copyright Prepify, LLC</p>
-          </div>
-          <div class="large-6 columns">
-            <ul class="inline-list right">
-              <li><h5 class="bottom-nav"><%= link_to 'Home', user_path(@user)%></h5><li><h5 class="bottom-nav">|</h5></li></li>
-              <li>
-                <h5 class="bottom-nav"><%= link_to 'Sign Out'%></h5> 
-                <li><h5 class="bottom-nav">|</h5></li>
-              </li>
-              <li>
-                <h5 class="bottom-nav"><%= link_to 'Courses'%></h5>                          
-                  <!-- <div class="subtext"><%= Subject.first.name %></div>
-                   <div class="subtext"><%= Subject.find(2).name %></div>
-                   <div class="subtext"><%= Subject.find(3).name %></div> -->               
-                <li><h5 class="bottom-nav">|</h5></li>
-              </li>
-              <li>
-                <h5 class="bottom-nav"><%= link_to 'Practice SAT'%></h5>
-              </li>
-            </ul>            
-          </div>        
-      </div>
-    </div>
-    
-  </div>
   
-  
-  </footer>
-
 
 
 

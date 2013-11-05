@@ -8,9 +8,9 @@ class SubjectsController < ApplicationController
   def index
   @published_subjects = Subject.where(published:true)
   @subjects = @published_subjects.all_with_pages
-  # @write_subjects = Subject.where(:section => "Writing")
-  # @math_subjects = Subject.where(:section => "Math")
-  # @read_subjects = Subject.where(:section => "Critical Reading")
+  @write_subjects = Subject.where(:section => "Writing")
+  @math_subjects = Subject.where(:section => "Math")
+  @read_subjects = Subject.where(:section => "Critical Reading")
   @user = current_user
   end
 

@@ -5,26 +5,20 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/foundation/4.3.1/js/foundation.min.js"></script>     
 
-      <div class="panel">
+      
         <div class="row">
           <h3><%= @subject.name %></h3>       
         </div>
-      </div>
+  
 
-<!-- End Header Content --> 
-            
+<!-- End Header Content -->         
 
-
-
-
-
-
-        <div class="row ">
-          <div class="large-4 columns recommended">
+        <div class="row"> 
+         <div class="large-4 columns centered">
           <ul class="pricing table">
             <div class="panel">
-              <h6><%= @question.body %></h6>
-              <div class="field">
+              <h5><%= @question.body %></h5>
+              <div class="field centered">
                 <div class="choices subheader ">
                   <% @question.choices.each do |choice| %>
                     <div class="choice slider" >
@@ -38,16 +32,21 @@
                 </div>
                 <div class="panel-notify" visibility: hidden>
                     <h4></h4>
-                    <%= progress_bar(progress(@page))%>
-                    <h3><%= link_to 'Next Page', next_page(current_user, @page)%></h3>                
+                    <div class="row">
+                    <!-- <h5 class="center">Progress: <%= progress_bar(progress(@page))%></h5> -->
+                  </div>
+                    <div class="row">
+                    <h6 class="inline left"><a href="<%= previous_page(current_user, @page)%>"><i class="fa fa-arrow-circle-left"></i> Back</a></h6>   
+
+                     <h6 class="inline right"><a href="<%= next_page(current_user, @page)%>"> Next <i class="fa fa-arrow-circle-right"></i></a></h6>  
+                     </div>             
                   </div>      
-              </div>
-            </div> 
-            </ul>               
+                </div>
+              </div>                      
           </div>  
           </div>   
       
-    
+   
 
 <script type="text/javascript">	
 

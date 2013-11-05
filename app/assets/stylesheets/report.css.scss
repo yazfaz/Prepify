@@ -4,16 +4,28 @@ $darkcolor: darken($prepifycolor, 40%);
 $lightcolor: lighten($prepifycolor, 20%);
 $incomplete: darken(red, 40%);
 $complete: darken(#5da423, 40%);
+$chairaccent: #233159;
 
 background-color: $prepifycolor;
 background-image: url("retina_wood.png");
 background-repeat: no-repeat;
 background-size: 100% auto;
 
-h2, h3 {
-	font-family: 'Covered By Your Grace'; 
+h2, h3{
+	font-family: 'Sansita One'; 
 	}
-.panel {
-	max-width: 400px;
+	
+ .report-card {
+	border: 5px solid #595758;
+	box-shadow: 5px 5px 5px #595758;
+	color: $prepifycolor;
 }
+	
+.incomplete {
+	color: #E01B3C;
+}
+ .complete {
+	color: #5da423;
+}
+
 }

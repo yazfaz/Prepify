@@ -1,0 +1,16 @@
+<% content_for(:body_id, "admin-pages") %> 
+
+
+<div class="row">
+  <div class="large-12 columns ">
+	<h1 class="page-title">New Post</h1>
+  <div class="center-buttons">
+     <%= link_to 'Back to Admin Dashboard', admin_subjects_path, class:"small button" %>
+   </div>
+  <div class="panel blog-table">
+	 <%= render 'form' %>
+	
+  </div>
+  </div>
+</div>
+
