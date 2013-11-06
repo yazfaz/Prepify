@@ -73,7 +73,7 @@
 		else {
       $('.panel-notify').toggle('slide');
 			$('.panel-notify h4').addClass('alert label').append("Incorrect!");
-      $('.panel-notify p').append("<%= @question.explanation %>");
+      $('.panel-notify p').addClass('alert label').append("<%= @question.explanation %>");
 			$('.submit').toggle();
 			$('.progress').toggle();
 			$('.progress').show();
