@@ -7,8 +7,9 @@ module UsersHelper
         last_page_user_completed = course.page_id
         total_pages = course.subject.pages.count
         user_progress = last_page_user_completed / total_pages * 10
-        report += content_tag(:h3, class: 'panel report-card incomplete') { "#{course.subject.name}: You are #{user_progress.round}% Completed "}
         # report += progress_bar(user_progress)
+        report += content_tag(:h3, class: 'panel report-card incomplete')  { "#{course.subject.name}: You are #{user_progress.round}% Completed "}
+        
       else
         report += content_tag(:h3, class: 'panel report-card complete') {  "#{course.subject.name}: Completed!" }
       end
