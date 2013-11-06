@@ -40,7 +40,7 @@ class Admin::SubjectsController < ApplicationController
         format.html { redirect_to admin_subject_pages_path(@subject), notice: 'Subject was successfully created.' }
         format.json { render action: 'show', status: :created, location: @subject }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to admin_subjects_path, :alert => "Title can't be blank. Please try creating a lesson again." }
         format.json { render json: @subject.errors, status: :unprocessable_entity }
       end
     end

@@ -10,7 +10,6 @@ $(document).on('click', '.show-lesson-form', function (e) {
   var form = $(e.currentTarget).siblings('form');
   console.log('form:', form);
   form.show();
-
 });
 
 $(document).on('click', '.change-published-status', function (e) {
