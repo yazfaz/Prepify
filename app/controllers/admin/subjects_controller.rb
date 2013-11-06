@@ -55,11 +55,12 @@ class Admin::SubjectsController < ApplicationController
       if @subject.update(subject_params)
         format.html { redirect_to admin_subject_pages_path(@subject), notice: 'Subject was successfully updated.' }
         format.json { head :no_content }
+        format.js { render layout: false }
        
       else
         format.html { render action: 'edit' }
         format.json { render json: @subject.errors, status: :unprocessable_entity }
-        format.js { render layout: false }
+        
       end
     end
   end
