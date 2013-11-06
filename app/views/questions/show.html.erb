@@ -8,23 +8,26 @@
 
       
         <div class="row">
-          <h3><%= @subject.name %></h3>       
+          <h2><%= @subject.name %></h2>       
         </div>
   
 
 <!-- End Header Content -->         
 
         <div class="row"> 
-         <div class="large-4 columns centered">
+         <div class="large-12 columns centered">
           <ul class="pricing table">
             <div class="panel">
-              <h5><%= @question.body %></h5>
+              <h3><%= @question.body %></h3>
+              <div class="slider"> 
+                <img src="<%= @question.image %>" width="100%" height="auto">  
+              </div>
               <div class="field centered">
                 <div class="choices subheader ">
                   <% @question.choices.each do |choice| %>
                     <div class="choice slider" >
-                      <%= radio_button :question, :choices, choice %>
-                      <%= choice %><br>
+                      <h3 class="choice"><%= radio_button :question, :choices, choice %>
+                      <%= choice %></h3>
                     </div>            
                   <%end%>
                 </div> 

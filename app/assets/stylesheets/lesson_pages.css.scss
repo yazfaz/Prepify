@@ -66,7 +66,7 @@ background-size: 100% auto;
   font-size: .75em;
  }
 
- h2, h3 {
+ h2  {
  	color: $prepifycolor;
  	font-family: 'Sansita One';
  
@@ -75,7 +75,9 @@ background-size: 100% auto;
  	text-shadow: black .1em .1em .2em;
  }
 
-	
+	h3 .choice {
+		color: black;
+	}
 
  h4, h5,h6, p {
  	color: #3E4040;
