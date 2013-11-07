@@ -1,7 +1,7 @@
 class Subject < ActiveRecord::Base
   validates_with SubjectFormValidator
   has_many :users, through: :course_progressions
-  has_many :course_progressions
+  has_many :course_progressions, dependent: :destroy
   has_many :pages
 
   validates :name, presence: true
