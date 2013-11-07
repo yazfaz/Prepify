@@ -26,11 +26,11 @@
             <h6 class="course-list"><%= link_to "#{subject.name}:                              ", user_subject_path(current_user, subject.id)%> 
 
             <% if current_user.completed_subject?(subject)%> 
-             <span class="complete">Completed Lesson</span>
+             <span class="complete">Completed</span>
             <% elsif current_user.started_subject?(subject)%>
-            <span class="started">Lesson Started</span>
+            <span class="started">Started</span>
             <%else%>
-           <span class="begin">Start Lesson</span></h6>                 
+           <span class="begin">Start</span></h6>                 
             <%end%>     
           <% end %> 
         </div>
@@ -50,13 +50,13 @@
           <% @read_subjects.each do |subject| %>
             
           
-          <h6 class="course-list"><%= link_to "#{subject.name}:                              ", user_subject_path(current_user, subject.id)%> 
+          <h6 class="course-list"><%= link_to "#{subject.name}:                           ", user_subject_path(current_user, subject.id)%> 
             <% if current_user.completed_subject?(subject)%> 
-             <span class="complete">Completed Lesson</span>
+             <span class="complete">Completed</span>
             <% elsif current_user.started_subject?(subject)%>
-            <span class="started">Lesson Started</span>
+            <span class="started">Started</span>
             <%else%>
-           <span class="begin">Start Lesson</span></h6>                 
+           <span class="begin">Start</span></h6>                 
             <%end%>       
              
           <% end %> 
@@ -81,11 +81,11 @@
           <h6 class="course-list"><%= link_to "#{subject.name}:                              ", user_subject_path(current_user, subject.id)%> 
 
             <% if current_user.completed_subject?(subject)%> 
-             <span class="complete">Completed Lesson</span>
+             <span class="complete">Completed</span>
             <% elsif current_user.started_subject?(subject)%>
-            <span class="started">Lesson Started</span>
+            <span class="started">Started</span>
             <%else%>
-           <span class="begin">Start Lesson</span></h6>                 
+           <span class="begin">Start</span></h6>                 
             <%end%>     
               
           <% end %> 
