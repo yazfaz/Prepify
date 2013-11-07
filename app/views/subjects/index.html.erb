@@ -11,13 +11,15 @@
 
   <div class="row">         
     <div class="large-4 columns centered">
-      
-      <div class="panel subtopic">        
+      <div class="panel circular">
         <h1>Math</h1>
         <h3><i class="fa fa-superscript fa-3x"></i></h3>
-         <p>They're creepy and they're kooky mysterious and spooky. They're all together ooky the Addams Family. You wanna be where you can see our troubles are all the same. You wanna be where everybody knows Your name. Straightnin' the curves.</p>
+        </div>      
+      <div class="panel radius subtopic">        
+        <p>They're creepy and they're kooky mysterious and spooky. They're all together ooky the Addams Family. You wanna be where you can see our troubles are all the same. You wanna be where everybody knows Your name. Straightnin' the curves.</hp>
+        <hr>
         <h5 class="math-subheader">Explore</h5>
-        <div class="math-slider" visibility: hidden>
+        <div class="math-slider">
           <% @math_subjects.each do |subject| %>
             <% if subject.section == "Math" %>
           <h6 class="course-list"><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id)%></h6>
@@ -28,13 +30,16 @@
     </div>
     
     <div class="large-4 columns centered">
-      
-      <div class="panel subtopic">
-        <h1>Reading</h1>
-        <h3><i class="fa fa-book fa-3x"></i></h3>
+      <div class="panel circular">
+      <h1>Read</h1>
+      <h3 class="icon"><i class="fa fa-book fa-3x"></i></h3>
+      </div>
+      <div class="panel radius subtopic">
+        
         <p>Its mission - to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before. And when the odds are against him and their dangers work to do. You bet your life Speed Racer he will see it through.</p>
+        <hr>
         <h5 class="reading-subheader">Explore</h5>
-        <div class="reading-slider" style="display: none;">
+        <div class="reading-slider">
           <% @read_subjects.each do |subject| %>
             <% if subject.section == "Critical Reading" %>
           <h6 class="course-list"><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></h6>
@@ -45,14 +50,15 @@
     </div>
               
     <div class="large-4 columns centered">
-      
-     
-      <div class="panel subtopic">
-        <h1>Writing</h1>
+      <div class="panel circular">
+        <h1>Write</h1>
         <h3><i class="fa fa-pencil-square-o fa-3x"></i></h3>
+      </div>
+      <div class="panel radius subtopic">        
         <p>Its mission - to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before. And when the odds are against him and their dangers work to do. You bet your life Speed Racer he will see it through.</p>
+        <hr>
         <h5 class="writing-subheader">Explore</h5>
-        <div class="writing-slider" style="display: none;">
+        <div class="writing-slider">
           <% @write_subjects.each do |subject| %>
             <% if subject.section == "Writing" %>
           <h6 class="course-list"><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></h6>
@@ -66,23 +72,23 @@
 
   <!-- End Thumbnails -->
 
-<script type="text/javascript"> 
- $('.writing-subheader').mouseover(function(e){
-  e.preventDefault();
-    $('.writing-slider').toggle("slide");
-  }); 
+// <script type="text/javascript"> 
+//  $('.writing-subheader').mouseover(function(e){
+//   e.preventDefault();
+//     $('.writing-slider').toggle("slide");
+//   }); 
  
-  $('.reading-subheader').mouseover(function(e){
-    e.preventDefault();
-    $('.reading-slider').toggle("slide");
-  });
+//   $('.reading-subheader').mouseover(function(e){
+//     e.preventDefault();
+//     $('.reading-slider').toggle("slide");
+//   });
 
 
-  $('.math-subheader').mouseover(function(e){
-    e.preventDefault();
-    $('.math-slider').toggle("slide");
-  });
-</script>
+//   $('.math-subheader').mouseover(function(e){
+//     e.preventDefault();
+//     $('.math-slider').toggle("slide");
+//   });
+// </script>
 
 
 
