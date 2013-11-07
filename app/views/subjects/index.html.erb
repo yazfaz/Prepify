@@ -14,15 +14,24 @@
       <div class="panel circular">
         <h1>Math</h1>
         <h3><i class="fa fa-superscript fa-3x"></i></h3>
+      </div>
+      <div class="panel radius subtopic">
          <p>The following concepts are covered on the SAT:
-Arithmetic word problems (including percent, ratio, and proportion)
-properties of integers (even, odd, prime numbers, divisibility, etc.), rational numbers, sets (union, and intersection.</p>
+        Arithmetic word problems (including percent, ratio, and proportion)
+        properties of integers (even, odd, prime numbers, divisibility, etc.), rational numbers, sets (union, and intersection.</p>
+        <hr>
         <h5 class="math-subheader">Explore</h5>
         <div class="math-slider">
-          <% @math_subjects.each do |subject| %>
-            <% if subject.section == "Math" %>
-          <h6 class="course-list"><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id)%></h6>
-            <% end %>
+          <% @math_subjects.each do |subject| %>            
+            <h6 class="course-list"><%= link_to "#{subject.name}:                              ", user_subject_path(current_user, subject.id)%> 
+
+            <% if current_user.completed_subject?(subject)%> 
+             <span class="complete">Completed Lesson</span>
+            <% elsif current_user.started_subject?(subject)%>
+            <span class="started">Lesson Started</span>
+            <%else%>
+           <span class="begin">Start Lesson</span></h6>                 
+            <%end%>     
           <% end %> 
         </div>
       </div>
@@ -33,21 +42,24 @@ properties of integers (even, odd, prime numbers, divisibility, etc.), rational 
       <h1>Read</h1>
       <h3 class="icon"><i class="fa fa-book fa-3x"></i></h3>
       </div>
-      <div class="panel radius subtopic">
-        
-        <p>Its mission - to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before. And when the odds are against him and their dangers work to do. You bet your life Speed Racer he will see it through.</p>
-        <hr>
-      
-      <div class="panel subtopic">
-        <h1>Reading</h1>
-        <h3><i class="fa fa-book fa-3x"></i></h3>
+      <div class="panel radius subtopic">        
         <p>All critical reading questions on the SAT® are multiple-choice questions. Here is a breakdown of the question types, passage-based reading, sentence completions, vocabulary, literal comprehensive and passage-based reasoning.</p>
+        <hr>
         <h5 class="reading-subheader">Explore</h5>
         <div class="reading-slider">
           <% @read_subjects.each do |subject| %>
-            <% if subject.section == "Critical Reading" %>
+            
           <h6 class="course-list"><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></h6>
-              <% end %>
+          <h6 class="course-list"><%= link_to "#{subject.name}:                              ", user_subject_path(current_user, subject.id)%> 
+
+            <% if current_user.completed_subject?(subject)%> 
+             <span class="complete">Completed Lesson</span>
+            <% elsif current_user.started_subject?(subject)%>
+            <span class="started">Lesson Started</span>
+            <%else%>
+           <span class="begin">Start Lesson</span></h6>                 
+            <%end%>       
+             
           <% end %> 
         </div>
       </div>
@@ -59,15 +71,24 @@ properties of integers (even, odd, prime numbers, divisibility, etc.), rational 
         <h3><i class="fa fa-pencil-square-o fa-3x"></i></h3>
       </div>
       <div class="panel radius subtopic">        
-        <p>Its mission - to explore strange new worlds to seek out new life and new civilizations to boldly go where no man has gone before. And when the odds are against him and their dangers work to do. You bet your life Speed Racer he will see it through.</p>
-        <hr>
+      
         <p>Writing questions on the SAT® have two formats: a direct measure in the form of an essay and multiple-choice questions. Here is a breakdown of the questions, essay, multiple-choice, improve your sentence structure.</p>
+          <hr>
         <h5 class="writing-subheader">Explore</h5>
         <div class="writing-slider">
           <% @write_subjects.each do |subject| %>
-            <% if subject.section == "Writing" %>
+            
           <h6 class="course-list"><%= link_to "#{subject.name}", user_subject_path(current_user, subject.id) %></h6>
-              <% end %>
+          <h6 class="course-list"><%= link_to "#{subject.name}:                              ", user_subject_path(current_user, subject.id)%> 
+
+            <% if current_user.completed_subject?(subject)%> 
+             <span class="complete">Completed Lesson</span>
+            <% elsif current_user.started_subject?(subject)%>
+            <span class="started">Lesson Started</span>
+            <%else%>
+           <span class="begin">Start Lesson</span></h6>                 
+            <%end%>     
+              
           <% end %> 
         </div>
       </div>
