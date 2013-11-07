@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :name
   end
 
+  # Method to document the date when the student completes a lesson
   def update_course_progression(subject, page)
     course_progression = current_user.course_progressions.where(subject_id: subject.id).first
     course_progression ||= current_user.course_progressions.create(subject_id: subject.id)

@@ -1,5 +1,6 @@
 module UsersHelper
 
+  # method to return a summary of the student's status for each lesson (returns string)
   def progress_report(courses)    
     report = ""
     courses.sort.each do |course|

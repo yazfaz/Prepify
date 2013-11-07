@@ -5,6 +5,7 @@ class SubjectsController < ApplicationController
 
   # GET /subjects
   # GET /subjects.json
+
   def index
   @published_subjects = Subject.where(published:true)
   @subjects = @published_subjects.all_with_pages
