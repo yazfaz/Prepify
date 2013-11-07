@@ -22,6 +22,7 @@
               <div class="slider"> 
                 <img src="<%= @question.image %>" width="100%" height="auto">  
               </div>
+              <div class="alert"><h1></h1></div>
               <div class="field centered">
                 <div class="choices subheader ">
                   <% @question.choices.each do |choice| %>
@@ -62,7 +63,7 @@
 		// Compare with actual answer
 		if (user_choice == "<%= @question.correct_answer%>"){
 			$('.panel-notify').toggle();
-			$('.panel-notify h4').addClass('success label').append("Correct!");
+			$('.alert h1').addClass('success label').append("Correct!");
 			$('.submit').hide();
       $('.progress').toggle();
       $('.progress').show();			
@@ -72,7 +73,7 @@
 		}
 		else {
       $('.panel-notify').toggle('slide');
-			$('.panel-notify h4').addClass('alert label').append("Incorrect!");
+			$('.alert h1').addClass('alert label').append("Incorrect!");
       $('.panel-notify p').append("<%= @question.explanation %>");
 			$('.submit').toggle();
 			$('.progress').toggle();

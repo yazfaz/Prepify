@@ -81,8 +81,8 @@ $default-float: left;
 
 // $primary-color: #2ba6cb;
 // $secondary-color: #e9e9e9;
-// $alert-color: #c60f13;
-// $success-color: #5da423;
+$alert-color: #CF1329;
+$success-color: #73D968;
 
 // Make sure border radius matches unless we want it different.
 
@@ -498,7 +498,7 @@ $global-radius: 10px;
 // We use these to control text style.
 
 // $alert-font-weight: bold;
-// $alert-font-size: em-calc(14);
+$alert-font-size: em-calc(5);
 // $alert-font-color: #fff;
 // $alert-font-color-alt: darken($secondary-color, 60%);
 
@@ -798,7 +798,7 @@ $global-radius: 10px;
 
 // We use these to style the label text
 
-// $label-font-sizing: em-calc(14);
+$label-font-sizing: em-calc(25);
 // $label-font-weight: bold;
 // $label-font-color: #333;
 // $label-font-color-alt: #fff;
