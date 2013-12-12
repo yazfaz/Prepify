@@ -1,5 +1,4 @@
-##Prepify SAT Prep App
-###prepifyapp.com
+##Prepify SAT Prep App - prepifyapp.com
 
 ##### Prepify is FREE, online SAT prep for any student, anywhere.
 
